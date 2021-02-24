@@ -91,7 +91,7 @@ module.exports = {
 
   output: {
     path: path.join(rootDir, "dist"),
-    publicPath: "/",
+    // publicPath: "/",
   },
 
   entry: {
