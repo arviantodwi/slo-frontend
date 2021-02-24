@@ -67,7 +67,7 @@ const staticImage = {
   },
 };
 
-const html = {
+const htmlImageSource = {
   test: /\.html$/i,
   loader: "html-loader",
   options: {
@@ -102,7 +102,7 @@ module.exports = {
   },
 
   module: {
-    rules: [js, css, scss, staticImage, html],
+    rules: [js, css, scss, staticImage, htmlImageSource],
   },
 
   plugins: [
