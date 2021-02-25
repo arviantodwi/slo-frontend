@@ -39,7 +39,7 @@ module.exports = {
   },
 
   module: {
-    rules: [js, css(), staticImage],
+    rules: [js, css(), staticImage, partialTemplates],
   },
 
   plugins: [

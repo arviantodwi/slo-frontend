@@ -65,3 +65,26 @@ exports.css = () => {
     ],
   };
 };
+
+exports.partialTemplates = {
+  test: /\.html$/i,
+  loader: "html-loader",
+  include: /views\/partials/,
+  options: {
+    esModule: false,
+    minimize: false,
+    preprocessor: (content, loaderContext) => {
+      const resourcePathSegments = loaderContext.resourcePath.split("/");
+      const contextSegments = [];
+      while (true) {
+        const currentSegment = resourcePathSegments.pop();
+        if (currentSegment === "src") break;
+
+        contextSegments.unshift(currentSegment);
+      }
+      const context = contextSegments.join("/");
+
+      return `\n<!-- Start of: ${context} -->${content}<!-- End of: ${context} -->\n`;
+    },
+  },
+};
