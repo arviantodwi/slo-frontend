@@ -5,6 +5,7 @@ const { js, staticImage, htmlImageSource, css } = require("./rules");
 const MINIFY_HTML = false;
 
 const isProductionMode = process.env.NODE_ENV === "production";
+const HtmlBeautifyPlugin = require("@nurminen/html-beautify-webpack-plugin");
 
 const rootDir = path.resolve(__dirname, "../");
 const srcDir = path.join(rootDir, "src");
@@ -48,3 +49,19 @@ module.exports = {
     // new HtmlWebpackPlugin(makeHwpOption("path/to/about.html", ["about"], {title: 'My About Page'})),
   ],
 };
+
+if (!env.useMinifyProcess) {
+  module.exports.plugins.push(
+    new HtmlBeautifyPlugin({
+      config: {
+        html: {
+          indent_size: 2,
+          indent_char: " ",
+          indent_with_tabs: false,
+          end_with_newline: false,
+          preserve_newlines: true,
+        },
+      },
+    })
+  );
+}
