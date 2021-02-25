@@ -12,6 +12,6 @@ module.exports = merge(common, {
 
   devServer: {
     port: 8080,
-    contentBase: [srcDir],
+    // contentBase: [srcDir],
   },
 });

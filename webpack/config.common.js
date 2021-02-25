@@ -1,6 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { js, staticImage, htmlImageSource, css } = require("./rules");
 
 const MINIFY_HTML = false;
 
@@ -10,79 +10,16 @@ const rootDir = path.resolve(__dirname, "../");
 const srcDir = path.join(rootDir, "src");
 const viewsDir = path.join(srcDir, "views");
 
-const makeHtmlWebpackPluginOption = (templateDir, htmlName, entries) => ({
-  template: path.join(viewsDir, `${templateDir}/${htmlName}`),
-  inject: "body",
-  chunks: ["app", ...entries],
-  filename: htmlName,
-  minify: MINIFY_HTML,
-});
+const makeHwpOption = (templateFilePath, entries = [], optionToMerge = {}) => {
+  const defaultOption = {
+    template: path.join(srcDir, templateFilePath),
+    filename: templateFilePath.split("/").pop(),
+    inject: "body",
+    chunks: ["app", ...entries],
+    minify: MINIFY_HTML,
+  };
 
-const js = {
-  test: /\.js$/i,
-  exclude: /node_modules/,
-  loader: "babel-loader",
-  options: {
-    presets: ["@babel/preset-env"],
-  },
-};
-
-const css = {
-  test: /\.css$/i,
-  use: [
-    isProductionMode ? MiniCssExtractPlugin.loader : "style-loader",
-    {
-      loader: "css-loader",
-      options: { importLoaders: 1 },
-    },
-    {
-      loader: "postcss-loader",
-      options: {
-        postcssOptions: {
-          plugins: [
-            [
-              "autoprefixer",
-              {
-                cascade: false,
-              },
-            ],
-          ],
-        },
-      },
-    },
-  ],
-};
-
-const scss = {
-  test: /\.s[ac]ss$/i,
-  use: [...css.use].concat("sass-loader"),
-};
-
-const staticImage = {
-  test: /\.(svg|png|gif|jpe?g)$/i,
-  loader: "file-loader",
-  options: {
-    outputPath: "images",
-    name: "[name].[contenthash:7].[ext]",
-  },
-};
-
-const htmlImageSource = {
-  test: /\.html$/i,
-  loader: "html-loader",
-  options: {
-    esModule: false,
-    minimize: MINIFY_HTML,
-    sources: {
-      list: [
-        {
-          tag: "img",
-          attribute: "src",
-          type: "src",
-        },
-      ],
-    },
-  },
+  return Object.assign({}, defaultOption, optionToMerge);
 };
 
 module.exports = {
@@ -98,18 +35,16 @@ module.exports = {
     app: path.join(srcDir, "app.js"),
     index: path.join(viewsDir, "Index/index.js"),
     // Add other script entries like the one below:
-    // about: path.join(viewsDir, 'your_page_dir/your_js_file.js'),
+    // about: path.join(viewsDir, 'path/to/about.js'),
   },
 
   module: {
-    rules: [js, css, scss, staticImage, htmlImageSource],
+    rules: [js, css(), staticImage],
   },
 
   plugins: [
-    new HtmlWebpackPlugin(
-      makeHtmlWebpackPluginOption("Index", "index.html", ["index"])
-    ),
+    new HtmlWebpackPlugin(makeHwpOption("views/Index/index.html", ["index"])),
     // Add other HtmlWebpackPlugin view instances like the one below:
-    // new HtmlWebpackPlugin(makeHtmlWebpackPluginOption("About", "about.html", ["about"])),
+    // new HtmlWebpackPlugin(makeHwpOption("path/to/about.html", ["about"], {title: 'My About Page'})),
   ],
 };
