@@ -13,6 +13,7 @@
     />
   </head>
   <body>
+    <%= require('html-loader!../NavBar/navbar.html').default %>
     <div class="container app">
       <div class="row align-items-center align-self-center">
         <div class="col">
@@ -27,5 +28,6 @@
         </div>
       </div>
     </div>
+    <%= require('html-loader!../Footer/footer.html').default %>
   </body>
 </html>
