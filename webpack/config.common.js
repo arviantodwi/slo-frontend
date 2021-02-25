@@ -1,10 +1,7 @@
 const path = require("path");
+const env = require("./env");
+const { js, staticImage, partialTemplates, css } = require("./rules");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { js, staticImage, htmlImageSource, css } = require("./rules");
-
-const MINIFY_HTML = false;
-
-const isProductionMode = process.env.NODE_ENV === "production";
 const HtmlBeautifyPlugin = require("@nurminen/html-beautify-webpack-plugin");
 
 const rootDir = path.resolve(__dirname, "../");
@@ -17,7 +14,11 @@ const makeHwpOption = (templateFilePath, entries = [], optionToMerge = {}) => {
     filename: templateFilePath.split("/").pop(),
     inject: "body",
     chunks: ["app", ...entries],
-    minify: MINIFY_HTML,
+    minify: {
+      sortAttributes: true,
+      sortClassName: true,
+      collapseWhitespace: env.useMinifyProcess,
+    },
   };
 
   return Object.assign({}, defaultOption, optionToMerge);
@@ -25,11 +26,10 @@ const makeHwpOption = (templateFilePath, entries = [], optionToMerge = {}) => {
 
 module.exports = {
   // https://github.com/webpack/webpack-dev-server/issues/2758
-  target: isProductionMode ? "browserslist" : "web",
+  target: env.isProductionMode ? "browserslist" : "web",
 
   output: {
     path: path.join(rootDir, "dist"),
-    // publicPath: "/",
   },
 
   entry: {

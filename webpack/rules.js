@@ -1,3 +1,5 @@
+const env = require("./env");
+
 exports.js = {
   test: /\.js$/i,
   exclude: /node_modules/,
@@ -36,12 +38,11 @@ exports.htmlImageSource = ({ minimize }) => ({
 
 exports.css = () => {
   const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-  const isProductionMode = process.env.NODE_ENV === "production";
 
   return {
     test: /\.s?[ac]ss$/i,
     use: [
-      isProductionMode ? MiniCssExtractPlugin.loader : "style-loader",
+      env.isProductionMode ? MiniCssExtractPlugin.loader : "style-loader",
       {
         loader: "css-loader",
         options: { importLoaders: 1 },
