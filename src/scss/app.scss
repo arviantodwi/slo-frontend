@@ -3,6 +3,8 @@
 body {
   min-height: 100vh;
   background-color: white;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
 }
 .app,
 .app > .row {
@@ -10,4 +12,14 @@ body {
 }
 img {
   border-radius: 50%;
+}
+
+small {
+  font-size: 13px;
+  line-height: 18px;
+  display: inline-block;
+
+  &.tiny {
+    font-size: 12px;
+  }
 }
