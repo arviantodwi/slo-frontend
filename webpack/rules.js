@@ -9,10 +9,9 @@ exports.js = {
 
 exports.staticImage = {
   test: /\.(svg|png|gif|jpe?g)$/i,
-  loader: "file-loader",
-  options: {
-    outputPath: "images",
-    name: "[name].[contenthash:7].[ext]",
+  type: "asset/resource",
+  generator: {
+    filename: "images/[name].[contenthash:7][ext]",
   },
 };
 
