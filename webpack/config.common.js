@@ -8,10 +8,11 @@ const rootDir = path.resolve(__dirname, "../");
 const srcDir = path.join(rootDir, "src");
 const viewsDir = path.join(srcDir, "views");
 
-const makeHwpOption = (templateFilePath, entries = [], optionToMerge = {}) => {
+const makeHwpOption = (contentFilePath, entries = [], optionToMerge = {}) => {
   const defaultOption = {
-    template: path.join(srcDir, templateFilePath),
-    filename: templateFilePath.split("/").pop(),
+    template: path.join(srcDir, "app.template.html"),
+    filename: contentFilePath.split("/").pop(),
+    content: contentFilePath,
     inject: "body",
     chunks: ["app", ...entries],
     minify: {
@@ -19,6 +20,15 @@ const makeHwpOption = (templateFilePath, entries = [], optionToMerge = {}) => {
       sortClassName: true,
       collapseWhitespace: env.useMinifyProcess,
     },
+    templateParameters: (compilation, assets, assetTags, options) => ({
+      compilation,
+      webpackConfig: compilation.options,
+      htmlWebpackPlugin: {
+        tags: assetTags,
+        files: assets,
+        options,
+      },
+    }),
   };
 
   return Object.assign({}, defaultOption, optionToMerge);
@@ -44,7 +54,7 @@ module.exports = {
   },
 
   plugins: [
-    new HtmlWebpackPlugin(makeHwpOption("views/Index/index.html", ["index"])),
+    new HtmlWebpackPlugin(makeHwpOption("Index/index.html", ["index"])),
     // Add other HtmlWebpackPlugin view instances like the one below:
     // new HtmlWebpackPlugin(makeHwpOption("path/to/about.html", ["about"], {title: 'My About Page'})),
   ],

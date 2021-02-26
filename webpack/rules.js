@@ -70,7 +70,7 @@ exports.css = () => {
 exports.partialTemplates = {
   test: /\.html$/i,
   loader: "html-loader",
-  include: /views\/partials/,
+  exclude: /app\.template\.html$/i,
   options: {
     esModule: false,
     minimize: false,
