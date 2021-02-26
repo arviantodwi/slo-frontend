@@ -1,1 +1,32 @@
-<div>Footer</div>
+<footer class="main-footer">
+  <div class="container">
+    <div class="top-wrap d-flex flex-row">
+      <div class="brand">
+        <a href="">
+          <img
+            src="<%= require('/src/images/logo-white-text.png') %>"
+            alt="Sports Learning Online logo"
+          />
+        </a>
+      </div>
+    </div>
+
+    <div class="links-wrap d-flex flex-row">
+      <%= require('./footerLinks.html')({title: 'About', links: [{text: `About
+      Us`}, {text: `Become an Author`, href: '/author'}]}) %>
+    </div>
+
+    <div class="bottom-wrap d-flex flex-row">
+      <div class="copy">
+        Copyright &copy; 2021 Sports Learning Online. All rights reserved.
+      </div>
+      <div class="social">
+        <a href="">f</a>
+        <a href="">t</a>
+        <a href="">g</a>
+        <a href="">in</a>
+        <a href="">ig</a>
+      </div>
+    </div>
+  </div>
+</footer>
