@@ -20,9 +20,9 @@
   </head>
   <body>
     <div id="app">
-      <%= require('./views/partials/navbar.html') %> <%=
-      require(`./views/${content}`) %> <%=
-      require('./views/partials/footer.html') %>
+      <%= require('./views/partials/navbar.html')() %> <%=
+      require(`./views/${content}`)() %> <%=
+      require('./views/partials/footer.html')() %>
     </div>
   </body>
 </html>

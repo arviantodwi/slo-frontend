@@ -1,5 +1,6 @@
 const path = require("path");
 const env = require("./env");
+const webpack = require("webpack");
 const { js, staticImage, partialTemplates, css } = require("./rules");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const HtmlBeautifyPlugin = require("@nurminen/html-beautify-webpack-plugin");
@@ -11,7 +12,10 @@ const viewsDir = path.join(srcDir, "views");
 const makeHwpOption = (contentFilePath, entries = [], optionToMerge = {}) => {
   const defaultOption = {
     template: path.join(srcDir, "app.template.html"),
-    filename: contentFilePath.split("/").pop(),
+    filename: contentFilePath
+      .split("/")
+      .pop()
+      .replace(/(\..+)$/i, ".html"),
     content: contentFilePath,
     inject: "body",
     chunks: ["app", ...entries],
@@ -54,6 +58,10 @@ module.exports = {
   },
 
   plugins: [
+    new webpack.ProvidePlugin({
+      _: "lodash",
+    }),
+
     new HtmlWebpackPlugin(makeHwpOption("Index/index.html", ["index"])),
     // Add other HtmlWebpackPlugin view instances like the one below:
     // new HtmlWebpackPlugin(makeHwpOption("path/to/about.html", ["about"], {title: 'My About Page'})),
