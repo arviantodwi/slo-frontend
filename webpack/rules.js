@@ -17,25 +17,6 @@ exports.staticImage = {
   },
 };
 
-// Deprecated
-exports.htmlImageSource = ({ minimize }) => ({
-  test: /\.html$/i,
-  loader: "html-loader",
-  options: {
-    esModule: false,
-    minimize,
-    sources: {
-      list: [
-        {
-          tag: "img",
-          attribute: "src",
-          type: "src",
-        },
-      ],
-    },
-  },
-});
-
 exports.css = () => {
   const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
