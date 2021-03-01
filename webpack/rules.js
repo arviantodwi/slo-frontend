@@ -1,6 +1,10 @@
 const env = require("./env");
+const imagesFilename = "images/[name].[contenthash:7][ext]";
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-exports.js = {
+const rules = {};
+
+rules.js = {
   test: /\.js$/i,
   exclude: /node_modules/,
   loader: "babel-loader",
@@ -9,46 +13,60 @@ exports.js = {
   },
 };
 
-exports.staticImage = {
-  test: /\.(svg|png|gif|jpe?g)$/i,
+rules.staticImage = {
+  test: /\.(png|gif|jpe?g)$/i,
   type: "asset/resource",
   generator: {
-    filename: "images/[name].[contenthash:7][ext]",
+    filename: imagesFilename,
   },
 };
 
-exports.css = () => {
-  const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-
-  return {
-    test: /\.s?[ac]ss$/i,
-    use: [
-      env.isProductionMode ? MiniCssExtractPlugin.loader : "style-loader",
-      {
-        loader: "css-loader",
-        options: { importLoaders: 1 },
+rules.svg = {
+  test: /\.svg$/,
+  oneOf: [
+    {
+      resourceQuery: /inline/,
+      type: "asset/source",
+    },
+    {
+      // Default rule to export svg file if `?inline` query not found
+      // i.e. when we use svg as an image source.
+      type: "asset/resource",
+      generator: {
+        filename: imagesFilename,
       },
-      {
-        loader: "postcss-loader",
-        options: {
-          postcssOptions: {
-            plugins: [
-              [
-                "autoprefixer",
-                {
-                  cascade: false,
-                },
-              ],
-            ],
-          },
-        },
-      },
-      "sass-loader",
-    ],
-  };
+    },
+  ],
 };
 
-exports.partialTemplates = {
+rules.css = {
+  test: /\.s?[ac]ss$/i,
+  use: [
+    env.isProductionMode ? MiniCssExtractPlugin.loader : "style-loader",
+    {
+      loader: "css-loader",
+      options: { importLoaders: 1 },
+    },
+    {
+      loader: "postcss-loader",
+      options: {
+        postcssOptions: {
+          plugins: [
+            [
+              "autoprefixer",
+              {
+                cascade: false,
+              },
+            ],
+          ],
+        },
+      },
+    },
+    "sass-loader",
+  ],
+};
+
+rules.partialTemplates = {
   test: /\.(ejs|html)$/i,
   exclude: /app\.template\.html$/i,
   use: [
@@ -61,3 +79,5 @@ exports.partialTemplates = {
     },
   ],
 };
+
+module.exports = Object.entries(rules).map(([_, rule]) => rule);
