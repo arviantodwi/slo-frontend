@@ -1,12 +1,13 @@
 <header class="container-fluid main-header">
   <div class="secondarybar-wrap d-flex justify-content-between">
     <div class="nav-left">
-      <a href="">
-        <small> Channels<i></i> </small>
+      <a class="d-flex flex-row align-items-center" href="">
+        <small>Channels</small>
+        <i><%= require('/src/images/icons/expand.svg?inline') %></i>
       </a>
     </div>
 
-    <ul class="nav-right flex-row">
+    <ul class="nav-right d-flex flex-row">
       <li>
         <a href="">
           <small>COVID-19</small>
@@ -28,8 +29,9 @@
         </a>
       </li>
       <li>
-        <a href="">
-          <small> <i></i>Trending Topics on SLO </small>
+        <a class="button d-flex flex-row align-items-center" href="">
+          <i><%= require('/src/images/icons/trend-up.svg?inline') %></i>
+          <small> Trending Topics on SLO </small>
         </a>
       </li>
     </ul>
@@ -45,22 +47,27 @@
     </div>
     <div class="module d-flex flex-row align-items-center">
       <div class="module-dropdown">
-        <a href=""><i></i>Explore</a>
+        <a class="d-flex flex-row align-items-center" href=""
+          ><i><%= require('/src/images/icons/block.svg?inline') %></i>Explore</a
+        >
       </div>
     </div>
     <div class="module d-flex flex-row align-items-center">
       <div class="module-search">
-        <a href=""><i>S</i></a>
+        <a href=""
+          ><i><%= require('/src/images/icons/search.svg?inline') %></i></a
+        >
       </div>
       <div class="module-cart">
-        <a href=""><i>C</i></a>
+        <a href=""
+          ><i><%= require('/src/images/icons/cart.svg?inline') %></i></a
+        >
       </div>
       <div class="module-v-separator"></div>
-      <div class="module-user">
-        <i></i>
-        <span><a href="">Sign In</a></span>
-        <span>or</span>
-        <span><a href="">Register</a></span>
+      <div class="module-user d-flex flex-row align-items-center">
+        <i><%= require('/src/images/icons/sign-in.svg?inline') %></i>
+        <a href="">Sign In</a>&nbsp; <span>or</span>&nbsp;
+        <a href="">Register</a>
       </div>
     </div>
   </nav>
