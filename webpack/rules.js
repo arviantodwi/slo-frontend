@@ -42,7 +42,14 @@ rules.svg = {
 rules.css = {
   test: /\.s?[ac]ss$/i,
   use: [
-    env.isProductionMode ? MiniCssExtractPlugin.loader : "style-loader",
+    env.isProductionMode
+      ? {
+          loader: MiniCssExtractPlugin.loader,
+          options: {
+            publicPath: "/",
+          },
+        }
+      : "style-loader",
     {
       loader: "css-loader",
       options: { importLoaders: 1 },
