@@ -1,0 +1,30 @@
+.hero {
+  background: url("/src/images/hero-bg.jpg") no-repeat center / 100%;
+  background-size: cover;
+  height: calc(100vw * 9 / 16);
+
+  h1 {
+    top: 374px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 52px;
+    line-height: 65px;
+    letter-spacing: 0.374px;
+    color: #ffffff;
+    margin-bottom: 48px;
+  }
+
+  .button {
+    width: fit-content;
+    display: inline-block;
+    background: #f8d178;
+    border-radius: 4px;
+    padding: 17px 24px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.75px;
+    color: #2e2b45;
+  }
+}
