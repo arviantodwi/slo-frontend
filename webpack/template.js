@@ -30,13 +30,12 @@ const pushEntries = (entries) => {
       "Additional entries to be included must be either an array or a string."
     );
   }
-  const newChunks = [...defaultOptions.chunks, entries];
-  defaultOptions.chunks = newChunks;
-};
+  if (entries === "") {
+    return defaultOptions.chunks;
+  }
 
-// const makeHwpOption = (contentFilePath, entries = [], optionToMerge = {}) => {
-//   return Object.assign({}, defaultOptions, optionToMerge);
-// };
+  return defaultOptions.chunks.concat(entries);
+};
 
 module.exports = (filePath, options) => {
   try {
@@ -59,8 +58,7 @@ module.exports = (filePath, options) => {
   const _default = Object.assign({}, defaultOptions);
   if ("includeEntries" in _options) {
     try {
-      pushEntries(_options.includeEntries);
-      delete _options.includeEntries;
+      _default.chunks = pushEntries(_options.includeEntries);
     } catch (e) {
       console.error(e);
       process.exit(-1);

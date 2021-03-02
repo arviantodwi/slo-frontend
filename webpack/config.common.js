@@ -35,7 +35,7 @@ module.exports = {
 
     new HtmlWebpackPlugin(
       template("Index/index.html", {
-        includeEntries: ["index"],
+        includeEntries: "index",
       })
     ),
     // Add other HtmlWebpackPlugin view instances like the one below:
