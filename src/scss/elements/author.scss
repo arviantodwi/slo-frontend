@@ -1,0 +1,34 @@
+.author {
+  &-photo {
+    margin-right: 6px;
+  }
+
+  &-profile {
+    .name {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 13px;
+      line-height: 18px;
+      letter-spacing: -0.078px;
+      color: #2e2b45;
+    }
+
+    .company {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 18px;
+      letter-spacing: -0.078px;
+      color: rgba(46, 43, 69, 0.6);
+    }
+  }
+
+  &-small {
+    .author-photo {
+      width: 28px;
+    }
+  }
+
+  &-medium {
+  }
+}

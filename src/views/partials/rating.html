@@ -1,0 +1,10 @@
+<% var lowerHalf = 0.39, upperHalf = 0.80, n = 5; %>
+<div class="rating d-flex">
+  <% while (true) { %> <% if (value >= upperHalf) { %>
+  <i><%= require('/src/images/icons/star-full.svg?inline') %></i>
+  <% } else if (value > lowerHalf && value < upperHalf) { %>
+  <i><%= require('/src/images/icons/star-half.svg?inline') %></i>
+  <% } else { %>
+  <i><%= require('/src/images/icons/star-empty.svg?inline') %></i>
+  <% } %> <% n -= 1; value -= 1 %> <% if (n === 0) break; %> <% } %>
+</div>

@@ -14,11 +14,63 @@
     <div class="row">
       <h2 class="light">Lessons from the legends</h2>
       <p>Magna fugiat consectetur consectetur irure deserunt.</p>
-      <div
-        id="lessons-carousel"
-        class="carousel"
-        data-carousel-type="steps"
-      ></div>
+      <div id="lessons-carousel" class="carousel" data-carousel-type="steps">
+        <div class="carousel-container swiper-container">
+          <div class="carousel-items swiper-wrapper">
+            <div class="carousel-item swiper-slide">
+              <%= require('../partials/cards/product.html')({ title:
+              "Exercitation\ commodo\ magna\ cillum\ officia\ amet\ mollit\
+              ullamco\ voluptate\ magna\ non\ id\ ad\ ipsum.", cover:
+              '/src/images/item-cover-1.jpg', author: { photo:
+              '/src/images/author-1.jpg', name: 'Chaya\ Davidson', company:
+              'Football\ Daily' }, rating: 4.55, price: 115.99 }) %>
+            </div>
+            <div class="carousel-item swiper-slide">
+              <%= require('../partials/cards/product.html')({ title:
+              "Exercitation\ commodo\ magna\ cillum\ officia\ amet\ mollit\
+              ullamco\ voluptate\ magna\ non\ id\ ad\ ipsum.", cover:
+              '/src/images/item-cover-1.jpg', author: { photo:
+              '/src/images/author-1.jpg', name: 'Chaya\ Davidson', company:
+              'Football\ Daily' }, rating: 4.55, price: 115.99 }) %>
+            </div>
+            <div class="carousel-item swiper-slide">
+              <%= require('../partials/cards/product.html')({ title:
+              "Exercitation\ commodo\ magna\ cillum\ officia\ amet\ mollit\
+              ullamco\ voluptate\ magna\ non\ id\ ad\ ipsum.", cover:
+              '/src/images/item-cover-1.jpg', author: { photo:
+              '/src/images/author-1.jpg', name: 'Chaya\ Davidson', company:
+              'Football\ Daily' }, rating: 4.55, price: 115.99 }) %>
+            </div>
+            <div class="carousel-item swiper-slide">
+              <%= require('../partials/cards/product.html')({ title:
+              "Exercitation\ commodo\ magna\ cillum\ officia\ amet\ mollit\
+              ullamco\ voluptate\ magna\ non\ id\ ad\ ipsum.", cover:
+              '/src/images/item-cover-1.jpg', author: { photo:
+              '/src/images/author-1.jpg', name: 'Chaya\ Davidson', company:
+              'Football\ Daily' }, rating: 4.55, price: 115.99 }) %>
+            </div>
+            <div class="carousel-item swiper-slide">
+              <%= require('../partials/cards/product.html')({ title:
+              "Exercitation\ commodo\ magna\ cillum\ officia\ amet\ mollit\
+              ullamco\ voluptate\ magna\ non\ id\ ad\ ipsum.", cover:
+              '/src/images/item-cover-1.jpg', author: { photo:
+              '/src/images/author-1.jpg', name: 'Chaya\ Davidson', company:
+              'Football\ Daily' }, rating: 4.55, price: 115.99 }) %>
+            </div>
+          </div>
+        </div>
+        <div
+          class="carousel-nav-left d-flex align-items-center justify-content-center"
+        >
+          <%= require('/src/images/icons/arrow-left.svg?inline') %>
+        </div>
+        <div
+          class="carousel-nav-right d-flex align-items-center justify-content-center"
+        >
+          <%= require('/src/images/icons/arrow-right.svg?inline') %>
+        </div>
+        <div class="carousel-dots"></div>
+      </div>
     </div>
   </section>
 
@@ -34,7 +86,16 @@
           id="videos-carousel"
           class="carousel"
           data-carousel-type="free-scroll"
-        ></div>
+        >
+          <div class="carousel-items">
+            <div class="carousel-item col">
+              <div class="card"></div>
+            </div>
+          </div>
+          <div class="carousel-dots"></div>
+          <div class="carousel-nav-left"></div>
+          <div class="carousel-nav-right"></div>
+        </div>
       </div>
     </div>
   </section>
@@ -47,7 +108,7 @@
           Labore duis sit labore et pariatur qui sint aliquip sunt commodo
           exercitation adipisicing.
         </p>
-        <div class="table">
+        <div class="table" data-table-type="podcast">
           <div class="table-head">
             <div class="row-wrap">
               <div class="row">
@@ -182,11 +243,63 @@
     <div class="row">
       <h2 class="light">Webinars</h2>
       <p>Non esse nostrud cupidatat eu proident eiusmod sunt in aute.</p>
-      <div
-        id="webinars-carousel"
-        class="carousel"
-        data-carousel-type="steps"
-      ></div>
+      <div id="webinars-carousel" class="carousel" data-carousel-type="steps">
+        <div class="carousel-container swiper-container">
+          <div class="carousel-items swiper-wrapper">
+            <div class="carousel-item swiper-slide">
+              <%= require('../partials/cards/product.html')({ title:
+              "Exercitation\ commodo\ magna\ cillum\ officia\ amet\ mollit\
+              ullamco\ voluptate\ magna\ non\ id\ ad\ ipsum.", cover:
+              '/src/images/item-cover-1.jpg', author: { photo:
+              '/src/images/author-1.jpg', name: 'Chaya\ Davidson', company:
+              'Football\ Daily' }, rating: 4.55, price: 115.99 }) %>
+            </div>
+            <div class="carousel-item swiper-slide">
+              <%= require('../partials/cards/product.html')({ title:
+              "Exercitation\ commodo\ magna\ cillum\ officia\ amet\ mollit\
+              ullamco\ voluptate\ magna\ non\ id\ ad\ ipsum.", cover:
+              '/src/images/item-cover-1.jpg', author: { photo:
+              '/src/images/author-1.jpg', name: 'Chaya\ Davidson', company:
+              'Football\ Daily' }, rating: 4.55, price: 115.99 }) %>
+            </div>
+            <div class="carousel-item swiper-slide">
+              <%= require('../partials/cards/product.html')({ title:
+              "Exercitation\ commodo\ magna\ cillum\ officia\ amet\ mollit\
+              ullamco\ voluptate\ magna\ non\ id\ ad\ ipsum.", cover:
+              '/src/images/item-cover-1.jpg', author: { photo:
+              '/src/images/author-1.jpg', name: 'Chaya\ Davidson', company:
+              'Football\ Daily' }, rating: 4.55, price: 115.99 }) %>
+            </div>
+            <div class="carousel-item swiper-slide">
+              <%= require('../partials/cards/product.html')({ title:
+              "Exercitation\ commodo\ magna\ cillum\ officia\ amet\ mollit\
+              ullamco\ voluptate\ magna\ non\ id\ ad\ ipsum.", cover:
+              '/src/images/item-cover-1.jpg', author: { photo:
+              '/src/images/author-1.jpg', name: 'Chaya\ Davidson', company:
+              'Football\ Daily' }, rating: 4.55, price: 115.99 }) %>
+            </div>
+            <div class="carousel-item swiper-slide">
+              <%= require('../partials/cards/product.html')({ title:
+              "Exercitation\ commodo\ magna\ cillum\ officia\ amet\ mollit\
+              ullamco\ voluptate\ magna\ non\ id\ ad\ ipsum.", cover:
+              '/src/images/item-cover-1.jpg', author: { photo:
+              '/src/images/author-1.jpg', name: 'Chaya\ Davidson', company:
+              'Football\ Daily' }, rating: 4.55, price: 115.99 }) %>
+            </div>
+          </div>
+        </div>
+        <div
+          class="carousel-nav-left d-flex align-items-center justify-content-center"
+        >
+          <%= require('/src/images/icons/arrow-left.svg?inline') %>
+        </div>
+        <div
+          class="carousel-nav-right d-flex align-items-center justify-content-center"
+        >
+          <%= require('/src/images/icons/arrow-right.svg?inline') %>
+        </div>
+        <div class="carousel-dots"></div>
+      </div>
     </div>
   </section>
 </main>
