@@ -26,4 +26,30 @@ section {
     line-height: 22px;
     letter-spacing: -0.408px;
   }
+
+  h2 + div {
+    > p {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 17px;
+      line-height: 22px;
+      letter-spacing: -0.408px;
+      color: rgba(255, 255, 255, 0.6);
+    }
+    > div {
+      padding-left: 24px;
+      margin-left: auto;
+      flex-shrink: 0;
+
+      a {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 17px;
+        line-height: 22px;
+        letter-spacing: -0.408px;
+        text-decoration-line: underline;
+        color: #ffffff;
+      }
+    }
+  }
 }

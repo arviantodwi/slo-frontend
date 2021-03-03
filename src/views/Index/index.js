@@ -46,3 +46,14 @@ const webinarsCarousel = (() => {
     })
   );
 })();
+
+const videosCarousel = (() => {
+  const swiper = carouselElement("videos-carousel");
+  return new Swiper(
+    swiper,
+    Object.assign({}, carouselDefaultOptions, {
+      loop: false,
+      a11y: false,
+    })
+  );
+})();

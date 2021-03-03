@@ -71,6 +71,7 @@
         </div>
         <div class="carousel-dots"></div>
       </div>
+      <a href="" class="button">See all lessons from the legends</a>
     </div>
   </section>
 
@@ -78,23 +79,64 @@
     <div class="container">
       <div class="row">
         <h2 class="dark">Videos</h2>
-        <p>
-          Aliquip Lorem est esse ad excepteur enim duis quis labore dolore
-          excepteur aliqua ea.
-        </p>
+        <div class="d-flex flex-md-row flex-sm-column">
+          <p>
+            Aliquip Lorem est esse ad excepteur enim duis quis labore dolore
+            excepteur aliqua ea.
+          </p>
+          <div class="d-flex justify-content-sm-between">
+            <a href="">See all videos</a>
+          </div>
+        </div>
         <div
           id="videos-carousel"
           class="carousel"
           data-carousel-type="free-scroll"
         >
-          <div class="carousel-items">
-            <div class="carousel-item col">
-              <div class="card"></div>
+          <div class="carousel-container swiper-container">
+            <div class="carousel-items swiper-wrapper">
+              <div class="carousel-item swiper-slide">
+                <%= require('../partials/cards/video.html')({ title:
+                "Exercitation\ commodo\ magna\ cillum\ officia\ amet\ mollit\
+                ullamco\ voluptate\ magna\ non\ id\ ad\ ipsum.", cover:
+                'item-cover-1.jpg', duration: '24:12', views: 832 }) %>
+              </div>
+              <div class="carousel-item swiper-slide">
+                <%= require('../partials/cards/video.html')({ title:
+                "Exercitation\ commodo\ magna\ cillum\ officia\ amet\ mollit\
+                ullamco\ voluptate\ magna\ non\ id\ ad\ ipsum.", cover:
+                'item-cover-1.jpg', duration: '24:12', views: 832 }) %>
+              </div>
+              <div class="carousel-item swiper-slide">
+                <%= require('../partials/cards/video.html')({ title:
+                "Exercitation\ commodo\ magna\ cillum\ officia\ amet\ mollit\
+                ullamco\ voluptate\ magna\ non\ id\ ad\ ipsum.", cover:
+                'item-cover-1.jpg', duration: '24:12', views: 832 }) %>
+              </div>
+              <div class="carousel-item swiper-slide">
+                <%= require('../partials/cards/video.html')({ title:
+                "Exercitation\ commodo\ magna\ cillum\ officia\ amet\ mollit\
+                ullamco\ voluptate\ magna\ non\ id\ ad\ ipsum.", cover:
+                'item-cover-1.jpg', duration: '24:12', views: 832 }) %>
+              </div>
+              <div class="carousel-item swiper-slide">
+                <%= require('../partials/cards/video.html')({ title:
+                "Exercitation\ commodo\ magna\ cillum\ officia\ amet\ mollit\
+                ullamco\ voluptate\ magna\ non\ id\ ad\ ipsum.", cover:
+                'item-cover-1.jpg', duration: '24:12', views: 832 }) %>
+              </div>
             </div>
           </div>
-          <div class="carousel-dots"></div>
-          <div class="carousel-nav-left"></div>
-          <div class="carousel-nav-right"></div>
+          <!-- <div
+            class="carousel-nav-left d-flex align-items-center justify-content-center"
+          >
+            <%= require('/src/images/icons/arrow-left.svg?inline') %>
+          </div>
+          <div
+            class="carousel-nav-right d-flex align-items-center justify-content-center"
+          >
+            <%= require('/src/images/icons/arrow-right.svg?inline') %>
+          </div> -->
         </div>
       </div>
     </div>
@@ -217,6 +259,7 @@
             </div>
           </div>
         </div>
+        <a href="" class="button">See all podcasts</a>
       </section>
 
       <section class="col">
@@ -235,6 +278,7 @@
           ><a href="" class="pill">Event Management</a
           ><a href="" class="pill">Project Management</a>
         </div>
+        <a href="" class="button">Browse more categories</a>
       </section>
     </div>
   </div>
@@ -300,6 +344,7 @@
         </div>
         <div class="carousel-dots"></div>
       </div>
+      <a href="" class="button">See all webinars</a>
     </div>
   </section>
 </main>

@@ -1,0 +1,20 @@
+<div class="card" data-card-type="video" data-display-type="col">
+  <div class="video-cover ratio ratio-4x3">
+    <img src="<%= require(`../../../images/${cover}`) %>" alt="" />
+    <i class="icon-play">
+      <%= require('/src/images/icons/play.svg?inline') %>
+    </i>
+  </div>
+  <div class="video-summary d-flex flex-column-reverse">
+    <h3 class="title"><%= title %></h3>
+
+    <div class="meta d-flex align-items-center">
+      <span class="duration d-flex align-items-center"
+        ><i><%= require('/src/images/icons/time.svg?inline') %></i>&nbsp;<%=
+        duration %></span
+      >
+      <span class="bullet">&nbsp;&#8226;&nbsp;</span>
+      <span class="views"><%= views %>&nbsp;views</span>
+    </div>
+  </div>
+</div>

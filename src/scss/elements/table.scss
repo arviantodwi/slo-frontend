@@ -5,6 +5,8 @@
   margin-bottom: 0;
 
   &-head {
+    border-bottom: 1px solid rgba(46, 43, 69, 0.1);
+
     .row-wrap {
       padding: 9px 0;
 
@@ -45,7 +47,7 @@
 
   &-body {
     .row-wrap {
-      border-top: 1px solid rgba(46, 43, 69, 0.1);
+      border-bottom: 1px solid rgba(46, 43, 69, 0.1);
       padding: 14px 0;
 
       .row {
