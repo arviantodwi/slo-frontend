@@ -79,6 +79,40 @@
           object-fit: cover;
         }
       }
+
+      .podcast-preview {
+        position: relative;
+        width: 32px;
+        height: 32px;
+
+        button {
+          background: none;
+          border: 0;
+          padding: 0;
+          width: 20px;
+          height: 20px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          margin-left: -10px;
+          margin-top: -10px;
+
+          i {
+            width: 20px;
+            height: 20px;
+            display: inline-flex;
+
+            svg {
+              width: inherit;
+              height: inherit;
+
+              path: {
+                fill: #2e2b45;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
