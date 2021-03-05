@@ -1,6 +1,8 @@
 const env = require("./env");
-const imagesFilename = "images/[name].[contenthash:7][ext]";
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
+const imagesFilename = "images/[name].[contenthash:7][ext]";
+const svgIconsFilename = "images/icons/[name].[contenthash:7][ext]";
 
 const rules = {};
 
@@ -33,7 +35,7 @@ rules.svg = {
       // i.e. when we use svg as an image source.
       type: "asset/resource",
       generator: {
-        filename: imagesFilename,
+        filename: svgIconsFilename,
       },
     },
   ],
