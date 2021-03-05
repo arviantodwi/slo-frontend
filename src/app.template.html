@@ -1,8 +1,10 @@
-<% const content = htmlWebpackPlugin.options.content; %>
+<% const content = htmlWebpackPlugin.options.content; %> <% const title =
+htmlWebpackPlugin.options.title || 'Webpack Boilerplate | Basic Static Website';
+%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Webpack Boilerplate | Basic Static Website</title>
+    <title><%= title %></title>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="cache-control" content="no-cache" />
