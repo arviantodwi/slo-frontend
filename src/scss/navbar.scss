@@ -1,6 +1,7 @@
 .main-header {
   position: sticky;
   top: -48px;
+  z-index: 3;
 
   .secondarybar-wrap {
     background-color: #f1f2f3;

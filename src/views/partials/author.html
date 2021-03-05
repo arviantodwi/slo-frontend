@@ -6,8 +6,13 @@
       class="rounded-circle"
     />
   </div>
+  <% if (Array.isArray(name)) { %>
+  <div class="author-more rounded-circle ratio ratio-1x1">
+    <span><%= `+${name.length - 1}` %></span>
+  </div>
+  <% } %>
   <div class="author-profile">
-    <div class="name"><%= name %></div>
+    <div class="name"><%= Array.isArray(name) ? name[0] : name %></div>
     <div class="company"><%= company %></div>
   </div>
 </div>

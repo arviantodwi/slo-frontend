@@ -14,7 +14,11 @@
         duration %></span
       >
       <span class="bullet">&nbsp;&#8226;&nbsp;</span>
+      <% if(!isPremiere) { %>
       <span class="views"><%= views %>&nbsp;views</span>
+      <% } else { %>
+      <span class="premiere">New</span>
+      <% } %>
     </div>
   </div>
 </div>

@@ -1,6 +1,26 @@
 .author {
   &-photo {
     margin-right: 6px;
+    z-index: 1;
+  }
+
+  &-more {
+    margin-right: 6px;
+    margin-left: -14px;
+    background: #ffffff;
+    border: 1px solid rgba(46, 43, 69, 0.16);
+    box-shadow: 0px 0px 0px 2px #fff;
+    z-index: 2;
+
+    > span {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 11px;
+      line-height: 26px;
+      text-align: center;
+      letter-spacing: -0.41px;
+      color: rgba(60, 60, 67, 0.6);
+    }
   }
 
   &-profile {
@@ -24,7 +44,8 @@
   }
 
   &-small {
-    .author-photo {
+    .author-photo,
+    .author-more {
       width: 28px;
     }
   }
