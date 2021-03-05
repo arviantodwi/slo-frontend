@@ -21,7 +21,7 @@ module.exports = {
     app: path.join(srcDir, "app.js"),
     index: path.join(viewsDir, "Index/index.js"),
     // Add other script entries like the one below:
-    // about: path.join(viewsDir, 'path/to/about.js'),
+    explore: path.join(viewsDir, "Explore/explore.js"),
   },
 
   module: {
@@ -40,11 +40,12 @@ module.exports = {
       })
     ),
     // Add other HtmlWebpackPlugin view instances like the one below:
-    // new HtmlWebpackPlugin(
-    //   template("path/to/about.html", {
-    //     includeEntries: ["about.js"],
-    //     title: "About"
-    //   })
-    // ),
+    new HtmlWebpackPlugin(
+      template("Explore/layout.html", {
+        includeEntries: ["explore"],
+        title: "Explore – SLO v2-dev",
+        filename: "explore/index.html",
+      })
+    ),
   ],
 };

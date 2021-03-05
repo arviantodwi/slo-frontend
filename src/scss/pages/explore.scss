@@ -1,0 +1,104 @@
+.explore {
+  > * {
+    .topbar {
+      margin-bottom: 12px;
+
+      > .row {
+        margin-right: 0;
+        border-bottom: 1px solid rgba(46, 43, 69, 0.1);
+      }
+
+      &-wrap {
+        padding-top: 28px;
+        padding-bottom: 24px;
+        padding-right: 0;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 17px;
+        line-height: 22px;
+        letter-spacing: -0.408px;
+        color: #2e2b45;
+
+        .counter > strong {
+          font-weight: 600;
+        }
+
+        .switch {
+          &-group {
+            background: #ffffff;
+            display: flex;
+            flex-direction: row;
+          }
+
+          &-button {
+            display: inline-flex;
+            padding: 6px 12px;
+            border: 1px solid rgba(46, 43, 69, 0.16);
+            border-left-color: rgba(46, 43, 69, 0.08);
+            border-right-color: rgba(46, 43, 69, 0.08);
+            z-index: 1;
+
+            &:first-of-type {
+              border-radius: 8px 0 0 8px;
+              border-left-color: rgba(46, 43, 69, 0.16);
+            }
+
+            &:last-of-type {
+              border-radius: 0 8px 8px 0;
+              border-right-color: rgba(46, 43, 69, 0.16);
+            }
+
+            &:not(:first-of-type) {
+              margin-left: -1px;
+            }
+
+            &.switch-active {
+              background-color: #2e2b45;
+              z-index: 2;
+              border-color: darken(#2e2b45, 10%);
+
+              i svg path {
+                fill: #f8d178;
+              }
+            }
+
+            i {
+              width: 24px;
+              height: 24px;
+              display: inline-flex;
+
+              svg {
+                width: inherit;
+                height: inherit;
+
+                path {
+                  fill: #2e2b45;
+                }
+              }
+            }
+          }
+
+          &-v-separator {
+            width: 1px;
+            height: auto;
+            border-left: 1px solid rgba(46, 43, 69, 0.3);
+            z-index: 1;
+          }
+        }
+      }
+    }
+
+    .content {
+      .grid-item {
+        margin-top: 12px;
+        margin-bottom: 12px;
+      }
+    }
+
+    .pagination {
+      margin-top: -12px;
+      padding-top: 36px;
+      padding-bottom: 36px;
+    }
+  }
+}

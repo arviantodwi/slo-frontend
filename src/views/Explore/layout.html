@@ -1,0 +1,38 @@
+<main class="explore">
+  <div class="container">
+    <div class="row flex-row-reverse">
+      <!-- List / Grid -->
+      <div class="col-9">
+        <div class="topbar">
+          <div class="row">
+            <div
+              class="topbar-wrap d-flex justify-content-between align-items-center"
+            >
+              <div class="counter"><strong>76</strong>&nbsp;contents total</div>
+              <div class="view-switch switch-group">
+                <a class="switch-button switch-active" href=""
+                  ><i
+                    ><%= require('../../images/icons/grid.svg?inline') %></i
+                  ></a
+                >
+                <a class="switch-button" href=""
+                  ><i
+                    ><%= require('../../images/icons/list.svg?inline') %></i
+                  ></a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content"><%= require('./grid.html')() %></div>
+
+        <div class="pagination d-flex justify-content-center">
+          <%= require('../partials/pagination.html')() %>
+        </div>
+      </div>
+      <!-- Filter -->
+      <div class="col-3">Filter</div>
+    </div>
+  </div>
+</main>
