@@ -36,6 +36,7 @@ module.exports = {
     new HtmlWebpackPlugin(
       template("Index/index.html", {
         includeEntries: "index",
+        title: "SLO v2-dev",
       })
     ),
     // Add other HtmlWebpackPlugin view instances like the one below:
