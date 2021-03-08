@@ -1,3 +1,5 @@
+@use "button" as b;
+
 .hero {
   background: url("/src/images/hero-bg.jpg") no-repeat center / 100%;
   background-size: cover;
@@ -15,16 +17,6 @@
   }
 
   .button {
-    width: fit-content;
-    display: inline-block;
-    background: #f8d178;
-    border-radius: 4px;
-    padding: 17px 24px;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 24px;
-    letter-spacing: 0.75px;
-    color: #2e2b45;
+    @include b.button("large", "secondary");
   }
 }

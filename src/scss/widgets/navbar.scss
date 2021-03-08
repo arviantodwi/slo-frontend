@@ -1,3 +1,5 @@
+@use '../elements/button' as b;
+
 .main-header {
   position: sticky;
   top: -48px;
@@ -52,11 +54,17 @@
         margin: 0 12px;
 
         .button {
-          background: #2e2b45;
-          border-radius: 4px;
-          padding-left: 12px;
-          padding-right: 12px;
-          color: #fff;
+          // background: #2e2b45;
+          // border-radius: 4px;
+          // padding-left: 12px;
+          // padding-right: 12px;
+          // color: #fff;
+          @include b.button("small", "primary");
+          &:hover {
+            i svg > path {
+              fill: var(--brand-primary);
+            }
+          }
 
           i {
             width: 16px;

@@ -1,0 +1,16 @@
+@mixin inline-svg-icon($size: 24px, $fill: #000) {
+  i {
+    width: $size;
+    height: $size;
+    display: inline-flex;
+
+    svg {
+      width: inherit;
+      height: inherit;
+
+      path {
+        fill: $fill;
+      }
+    }
+  }
+}

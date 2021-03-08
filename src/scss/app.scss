@@ -1,15 +1,21 @@
-@import "navbar";
-@import "footer";
-@import "elements/hero";
-@import "elements/section";
-@import "elements/table";
-@import "elements/carousel";
-@import "elements/categories";
-@import "elements/pill";
-@import "elements/card";
-@import "elements/author";
-@import "pages/index";
-@import "pages/explore.scss";
+@use "mixins";
+@use "theme";
+
+@use "elements/button";
+@use "elements/card";
+@use "elements/pill";
+@use "elements/hero";
+@use "elements/table";
+@use "elements/author";
+@use "elements/section";
+@use "elements/carousel";
+@use "elements/categories";
+
+@use "widgets/footer";
+@use "widgets/navbar";
+
+@use "pages/index";
+@use "pages/explore.scss";
 
 body {
   min-height: 100vh;
