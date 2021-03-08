@@ -53,12 +53,15 @@
       li {
         margin: 0 12px;
 
+        > a:not(.button) {
+          transition: font-weight 0.125s ease-in;
+
+          &:hover {
+            font-weight: 600;
+          }
+        }
+
         .button {
-          // background: #2e2b45;
-          // border-radius: 4px;
-          // padding-left: 12px;
-          // padding-right: 12px;
-          // color: #fff;
           @include b.button("small", "primary");
           &:hover {
             i svg > path {

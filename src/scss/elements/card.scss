@@ -73,6 +73,10 @@
                 svg {
                   width: inherit;
                   height: inherit;
+
+                  > path {
+                    fill: var(--brand-orange);
+                  }
                 }
               }
             }
