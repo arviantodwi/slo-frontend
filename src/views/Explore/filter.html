@@ -1,0 +1,297 @@
+<div class="filter col-3">
+  <div class="filter-container">
+    <div class="filter-topbar">
+      <div
+        class="topbar-wrap d-flex justify-content-between align-items-center"
+      >
+        <h2>
+          <i><%= require('../../images/icons/filter.svg?inline') %></i>Filter
+        </h2>
+        <button>Reset</button>
+      </div>
+    </div>
+
+    <div class="filter-sections accordion">
+      <div class="section accordion-item" data-expanded="true">
+        <div class="section-header">
+          <div class="title">Categories</div>
+          <button class="accordion-toggler">
+            <%= require('../../images/icons/collapse.svg?inline') %>
+          </button>
+        </div>
+        <div class="section-content">
+          <div>
+            <input
+              type="checkbox"
+              id="category-all"
+              name="sub_category"
+              value="all"
+              checked
+            />
+            <label for="category-all">
+              <span class="slo-checkbox"
+                ><i><%= require('../../images/icons/check.svg?inline') %></i>
+              </span>
+              <span class="filter-label">All Categories</span>
+            </label>
+          </div>
+
+          <div>
+            <input
+              type="checkbox"
+              id="category-1"
+              name="sub_category"
+              value="1"
+            />
+            <label for="category-1">
+              <span class="slo-checkbox"
+                ><i><%= require('../../images/icons/check.svg?inline') %></i>
+              </span>
+              <span class="filter-label">Event Operations</span>
+            </label>
+          </div>
+
+          <div class="indent-1">
+            <input
+              type="checkbox"
+              id="category-2"
+              name="sub_category"
+              value="2"
+            />
+            <label for="category-2">
+              <span class="slo-checkbox"
+                ><i><%= require('../../images/icons/check.svg?inline') %></i>
+              </span>
+              <span class="filter-label">Volunteer Management</span>
+            </label>
+          </div>
+
+          <div>
+            <input
+              type="checkbox"
+              id="category-3"
+              name="sub_category"
+              value="3"
+            />
+            <label for="category-3">
+              <span class="slo-checkbox"
+                ><i><%= require('../../images/icons/check.svg?inline') %></i>
+              </span>
+              <span class="filter-label">Professional Development</span>
+            </label>
+          </div>
+
+          <div class="indent-1">
+            <input
+              type="checkbox"
+              id="category-4"
+              name="sub_category"
+              value="4"
+            />
+            <label for="category-4">
+              <span class="slo-checkbox"
+                ><i><%= require('../../images/icons/check.svg?inline') %></i>
+              </span>
+              <span class="filter-label">Marketing</span>
+            </label>
+          </div>
+
+          <div class="indent-1">
+            <input
+              type="checkbox"
+              id="category-5"
+              name="sub_category"
+              value="5"
+            />
+            <label for="category-5">
+              <span class="slo-checkbox"
+                ><i><%= require('../../images/icons/check.svg?inline') %></i>
+              </span>
+              <span class="filter-label">Onboarding with the ISC</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="section accordion-item" data-expanded="true">
+        <div class="section-header">
+          <div class="title">Price</div>
+          <button class="accordion-toggler">
+            <%= require('../../images/icons/collapse.svg?inline') %>
+          </button>
+        </div>
+        <div class="section-content">
+          <div>
+            <input type="checkbox" id="price-free" name="price" value="free" />
+            <label for="price-free">
+              <span class="slo-checkbox"
+                ><i><%= require('../../images/icons/check.svg?inline') %></i>
+              </span>
+              <span class="filter-label">Free Contents</span>
+            </label>
+          </div>
+
+          <div>
+            <input type="checkbox" id="price-paid" name="price" value="paid" />
+            <label for="price-paid">
+              <span class="slo-checkbox"
+                ><i><%= require('../../images/icons/check.svg?inline') %></i>
+              </span>
+              <span class="filter-label">Paid Contents</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="section accordion-item" data-expanded="true">
+        <div class="section-header">
+          <div class="title">Level</div>
+          <button class="accordion-toggler">
+            <%= require('../../images/icons/collapse.svg?inline') %>
+          </button>
+        </div>
+        <div class="section-content">
+          <div>
+            <input
+              type="checkbox"
+              id="level-beginner"
+              name="level"
+              value="beginner"
+            />
+            <label for="level-beginner">
+              <span class="slo-checkbox"
+                ><i><%= require('../../images/icons/check.svg?inline') %></i>
+              </span>
+              <span class="filter-label">Beginner</span>
+            </label>
+          </div>
+
+          <div>
+            <input
+              type="checkbox"
+              id="level-advanced"
+              name="level"
+              value="advanced"
+            />
+            <label for="level-advanced">
+              <span class="slo-checkbox"
+                ><i><%= require('../../images/icons/check.svg?inline') %></i>
+              </span>
+              <span class="filter-label">Advanced</span>
+            </label>
+          </div>
+
+          <div>
+            <input
+              type="checkbox"
+              id="level-intermediate"
+              name="level"
+              value="intermediate"
+            />
+            <label for="level-intermediate">
+              <span class="slo-checkbox"
+                ><i><%= require('../../images/icons/check.svg?inline') %></i>
+              </span>
+              <span class="filter-label">Intermediate</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="section accordion-item" data-expanded="true">
+        <div class="section-header">
+          <div class="title">Language</div>
+          <button class="accordion-toggler">
+            <%= require('../../images/icons/collapse.svg?inline') %>
+          </button>
+        </div>
+        <div class="section-content">
+          <div>
+            <input
+              type="checkbox"
+              id="language-english-only"
+              name="language"
+              value="english"
+            />
+            <label for="language-english-only">
+              <span class="slo-checkbox"
+                ><i><%= require('../../images/icons/check.svg?inline') %></i>
+              </span>
+              <span class="filter-label">English Contents Only</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="section accordion-item" data-expanded="true">
+        <div class="section-header">
+          <div class="title">Ratings</div>
+          <button class="accordion-toggler">
+            <%= require('../../images/icons/collapse.svg?inline') %>
+          </button>
+        </div>
+        <div class="section-content">
+          <div>
+            <input type="checkbox" id="rating-5" name="rating" value="5" />
+            <label for="rating-5">
+              <span class="slo-checkbox"
+                ><i><%= require('../../images/icons/check.svg?inline') %></i>
+              </span>
+              <span class="filter-label">
+                <%= require('../partials/rating.html')({value: 5}) %>
+              </span>
+            </label>
+          </div>
+
+          <div>
+            <input type="checkbox" id="rating-4" name="rating" value="4" />
+            <label for="rating-4">
+              <span class="slo-checkbox"
+                ><i><%= require('../../images/icons/check.svg?inline') %></i>
+              </span>
+              <span class="filter-label">
+                <%= require('../partials/rating.html')({value: 4}) %>
+              </span>
+            </label>
+          </div>
+
+          <div>
+            <input type="checkbox" id="rating-3" name="rating" value="3" />
+            <label for="rating-3">
+              <span class="slo-checkbox"
+                ><i><%= require('../../images/icons/check.svg?inline') %></i>
+              </span>
+              <span class="filter-label">
+                <%= require('../partials/rating.html')({value: 3}) %>
+              </span>
+            </label>
+          </div>
+
+          <div>
+            <input type="checkbox" id="rating-2" name="rating" value="2" />
+            <label for="rating-2">
+              <span class="slo-checkbox"
+                ><i><%= require('../../images/icons/check.svg?inline') %></i>
+              </span>
+              <span class="filter-label">
+                <%= require('../partials/rating.html')({value: 2}) %>
+              </span>
+            </label>
+          </div>
+
+          <div>
+            <input type="checkbox" id="rating-1" name="rating" value="1" />
+            <label for="rating-1">
+              <span class="slo-checkbox"
+                ><i><%= require('../../images/icons/check.svg?inline') %></i>
+              </span>
+              <span class="filter-label">
+                <%= require('../partials/rating.html')({value: 1}) %>
+              </span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

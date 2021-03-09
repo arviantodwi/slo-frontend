@@ -1,16 +1,20 @@
 @mixin inline-svg-icon($size: 24px, $fill: #000) {
-  i {
-    width: $size;
-    height: $size;
-    display: inline-flex;
+  width: $size;
+  height: $size;
+  display: inline-flex;
 
-    svg {
-      width: inherit;
-      height: inherit;
+  svg {
+    width: inherit;
+    height: inherit;
 
-      path {
-        fill: $fill;
-      }
+    path {
+      fill: $fill;
     }
   }
+}
+
+@mixin button-reset() {
+  background: none;
+  border: 0;
+  padding: 0;
 }

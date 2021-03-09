@@ -2,13 +2,16 @@
   <div class="container">
     <div class="row flex-row-reverse">
       <!-- List / Grid -->
-      <div class="col-9">
-        <div class="topbar">
+      <div class="content col-9">
+        <div class="content-topbar">
           <div class="row">
             <div
               class="topbar-wrap d-flex justify-content-between align-items-center"
             >
-              <div class="counter"><strong>76</strong>&nbsp;contents total</div>
+              <div class="counter">
+                Showing <strong>1 - 15</strong> contents out of
+                <strong>76</strong> in total
+              </div>
               <div class="view-switch switch-group">
                 <a class="switch-button switch-active" href=""
                   ><i
@@ -25,14 +28,16 @@
           </div>
         </div>
 
-        <div class="content"><%= require('./grid.html')() %></div>
+        <!-- <div class="content-catalog"><%= require('./grid.html')() %></div> -->
+        <div class="content-catalog"><%= require('./list.html')() %></div>
 
-        <div class="pagination d-flex justify-content-center">
+        <div class="content-pagination">
           <%= require('../partials/pagination.html')() %>
         </div>
       </div>
+
       <!-- Filter -->
-      <div class="col-3">Filter</div>
+      <%= require('./filter.html')() %>
     </div>
   </div>
 </main>

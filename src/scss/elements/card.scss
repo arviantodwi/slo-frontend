@@ -107,6 +107,121 @@
         }
       }
     }
+
+    &[data-display-type="row"] {
+      display: flex;
+      flex-direction: row;
+
+      .product {
+        &-cover {
+          width: 200px;
+          border-radius: 24px 0 0 24px;
+          overflow: hidden;
+          flex-shrink: 0;
+        }
+
+        &-summary {
+          padding: 24px;
+          display: flex;
+          flex-direction: column;
+          flex-grow: 1;
+
+          .header {
+            margin-bottom: 16px;
+            justify-content: space-between;
+          }
+          .author {
+            margin-bottom: 12px;
+          }
+
+          .title {
+            max-height: 48px;
+            overflow: hidden;
+            flex-grow: 0.75;
+
+            h3 {
+              font-style: normal;
+              font-weight: 600;
+              font-size: 20px;
+              line-height: 24px;
+              letter-spacing: 0.32px;
+              color: var(--brand-primary);
+              margin: 0;
+            }
+          }
+
+          .wish {
+            max-width: 36px;
+            padding-left: 0;
+
+            button {
+              all: initial;
+              font-size: 0;
+              padding: 0;
+
+              i {
+                width: 24px;
+                height: 24px;
+                display: inline-flex;
+
+                svg {
+                  width: inherit;
+                  height: inherit;
+                }
+              }
+            }
+          }
+
+          .footer {
+            margin-top: auto;
+
+            .rating {
+              i {
+                width: 16px;
+                height: 16px;
+                display: inline-flex;
+
+                &:not(:last-child) {
+                  margin-right: 2px;
+                }
+
+                svg {
+                  width: inherit;
+                  height: inherit;
+
+                  > path {
+                    fill: var(--brand-orange);
+                  }
+                }
+              }
+            }
+
+            .price {
+              text-align: right;
+
+              > span {
+                display: inline-block;
+                color: #e95244;
+                text-align: right;
+
+                &:first-child {
+                  font-weight: normal;
+                  font-size: 16px;
+                  line-height: 22px;
+                  letter-spacing: -0.32px;
+                  vertical-align: top;
+                }
+                &:last-child {
+                  font-weight: bold;
+                  font-size: 22px;
+                  line-height: 28px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 
   &[data-card-type="video"] {

@@ -1,7 +1,5 @@
-@use "mixins";
 @use "theme";
 
-@use "elements/button";
 @use "elements/card";
 @use "elements/pill";
 @use "elements/hero";
@@ -13,9 +11,10 @@
 
 @use "widgets/footer";
 @use "widgets/navbar";
+@use "widgets/pagination";
 
 @use "pages/index";
-@use "pages/explore.scss";
+@use "pages/explore";
 
 body {
   min-height: 100vh;
