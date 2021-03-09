@@ -60,6 +60,20 @@
           }
 
           .footer {
+            flex-direction: column;
+
+            > div[class*="col-"] {
+              &:first-child {
+              }
+
+              &:last-child {
+                flex-direction: row;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+              }
+            }
+
             .rating {
               i {
                 width: 16px;
@@ -111,6 +125,7 @@
     &[data-display-type="row"] {
       display: flex;
       flex-direction: row;
+      max-height: 200px;
 
       .product {
         &-cover {
@@ -121,7 +136,7 @@
         }
 
         &-summary {
-          padding: 24px;
+          padding: 16px 24px;
           display: flex;
           flex-direction: column;
           flex-grow: 1;
@@ -131,21 +146,35 @@
             justify-content: space-between;
           }
           .author {
-            margin-bottom: 12px;
+            // margin-bottom: 12px;
           }
 
           .title {
-            max-height: 48px;
-            overflow: hidden;
+            // max-height: none;
+            // overflow: hidden;
             flex-grow: 0.75;
 
             h3 {
               font-style: normal;
               font-weight: 600;
-              font-size: 20px;
-              line-height: 24px;
-              letter-spacing: 0.32px;
+              font-size: 17px;
+              line-height: 22px;
+              letter-spacing: -0.408px;
               color: var(--brand-primary);
+              // margin: 0;
+              max-height: 44px;
+              overflow: hidden;
+            }
+
+            p.description {
+              font-style: normal;
+              font-weight: normal;
+              font-size: 15px;
+              line-height: 20px;
+              letter-spacing: -0.24px;
+              color: rgba(46, 43, 69, 0.6);
+              max-height: 40px;
+              overflow: hidden;
               margin: 0;
             }
           }
@@ -174,8 +203,19 @@
 
           .footer {
             margin-top: auto;
+            align-items: center;
+
+            > .col {
+              &:last-child {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+              }
+            }
 
             .rating {
+              margin-bottom: 8px;
+
               i {
                 width: 16px;
                 height: 16px;
