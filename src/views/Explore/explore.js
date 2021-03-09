@@ -1,7 +1,7 @@
 // explore.js
+import DomPurify from "dompurify";
 import GridContent from "./grid.html";
 import ListContent from "./list.html";
-import DomPurify from "dompurify";
 
 const VIEW_SWITCH_CLASSNAME = "view-switch";
 const CONTENT_CLASSNAME = "content-catalog";

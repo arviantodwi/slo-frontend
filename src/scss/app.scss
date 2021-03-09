@@ -6,11 +6,11 @@
 @use "elements/table";
 @use "elements/author";
 @use "elements/section";
-@use "elements/carousel";
 @use "elements/categories";
 
 @use "widgets/footer";
 @use "widgets/navbar";
+@use 'widgets/carousel';
 @use "widgets/pagination";
 
 @use "pages/index";
