@@ -18,10 +18,23 @@ module.exports = {
   },
 
   entry: {
+    // Main app entry
     app: path.join(srcDir, "app.js"),
-    index: path.join(viewsDir, "Index/index.js"),
-    // Add other script entries like the one below:
-    explore: path.join(viewsDir, "Explore/explore.js"),
+
+    // Add shared components below. Only for dependencies.
+    swiper: "swiper",
+    "dom-purify": "dompurify",
+    "progress-bar": "progressbar.js",
+
+    // Page entries. Add other page entries below.
+    index: {
+      import: path.join(viewsDir, "Index/index.js"),
+      dependOn: ["dom-purify", "swiper", "progress-bar"],
+    },
+    explore: {
+      import: path.join(viewsDir, "Explore/explore.js"),
+      dependOn: ["dom-purify"],
+    },
   },
 
   module: {
@@ -35,17 +48,24 @@ module.exports = {
 
     new HtmlWebpackPlugin(
       template("Index/index.html", {
-        includeEntries: "index",
+        includeEntries: ["dom-purify", "swiper", "progress-bar", "index"],
         title: "SLO v2-dev",
       })
     ),
     // Add other HtmlWebpackPlugin view instances like the one below:
     new HtmlWebpackPlugin(
       template("Explore/layout.html", {
-        includeEntries: ["explore"],
+        includeEntries: ["dom-purify", "explore"],
         title: "Explore – SLO v2-dev",
         filename: "explore/index.html",
       })
     ),
   ],
+
+  optimization: {
+    runtimeChunk: "single",
+    splitChunks: {
+      chunks: "all",
+    },
+  },
 };
