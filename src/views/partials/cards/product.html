@@ -5,6 +5,14 @@
 >
   <div class="product-cover ratio ratio-1x1">
     <img src="<%= require(`../../../images/${cover}`) %>" alt="" />
+    <% if('productType' in obj) { %>
+    <div
+      class="product-tag"
+      data-product-type="<%= productType.toLowerCase() %>"
+    >
+      <%= productType %>
+    </div>
+    <% } %>
   </div>
   <div class="product-summary">
     <div class="row header">
