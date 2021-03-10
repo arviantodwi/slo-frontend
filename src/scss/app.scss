@@ -1,4 +1,5 @@
 @use "theme";
+@use 'animations';
 
 @use "elements/card";
 @use "elements/pill";
@@ -11,6 +12,7 @@
 @use "widgets/footer";
 @use "widgets/navbar";
 @use 'widgets/carousel';
+@use 'widgets/preloader';
 @use "widgets/pagination";
 
 @use "pages/index";

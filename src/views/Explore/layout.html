@@ -3,7 +3,7 @@
     <div class="row flex-row-reverse">
       <!-- List / Grid -->
       <div class="content col-9">
-        <div class="content-topbar">
+        <div class="content-topbar" style="display: none">
           <div class="row">
             <div
               class="topbar-wrap d-flex justify-content-between align-items-center"
@@ -31,10 +31,27 @@
           </div>
         </div>
 
-        <div class="content-catalog"><%= require('./grid.html')() %></div>
+        <div class="content-catalog" style="display: none">
+          <%= require('./grid.html')() %>
+        </div>
 
-        <div class="content-pagination">
+        <div class="content-pagination" style="display: none">
           <%= require('../partials/pagination.html')() %>
+        </div>
+
+        <div class="preloader content-preloader">
+          <div class="row topbar">
+            <div class="col-4">
+              <div class="preloader-block"></div>
+            </div>
+          </div>
+          <div class="row catalog">
+            <% for(let i = 0; i < 4; i += 1) { %>
+            <div class="col-3">
+              <%= require('../partials/preloaders/productCol.html')() %>
+            </div>
+            <% } %>
+          </div>
         </div>
       </div>
 
