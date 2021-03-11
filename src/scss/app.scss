@@ -1,22 +1,23 @@
-@use "theme";
+@use 'theme';
 @use 'animations';
 
-@use "elements/card";
-@use "elements/pill";
-@use "elements/hero";
-@use "elements/table";
-@use "elements/author";
-@use "elements/section";
-@use "elements/categories";
+@use 'elements/card';
+@use 'elements/pill';
+@use 'elements/hero';
+@use 'elements/table';
+@use 'elements/section';
+@use 'elements/categories';
 
-@use "widgets/footer";
-@use "widgets/navbar";
+@use 'widgets/footer';
+@use 'widgets/navbar';
 @use 'widgets/carousel';
 @use 'widgets/preloader';
-@use "widgets/pagination";
+@use 'widgets/pagination';
+@use 'widgets/cards/video';
+@use 'widgets/cards/product';
 
-@use "pages/index";
-@use "pages/explore";
+@use 'pages/index';
+@use 'pages/explore';
 
 body {
   min-height: 100vh;

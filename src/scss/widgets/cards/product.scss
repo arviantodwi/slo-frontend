@@ -1,0 +1,234 @@
+@use '../../elements/author';
+
+.card[data-card-type="product"] {
+  .product-cover {
+    overflow: hidden;
+
+    img {
+      z-index: 1;
+    }
+  }
+
+  .product-tag {
+    z-index: 2;
+    position: absolute;
+    width: 62px;
+    height: auto;
+    padding: 4px 0;
+    border-radius: 4px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 18px;
+    text-align: center;
+    letter-spacing: -0.078px;
+    color: var(--brand-white);
+
+    &[data-product-type="course"] {
+      background-color: var(--brand-violet);
+    }
+    &[data-product-type="podcast"] {
+      background-color: var(--brand-orange);
+    }
+    &[data-product-type="video"] {
+      background-color: var(--brand-green);
+    }
+    &[data-product-type="webinar"] {
+      background-color: var(--brand-blue);
+    }
+  }
+
+  .product-summary {
+    padding-top: 16px;
+    padding-bottom: 16px;
+
+    .footer {
+      > div[class^="col"] {
+        &:last-child {
+          display: flex;
+        }
+      }
+    }
+
+    .title h3 {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 17px;
+      line-height: 22px;
+      letter-spacing: -0.408px;
+      color: var(--brand-primary);
+      max-height: 44px;
+      overflow: hidden;
+    }
+
+    .wish {
+      max-width: 36px;
+      padding-left: 0;
+
+      button {
+        all: initial;
+        font-size: 0;
+        padding: 0;
+
+        i {
+          width: 24px;
+          height: 24px;
+          display: inline-flex;
+
+          svg {
+            width: inherit;
+            height: inherit;
+          }
+        }
+      }
+    }
+
+    .author {
+      @include author.base;
+    }
+
+    .rating {
+      i {
+        width: 16px;
+        height: 16px;
+        display: inline-flex;
+
+        &:not(:last-child) {
+          margin-right: 2px;
+        }
+
+        svg {
+          width: inherit;
+          height: inherit;
+
+          > path {
+            fill: var(--brand-orange);
+          }
+        }
+      }
+    }
+
+    .price {
+      text-align: right;
+
+      > span {
+        display: inline-block;
+        color: #e95244;
+        text-align: right;
+
+        &:first-child {
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 22px;
+          letter-spacing: -0.32px;
+          vertical-align: top;
+        }
+        &:last-child {
+          font-weight: bold;
+          font-size: 22px;
+          line-height: 28px;
+        }
+      }
+    }
+  }
+
+  &[data-display-type="col"] {
+    .product-cover {
+      border-radius: 24px 24px 0 0;
+    }
+
+    .product-tag {
+      top: initial;
+      left: 6px;
+      bottom: 6px;
+    }
+
+    .product-summary {
+      padding-left: 12px;
+      padding-right: 12px;
+
+      .footer {
+        flex-direction: column;
+
+        > div[class^="col"] {
+          &:last-child {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+          }
+        }
+      }
+
+      .title h3 {
+        margin-bottom: 6px;
+      }
+
+      .author {
+        margin-bottom: 12px;
+      }
+    }
+  }
+
+  &[data-display-type="row"] {
+    display: flex;
+    flex-direction: row;
+    max-height: 200px;
+
+    .product-cover {
+      width: 200px;
+      border-radius: 24px 0 0 24px;
+      flex-shrink: 0;
+    }
+
+    .product-tag {
+      left: initial;
+      right: 6px;
+      top: 6px;
+    }
+
+    .product-summary {
+      padding-left: 24px;
+      padding-right: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+
+      .header {
+        margin-bottom: 16px;
+        justify-content: space-between;
+      }
+
+      .footer {
+        margin-top: auto;
+        align-items: center;
+
+        > div[class^="col"] {
+          &:last-child {
+            flex-direction: column;
+            align-items: flex-end;
+          }
+        }
+      }
+
+      .title {
+        flex-grow: 0.75;
+
+        p.description {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 15px;
+          line-height: 20px;
+          letter-spacing: -0.24px;
+          color: rgba(46, 43, 69, 0.6);
+          max-height: 40px;
+          overflow: hidden;
+          margin: 0;
+        }
+      }
+
+      .rating {
+        margin-bottom: 8px;
+      }
+    }
+  }
+}

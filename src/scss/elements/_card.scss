@@ -1,0 +1,9 @@
+$border-radius-large: 24px;
+$shadow-large: 0px 28px 40px -1px rgba(14, 31, 53, 0.12);
+
+.card {
+  background-color: var(--brand-white);
+  box-shadow: $shadow-large;
+  border-radius: $border-radius-large;
+  border: 0;
+}

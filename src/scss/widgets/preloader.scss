@@ -1,111 +1,112 @@
-.preloader {
-  &-block {
-    background: #f1f2f3;
-    overflow: hidden;
-    position: relative;
-    height: 16px;
+.preloader-block {
+  background: #f1f2f3;
+  overflow: hidden;
+  position: relative;
+  height: 16px;
 
-    &.large {
-      height: 24px;
-    }
+  &.large {
+    height: 24px;
+  }
 
-    &.round {
-      border-radius: 50%;
-    }
+  &.round {
+    border-radius: 50%;
+  }
 
-    &::after {
-      content: "";
-      min-width: 18px;
-      width: 33%;
-      height: 100%;
-      transform: scale(1.5) rotate(15deg);
-      background: linear-gradient(
-        90deg,
-        rgba(255, 255, 255, 0) 0%,
-        #ffffff 50%,
-        rgba(255, 255, 255, 0) 100%
-      );
-      position: absolute;
-      top: 0;
-      left: -100%;
-      opacity: 0.66;
-      animation-duration: 2s;
-      animation-name: preloader-glare;
-      animation-iteration-count: infinite;
-    }
+  &::after {
+    content: "";
+    min-width: 18px;
+    width: 33%;
+    height: 100%;
+    transform: scale(1.5) translateX(-100%);
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      #ffffff 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.66;
+    animation-delay: 0.5s;
+    animation-duration: 2s;
+    animation-name: preloader-glare;
+    animation-iteration-count: infinite;
   }
 }
 
-.preloader-product {
-  .block {
-    &-cover {
-      border-radius: 24px 24px 0 0;
-      overflow: hidden;
+.card[data-card-type="preloader"] {
+  .preloader-product {
+    .block {
+      &-cover {
+        border-radius: 24px 24px 0 0;
+        overflow: hidden;
 
-      .preloader-block {
-        position: absolute;
-        height: 100%;
-      }
-    }
-
-    &-info {
-      padding: 4px 12px;
-    }
-
-    &-header,
-    &-author,
-    &-footer {
-      padding: 12px 0;
-      display: flex;
-      flex-direction: row;
-      flex: 0 0 auto;
-      flex-wrap: wrap;
-    }
-
-    &-header {
-      .preloader-block {
-        &:first-child {
-          flex-grow: 1;
-          margin-right: 12px;
-        }
-
-        &:last-child {
-          width: 24px;
+        .preloader-block {
+          position: absolute;
+          height: 100%;
         }
       }
-    }
 
-    &-author {
-      align-items: center;
-
-      > .preloader-block {
-        width: 28px;
-        height: 28px;
-        margin-right: 6px;
+      &-info {
+        padding: 4px 12px;
       }
-    }
 
-    &-author-profile {
-      display: flex;
-      flex-direction: column;
-      flex: 1 0 auto;
+      &-header,
+      &-author,
+      &-footer {
+        padding: 12px 0;
+        display: flex;
+        flex-direction: row;
+        flex: 0 0 auto;
+        flex-wrap: wrap;
+      }
 
-      .preloader-block {
-        &:first-child {
-          width: 50%;
-          margin-bottom: 6px;
-        }
-        &:last-child {
-          width: 75%;
+      &-header {
+        .preloader-block {
+          &:first-child {
+            flex-grow: 1;
+            margin-right: 12px;
+          }
+
+          &:last-child {
+            width: 24px;
+          }
         }
       }
-    }
 
-    &-footer {
-      justify-content: space-between;
+      &-author {
+        align-items: center;
 
-      .preloader-block {
-        width: 40%;
+        > .preloader-block {
+          width: 28px;
+          height: 28px;
+          margin-right: 6px;
+        }
+      }
+
+      &-author-profile {
+        display: flex;
+        flex-direction: column;
+        flex: 1 0 auto;
+
+        .preloader-block {
+          &:first-child {
+            width: 50%;
+            margin-bottom: 6px;
+          }
+          &:last-child {
+            width: 75%;
+          }
+        }
+      }
+
+      &-footer {
+        justify-content: space-between;
+
+        .preloader-block {
+          width: 40%;
+        }
       }
     }
   }

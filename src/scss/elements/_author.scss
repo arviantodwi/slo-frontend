@@ -1,0 +1,72 @@
+$base-class: ".author";
+
+@mixin base($size: "small") {
+  @if $size != "small" {
+    @error ('Author sizing is currently only support the "small" size');
+  }
+
+  #{$base-class}-photo {
+    @include photo;
+  }
+
+  #{$base-class}-more {
+    @include additional-author;
+  }
+
+  #{$base-class}-profile {
+    @include profile;
+  }
+
+  &#{$base-class}-#{$size} {
+    @include sizing($size);
+  }
+}
+
+@mixin photo {
+  margin-right: 6px;
+  z-index: 1;
+}
+
+@mixin additional-author {
+  margin-right: 6px;
+  margin-left: -14px;
+  background: var(--brand-white);
+  border: 1px solid rgba(46, 43, 69, 0.16);
+  box-shadow: 0px 0px 0px 2px var(--brand-white);
+  z-index: 2;
+
+  > span {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 26px;
+    text-align: center;
+    letter-spacing: -0.41px;
+    color: rgba(60, 60, 67, 0.6);
+  }
+}
+
+@mixin profile {
+  font-style: normal;
+  font-weight: normal;
+  line-height: 18px;
+  letter-spacing: -0.078px;
+  font-size: 13px;
+  color: var(--brand-primary);
+
+  .company {
+    font-size: 12px;
+    opacity: 0.6;
+  }
+}
+
+@mixin sizing($size) {
+  @if ($size == "small") {
+    #{$base-class} {
+      &-photo,
+      &-more {
+        width: 28px;
+      }
+    }
+  }
+}
