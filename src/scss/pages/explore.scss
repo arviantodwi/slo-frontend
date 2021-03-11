@@ -240,9 +240,23 @@
               .title {
                 color: rgba(46, 43, 69, 0.3);
               }
-              button svg path {
-                fill: rgba(46, 43, 69, 0.3);
+              button {
+                transform: rotate(180deg);
+
+                svg path {
+                  fill: rgba(46, 43, 69, 0.3);
+                }
               }
+            }
+            .section-content {
+              padding-top: 0;
+              height: 0;
+            }
+          }
+          &[data-expanded="true"] {
+            .section-content {
+              padding-top: 12px;
+              height: auto;
             }
           }
 
@@ -267,7 +281,10 @@
           }
 
           &-content {
-            padding-top: 12px;
+            transition-property: height, padding-top;
+            transition-duration: 0.125s;
+            transition-timing-function: ease-in;
+            overflow: hidden;
 
             > div {
               &:not(:first-child) {
