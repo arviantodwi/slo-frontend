@@ -1,0 +1,44 @@
+<div class="menu mega-menu">
+  <div class="menu-wrap">
+    <ul>
+      <% for (let linkLv0 of obj) { %> <% const sub1 = linkLv0?.sub || null %>
+      <li>
+        <a href="<%= linkLv0.href || '#' %>"
+          ><span><%= linkLv0.text %></span>
+          <% if(sub1 !== null) { %>
+          <i><%= require('../../../images/icons/next.svg?inline') %></i>
+          <% } %>
+        </a>
+
+        <% if (sub1 !== null) { %>
+        <ul>
+          <% for (let linkLv1 of sub1) { %> <% const sub2 = linkLv1?.sub || null
+          %>
+          <li>
+            <a href="<%= linkLv1.href || '#' %>"
+              ><span><%= linkLv1.text %></span>
+              <% if(sub2 !== null) { %>
+              <i><%= require('../../../images/icons/next.svg?inline') %></i>
+              <% } %>
+            </a>
+
+            <% if (sub2 !== null) { %>
+            <ul>
+              <% for (let linkLv2 of sub2) { %>
+              <li>
+                <a href="<%= linkLv2.href || '#' %>"
+                  ><span><%= linkLv2.text %></span></a
+                >
+              </li>
+              <% } %>
+            </ul>
+            <% } %>
+          </li>
+          <% } %>
+        </ul>
+        <% } %>
+      </li>
+      <% } %>
+    </ul>
+  </div>
+</div>

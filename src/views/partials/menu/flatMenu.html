@@ -1,0 +1,11 @@
+<div class="menu">
+  <div class="menu-wrap">
+    <ul>
+      <% for (let link of obj) { %>
+      <li>
+        <a href="<%= link.href || '#' %>"><%= link.text %></a>
+      </li>
+      <% } %>
+    </ul>
+  </div>
+</div>
