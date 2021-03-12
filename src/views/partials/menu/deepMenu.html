@@ -1,7 +1,7 @@
 <div class="menu mega-menu">
   <div class="menu-wrap">
     <ul>
-      <% for (let linkLv0 of obj) { %> <% const sub1 = linkLv0?.sub || null %>
+      <% for (let linkLv0 of obj) { %> <% const sub1 = linkLv0.sub || null %>
       <li>
         <a href="<%= linkLv0.href || '#' %>"
           ><span><%= linkLv0.text %></span>
@@ -12,7 +12,7 @@
 
         <% if (sub1 !== null) { %>
         <ul>
-          <% for (let linkLv1 of sub1) { %> <% const sub2 = linkLv1?.sub || null
+          <% for (let linkLv1 of sub1) { %> <% const sub2 = linkLv1.sub || null
           %>
           <li>
             <a href="<%= linkLv1.href || '#' %>"
