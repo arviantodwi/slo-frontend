@@ -1,6 +1,7 @@
 @use 'theme';
 @use 'animations';
 
+@use 'elements/tags';
 @use 'elements/card';
 @use 'elements/pill';
 @use 'elements/hero';
@@ -12,12 +13,14 @@
 @use 'widgets/navbar';
 @use 'widgets/carousel';
 @use 'widgets/preloader';
+@use 'widgets/breadcrumb';
 @use 'widgets/pagination';
 @use 'widgets/cards/video';
 @use 'widgets/cards/product';
 
 @use 'pages/index';
 @use 'pages/explore';
+@use 'pages/contentDetails.scss';
 
 body {
   min-height: 100vh;

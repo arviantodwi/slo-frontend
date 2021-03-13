@@ -1,0 +1,28 @@
+<div class="sidebar">
+  <div class="sidebar-container">
+    <div class="cover ratio ratio-4x3">
+      <img src="<%= require(`../../images/${cover}`) %>" alt="<%= title %>" />
+    </div>
+    <div class="sidebar-content-wrap">
+      <div class="shop">
+        <div class="shop-price price">
+          <% if(price > 0) { %>
+          <span>$</span><span><%= price %></span>
+          <% } else if (price <= 0) { %>
+          <span>Free</span>
+          <% } %>
+        </div>
+
+        <div class="shop-ctas">
+          <button class="button-medium button-secondary">Buy Course</button>
+          <button class="button-medium" aria-label="Add to wishlist">
+            <i><%= require('/src/images/icons/love.svg?inline') %></i>Add to
+            wishlist
+          </button>
+        </div>
+      </div>
+
+      <div class="author"></div>
+    </div>
+  </div>
+</div>

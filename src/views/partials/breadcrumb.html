@@ -1,0 +1,8 @@
+<% const links = JSON.parse(obj) %>
+<div class="breadcrumb">
+  <% links.forEach((link, index) => { %> <% if (index > 0) { %>
+  <i> <%= require('../../images/icons/next.svg?inline') %> </i>
+  <% } %>
+  <a href="#"><%= link %></a>
+  <% }) %>
+</div>

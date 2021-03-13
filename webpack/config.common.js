@@ -60,6 +60,12 @@ module.exports = {
         filename: "explore/index.html",
       })
     ),
+    new HtmlWebpackPlugin(
+      template("ContentDetail/layout.html", {
+        title: "Sample Demo Course – SLO v2-dev",
+        filename: "course/sample-demo-course.html",
+      })
+    ),
   ],
 
   optimization: {
