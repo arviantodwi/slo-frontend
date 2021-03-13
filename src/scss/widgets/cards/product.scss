@@ -10,32 +10,7 @@
   }
 
   .product-tag {
-    z-index: 2;
     position: absolute;
-    width: 62px;
-    height: auto;
-    padding: 4px 0;
-    border-radius: 4px;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 13px;
-    line-height: 18px;
-    text-align: center;
-    letter-spacing: -0.078px;
-    color: var(--brand-white);
-
-    &[data-product-type="course"] {
-      background-color: var(--brand-violet);
-    }
-    &[data-product-type="podcast"] {
-      background-color: var(--brand-orange);
-    }
-    &[data-product-type="video"] {
-      background-color: var(--brand-green);
-    }
-    &[data-product-type="webinar"] {
-      background-color: var(--brand-blue);
-    }
   }
 
   .product-summary {
