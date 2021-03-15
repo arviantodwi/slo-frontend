@@ -90,5 +90,5 @@ class Accordion {
 (() => {
   const objectives = new Accordion(".objectives");
   const description = new Accordion(".description");
-  const curriculum = new Accordion(".curriculum");
+  const curriculum = new Accordion(".lessons");
 })();
