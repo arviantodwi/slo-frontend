@@ -1,143 +1,153 @@
 <main class="content-details">
   <article>
-    <div class="top-wrap">
+    <div class="content-details-top">
       <div class="container">
-        <%= require('../partials/breadcrumb.html')(JSON.stringify(['Explore',
-        'Event Operations', 'Volunteer Management'] )) %>
+        <div class="content-wrap">
+          <%= require('../partials/breadcrumb.html')(JSON.stringify(['Explore',
+          'Event Operations', 'Volunteer Management'] )) %> <%=
+          require('./header.html')() %>
+        </div>
+      </div>
+    </div>
 
-        <div class="row">
-          <div class="col-8"><%= require('./header.html')() %></div>
-
-          <aside class="col-4">
+    <div class="content-details-bottom">
+      <div class="container">
+        <div class="row flex-row-reverse">
+          <div class="sidebar-container col-auto">
             <%= require('./sidebar.html')({cover: 'course-sample-cover.jpg',
             title: 'Cillum\ Nulla\ Dolore\ Voluptate\ Deserunt', price: 115.99})
             %>
-          </aside>
+          </div>
+
+          <div class="content-wrap col">
+            <section class="objectives accordion">
+              <div class="section accordion-item" data-expanded="true">
+                <div class="section-header">
+                  <h2 class="title">Course Objectives</h2>
+                  <button class="accordion-toggler">
+                    <i
+                      ><%= require('../../images/icons/collapse.svg?inline')
+                      %></i
+                    >
+                  </button>
+                </div>
+                <div class="section-content accordion-item-content">
+                  <p>
+                    Quis consequat anim laborum elit ex aliquip exercitation
+                    quis sint enim sit fugiat reprehenderit enim. Reprehenderit
+                    aute dolore duis tempor enim ut duis ipsum. Magna irure
+                    laboris incididunt duis magna. Laborum in dolor do quis
+                    reprehenderit excepteur exercitation dolore ea amet
+                    cupidatat anim aliqua. Dolor culpa incididunt aliquip
+                    laborum consequat exercitation deserunt cillum. Eiusmod
+                    aliqua esse non elit elit sunt ea sit pariatur aute fugiat
+                    consequat tempor pariatur.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <section class="description accordion">
+              <div class="section accordion-item" data-expanded="true">
+                <div class="section-header">
+                  <h2 class="title">About This Course</h2>
+                  <button class="accordion-toggler">
+                    <i
+                      ><%= require('../../images/icons/collapse.svg?inline')
+                      %></i
+                    >
+                  </button>
+                </div>
+                <div class="section-content accordion-item-content">
+                  <p>
+                    Velit in ridiculus sed netus. Et sit pharetra sit quam est
+                    nisi nunc. Enim, scelerisque mattis sagittis pretium, elit.
+                    Felis lacus nulla dui sed mauris. Sed faucibus egestas vitae
+                    phasellus viverra pulvinar. Tincidunt tortor cum libero,
+                    donec.
+                  </p>
+
+                  <p>
+                    Diam enim semper lacus, gravida. Pellentesque tellus
+                    scelerisque ornare nisl. Scelerisque nulla risus, molestie
+                    amet, vitae dolor sed.
+                  </p>
+
+                  <p>
+                    Pellentesque nulla felis sagittis eget orci facilisis at
+                    proin. Urna, turpis pellentesque non massa massa lectus elit
+                    tellus. Purus dictum id dis tristique quis amet odio ac,
+                    feugiat. Eu pharetra, et id diam gravida molestie. Augue
+                    vestibulum, amet nunc laoreet elementum nulla in.
+                  </p>
+
+                  <p>
+                    Pulvinar habitasse integer massa aliquam feugiat augue
+                    sagittis senectus quisque. Odio mattis tincidunt maecenas
+                    duis vel blandit. Sed sed dictum neque, sit convallis
+                    sagittis etiam. Et placerat habitant vitae sed consectetur
+                    nisl aliquam, massa. Risus vestibulum amet lacus.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <section class="curriculum accordion">
+              <div class="section accordion-item" data-expanded="true">
+                <div class="section-header">
+                  <h2 class="title">Course Curriculum</h2>
+                  <button class="accordion-toggler">
+                    <i
+                      ><%= require('../../images/icons/collapse.svg?inline')
+                      %></i
+                    >
+                  </button>
+                </div>
+                <div class="section-content accordion-item-content">
+                  Quis consequat anim laborum elit ex aliquip exercitation quis
+                  sint enim sit fugiat reprehenderit enim. Reprehenderit aute
+                  dolore duis tempor enim ut duis ipsum. Magna irure laboris
+                  incididunt duis magna. Laborum in dolor do quis reprehenderit
+                  excepteur exercitation dolore ea amet cupidatat anim aliqua.
+                  Dolor culpa incididunt aliquip laborum consequat exercitation
+                  deserunt cillum. Eiusmod aliqua esse non elit elit sunt ea sit
+                  pariatur aute fugiat consequat tempor pariatur.
+                </div>
+              </div>
+            </section>
+
+            <section class="author-container">
+              <div class="row">
+                <div class="col-auto">
+                  <%= require('../partials/author.html')({size: 'medium', photo:
+                  'author-6.jpg', name: 'Aydin\ Smith', company: 'TED\ Talk'})
+                  %>
+                </div>
+                <div class="col-auto d-flex align-items-center">
+                  <%= require('../partials/rating.html')({value: 4.5}) %>
+                </div>
+              </div>
+
+              <p>
+                Hi, I’m Aydin, a yoga specialist. Sollicitudin pretium neque
+                viverra in. Arcu, feugiat aliquam molestie amet iaculis. Quam
+                elit quis nulla vestibulum sit enim, consectetur.
+              </p>
+
+              <hr />
+
+              <div class="author-courses">
+                <h2>More Courses from Aydin Smith</h2>
+                <div class="author-courses-wrap"></div>
+              </div>
+            </section>
+
+            <footer class="related">
+              <h2>Related Courses You May Like</h2>
+            </footer>
+          </div>
         </div>
       </div>
     </div>
-
-    <div class="detail-wrap container">
-      <div class="row">
-        <div class="col-8">
-          Consectetur adipisicing ex cupidatat sit aute est anim commodo labore
-          in laboris dolore occaecat duis. In sit do laborum est laborum culpa
-          id cillum labore dolore nisi. Aute cupidatat dolor incididunt tempor
-          commodo in esse non. Duis nulla nostrud ut ad proident minim fugiat
-          consectetur enim id sint labore in. Veniam sint ipsum laborum dolore
-          est ea incididunt pariatur tempor. Anim est cillum dolor sit culpa
-          velit veniam culpa ea qui.<br /><br />
-
-          Sint mollit ullamco ea tempor eiusmod magna. Adipisicing deserunt duis
-          aute ea non irure ex excepteur. Velit reprehenderit eu pariatur aute
-          ex esse consequat. Enim veniam deserunt exercitation cillum duis. Sint
-          consequat qui fugiat anim tempor et quis consectetur sunt. Consequat
-          laborum consequat aliqua mollit aliquip laborum mollit excepteur. Do
-          dolore quis cupidatat laboris tempor velit aute nostrud amet sit
-          reprehenderit.<br /><br />
-
-          Aliqua amet Lorem aliqua qui. Dolor sint laborum exercitation
-          consequat ex non et. Ut consectetur fugiat nisi ad proident magna in
-          sint id aliquip eiusmod ipsum adipisicing nostrud. Nulla enim non
-          voluptate culpa. Adipisicing occaecat ipsum incididunt in. Tempor duis
-          ipsum officia laboris qui est.<br /><br />
-
-          Non est nulla fugiat exercitation reprehenderit. Laboris qui nisi
-          deserunt sint adipisicing incididunt proident voluptate. Commodo
-          excepteur sunt minim do cillum labore excepteur consequat elit sunt
-          esse irure. Non ad ipsum laboris velit Lorem ea aliquip consectetur
-          eiusmod reprehenderit anim labore. Irure anim id reprehenderit ad in
-          ipsum minim nisi non labore laboris cillum enim nulla. Occaecat eu ad
-          pariatur officia do ea consectetur nulla incididunt duis nostrud.
-          Veniam aliquip eiusmod nulla laboris dolor adipisicing aliquip labore
-          magna est voluptate labore veniam.<br /><br />
-
-          Esse veniam sint ad ex duis nulla tempor id incididunt ipsum laboris
-          dolor nulla. Nisi duis voluptate aute nulla pariatur in anim ea do
-          officia. Mollit adipisicing est sunt duis minim labore.<br /><br />
-
-          Aliquip culpa id excepteur ipsum irure ullamco aute occaecat culpa
-          laboris magna. Sint commodo nisi veniam mollit. Ullamco voluptate
-          commodo velit dolor dolore occaecat veniam tempor consectetur
-          reprehenderit.<br /><br />
-
-          Fugiat laboris officia eu reprehenderit ex laboris magna Lorem
-          adipisicing culpa do. Dolor laborum exercitation in eu. Exercitation
-          in sunt esse Lorem velit incididunt labore elit ad aliquip Lorem ad
-          exercitation adipisicing. Nostrud consectetur deserunt proident dolore
-          occaecat qui elit eiusmod magna in cupidatat nulla. Esse ea occaecat
-          sit elit est.<br /><br />
-
-          Adipisicing eiusmod commodo ex reprehenderit tempor culpa. Dolor id
-          laboris id aliquip ex incididunt eiusmod aute. Minim laboris culpa id
-          non culpa consequat aliqua Lorem eu sint. Non incididunt duis veniam
-          excepteur aliqua commodo sunt esse.<br /><br />
-
-          Consectetur adipisicing ex cupidatat sit aute est anim commodo labore
-          in laboris dolore occaecat duis. In sit do laborum est laborum culpa
-          id cillum labore dolore nisi. Aute cupidatat dolor incididunt tempor
-          commodo in esse non. Duis nulla nostrud ut ad proident minim fugiat
-          consectetur enim id sint labore in. Veniam sint ipsum laborum dolore
-          est ea incididunt pariatur tempor. Anim est cillum dolor sit culpa
-          velit veniam culpa ea qui.<br /><br />
-
-          Sint mollit ullamco ea tempor eiusmod magna. Adipisicing deserunt duis
-          aute ea non irure ex excepteur. Velit reprehenderit eu pariatur aute
-          ex esse consequat. Enim veniam deserunt exercitation cillum duis. Sint
-          consequat qui fugiat anim tempor et quis consectetur sunt. Consequat
-          laborum consequat aliqua mollit aliquip laborum mollit excepteur. Do
-          dolore quis cupidatat laboris tempor velit aute nostrud amet sit
-          reprehenderit.<br /><br />
-
-          Aliqua amet Lorem aliqua qui. Dolor sint laborum exercitation
-          consequat ex non et. Ut consectetur fugiat nisi ad proident magna in
-          sint id aliquip eiusmod ipsum adipisicing nostrud. Nulla enim non
-          voluptate culpa. Adipisicing occaecat ipsum incididunt in. Tempor duis
-          ipsum officia laboris qui est.<br /><br />
-
-          Non est nulla fugiat exercitation reprehenderit. Laboris qui nisi
-          deserunt sint adipisicing incididunt proident voluptate. Commodo
-          excepteur sunt minim do cillum labore excepteur consequat elit sunt
-          esse irure. Non ad ipsum laboris velit Lorem ea aliquip consectetur
-          eiusmod reprehenderit anim labore. Irure anim id reprehenderit ad in
-          ipsum minim nisi non labore laboris cillum enim nulla. Occaecat eu ad
-          pariatur officia do ea consectetur nulla incididunt duis nostrud.
-          Veniam aliquip eiusmod nulla laboris dolor adipisicing aliquip labore
-          magna est voluptate labore veniam.<br /><br />
-
-          Esse veniam sint ad ex duis nulla tempor id incididunt ipsum laboris
-          dolor nulla. Nisi duis voluptate aute nulla pariatur in anim ea do
-          officia. Mollit adipisicing est sunt duis minim labore.<br /><br />
-
-          Aliquip culpa id excepteur ipsum irure ullamco aute occaecat culpa
-          laboris magna. Sint commodo nisi veniam mollit. Ullamco voluptate
-          commodo velit dolor dolore occaecat veniam tempor consectetur
-          reprehenderit.<br /><br />
-
-          Fugiat laboris officia eu reprehenderit ex laboris magna Lorem
-          adipisicing culpa do. Dolor laborum exercitation in eu. Exercitation
-          in sunt esse Lorem velit incididunt labore elit ad aliquip Lorem ad
-          exercitation adipisicing. Nostrud consectetur deserunt proident dolore
-          occaecat qui elit eiusmod magna in cupidatat nulla. Esse ea occaecat
-          sit elit est.<br /><br />
-
-          Adipisicing eiusmod commodo ex reprehenderit tempor culpa. Dolor id
-          laboris id aliquip ex incididunt eiusmod aute. Minim laboris culpa id
-          non culpa consequat aliqua Lorem eu sint. Non incididunt duis veniam
-          excepteur aliqua commodo sunt esse.<br /><br />
-          <section class="objectives"></section>
-
-          <section class="description"></section>
-
-          <section class="curriculum"></section>
-
-          <section class="author"></section>
-        </div>
-      </div>
-    </div>
-
-    <footer class="bottom-wrap container">
-      <div class="related"></div>
-    </footer>
   </article>
 </main>

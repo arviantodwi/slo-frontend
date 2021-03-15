@@ -1,10 +1,6 @@
 $base-class: ".author";
 
 @mixin base($size: "small") {
-  @if $size != "small" {
-    @error ('Author sizing is currently only support the "small" size');
-  }
-
   #{$base-class}-photo {
     @include photo;
   }
@@ -14,7 +10,7 @@ $base-class: ".author";
   }
 
   #{$base-class}-profile {
-    @include profile;
+    @include profile($size);
   }
 
   &#{$base-class}-#{$size} {
@@ -46,17 +42,33 @@ $base-class: ".author";
   }
 }
 
-@mixin profile {
+@mixin profile($size) {
   font-style: normal;
-  font-weight: normal;
-  line-height: 18px;
-  letter-spacing: -0.078px;
-  font-size: 13px;
   color: var(--brand-primary);
 
   .company {
-    font-size: 12px;
     opacity: 0.6;
+  }
+
+  @if ($size == "small") {
+    font-weight: normal;
+    line-height: 18px;
+    letter-spacing: -0.078px;
+    font-size: 13px;
+
+    .company {
+      font-size: 12px;
+    }
+  } @else if ($size == "medium") {
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 22px;
+    letter-spacing: -0.408px;
+    padding-left: 10px;
+
+    .company {
+      font-weight: normal;
+    }
   }
 }
 
@@ -66,6 +78,13 @@ $base-class: ".author";
       &-photo,
       &-more {
         width: 28px;
+      }
+    }
+  } @else if ($size == "medium") {
+    #{$base-class} {
+      &-photo,
+      &-more {
+        width: 64px;
       }
     }
   }

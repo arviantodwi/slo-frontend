@@ -1,9 +1,10 @@
-<div class="sidebar">
-  <div class="sidebar-container">
-    <div class="cover ratio ratio-4x3">
+<aside class="sidebar">
+  <div class="sidebar-wrap">
+    <div class="sidebar-cover ratio ratio-4x3">
       <img src="<%= require(`../../images/${cover}`) %>" alt="<%= title %>" />
     </div>
-    <div class="sidebar-content-wrap">
+
+    <div class="sidebar-content">
       <div class="shop">
         <div class="shop-price price">
           <% if(price > 0) { %>
@@ -22,7 +23,13 @@
         </div>
       </div>
 
-      <div class="author"></div>
+      <!-- <hr />
+
+      <div class="author-container">
+        <h2>Author</h2>
+        
+        <a href="#author" class="button-medium">About author</a>
+      </div> -->
     </div>
   </div>
-</div>
+</aside>

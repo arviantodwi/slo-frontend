@@ -35,6 +35,10 @@ module.exports = {
       import: path.join(viewsDir, "Explore/explore.js"),
       dependOn: ["dom-purify"],
     },
+    contentDetail: {
+      import: path.join(viewsDir, "ContentDetail/contentDetail.js"),
+      dependOn: ["dom-purify"],
+    },
   },
 
   module: {
@@ -62,6 +66,7 @@ module.exports = {
     ),
     new HtmlWebpackPlugin(
       template("ContentDetail/layout.html", {
+        includeEntries: ["dom-purify", "contentDetail"],
         title: "Sample Demo Course – SLO v2-dev",
         filename: "course/sample-demo-course.html",
       })
