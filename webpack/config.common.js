@@ -25,11 +25,13 @@ module.exports = {
     swiper: "swiper",
     "dom-purify": "dompurify",
     "progress-bar": "progressbar.js",
+    shared: path.join(srcDir, "library/shared.js"),
+    svgIcons: path.join(srcDir, "library/svgicons.js"),
 
     // Page entries. Add other page entries below.
     index: {
       import: path.join(viewsDir, "Index/index.js"),
-      dependOn: ["dom-purify", "swiper", "progress-bar"],
+      dependOn: ["dom-purify", "swiper", "progress-bar", "shared", "svgIcons"],
     },
     explore: {
       import: path.join(viewsDir, "Explore/explore.js"),
@@ -52,7 +54,14 @@ module.exports = {
 
     new HtmlWebpackPlugin(
       template("Index/index.html", {
-        includeEntries: ["dom-purify", "swiper", "progress-bar", "index"],
+        includeEntries: [
+          "dom-purify",
+          "swiper",
+          "progress-bar",
+          "shared",
+          "svgIcons",
+          "index",
+        ],
         title: "SLO v2-dev",
       })
     ),

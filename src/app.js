@@ -8,26 +8,6 @@ const $megaMenu = document.querySelector(`.${MEGA_MENU_CLASSNAME}`);
 const $megaMenuLinkList = $megaMenu.querySelectorAll(".menu-wrap ul li");
 
 /**
-const findEventTarget = (eventPath, elementLimit, elementToFind) => {
-  let target = null;
-
-  // console.log("traversing event path...");
-  while (true) {
-    const current = eventPath.shift();
-    if (current === elementLimit) {
-      // console.log("target not found...");
-      break;
-    }
-    if (current.tagName.toLowerCase() == elementToFind) {
-      // console.log("target found...");
-      target = current;
-      break;
-    }
-  }
-
-  return target;
-};
-
 const onMegaMenuLinkMouseOver = (ev) => {
   console.log(ev);
   // ev.stopPropagation();
