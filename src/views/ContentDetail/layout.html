@@ -98,11 +98,8 @@
               <div class="row">
                 <div class="col-auto">
                   <%= require('../partials/author.html')({size: 'medium', photo:
-                  'author-6.jpg', name: 'Aydin\ Smith', company: 'TED\ Talk'})
-                  %>
-                </div>
-                <div class="col-auto d-flex align-items-center">
-                  <%= require('../partials/rating.html')({value: 4.5}) %>
+                  'author-6.jpg', name: 'Aydin\ Smith', company: 'TED\ Talk',
+                  ratingValue: 4.21}) %>
                 </div>
               </div>
 
@@ -116,12 +113,112 @@
 
               <div class="author-courses">
                 <h2>More Courses from Aydin Smith</h2>
-                <div class="author-courses-wrap"></div>
+                <div class="author-courses-wrap row">
+                  <div
+                    id="author-carousel"
+                    class="carousel"
+                    data-carousel-type="steps"
+                  >
+                    <div class="carousel-container swiper-container">
+                      <div class="carousel-items swiper-wrapper">
+                        <div class="carousel-item swiper-slide">
+                          <%= require('../partials/cards/product.html')({ title:
+                          "Exercitation\ commodo\ magna\ cillum\ officia\ amet\
+                          mollit\ ullamco\ voluptate\ magna\ non\ id\ ad\
+                          ipsum.", description: "Exercitation\ commodo\ magna\
+                          cillum\ officia\ amet\ mollit\ ullamco\ voluptate\
+                          magna\ non\ id\ ad\ ipsum.", cover:
+                          'item-cover-1.jpg', rating: 4.55, price: 115.99,
+                          displayType: 'mini' }) %>
+                        </div>
+                        <div class="carousel-item swiper-slide">
+                          <%= require('../partials/cards/product.html')({ title:
+                          "Nulla\ Anim\ Sunt\ Labore\ Exercitation\ Labore\
+                          Voluptate\ Commodo\ Excepteur\ Cillum\ Minim",
+                          description: "Nulla\ anim\ sunt\ labore\ exercitation\
+                          labore\ voluptate\ commodo\ excepteur\ cillum\ minim",
+                          cover: 'item-cover-2.jpg', rating: 4.92, price: 72.45,
+                          displayType: 'mini' }) %>
+                        </div>
+                        <div class="carousel-item swiper-slide">
+                          <%= require('../partials/cards/product.html')({ title:
+                          "Ea\ Veniam\ Cupidatat\ Ut\ Ad\ Veniam\ Id\ Anim\ Ad\
+                          Enim\ Deserunt\ Dolor\ Nisi\ Esse\ Consectetur",
+                          description: "Ea\ veniam\ cupidatat\ ut\ ad\ veniam\
+                          id\ anim\ ad\ enim\ deserunt\ dolor\ nisi\ esse\
+                          consectetur", cover: 'item-cover-3.jpg', rating: 3.23,
+                          price: 99, displayType: 'mini' }) %>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="carousel-nav-left d-flex align-items-center justify-content-center"
+                    >
+                      <%= require('/src/images/icons/arrow-left.svg?inline') %>
+                    </div>
+                    <div
+                      class="carousel-nav-right d-flex align-items-center justify-content-center"
+                    >
+                      <%= require('/src/images/icons/arrow-right.svg?inline') %>
+                    </div>
+                    <div class="carousel-dots"></div>
+                  </div>
+                </div>
               </div>
             </section>
 
             <footer class="related">
               <h2>Related Courses You May Like</h2>
+              <div class="related-courses-wrap row">
+                <div
+                  id="related-carousel"
+                  class="carousel"
+                  data-carousel-type="steps"
+                >
+                  <div class="carousel-container swiper-container">
+                    <div class="carousel-items swiper-wrapper">
+                      <div class="carousel-item swiper-slide">
+                        <%= require('../partials/cards/product.html')({ title:
+                        "Exercitation\ commodo\ magna\ cillum\ officia\ amet\
+                        mollit\ ullamco\ voluptate\ magna\ non\ id\ ad\ ipsum.",
+                        description: "Exercitation\ commodo\ magna\ cillum\
+                        officia\ amet\ mollit\ ullamco\ voluptate\ magna\ non\
+                        id\ ad\ ipsum.", cover: 'item-cover-1.jpg', rating:
+                        4.55, price: 115.99, displayType: 'mini' }) %>
+                      </div>
+                      <div class="carousel-item swiper-slide">
+                        <%= require('../partials/cards/product.html')({ title:
+                        "Nulla\ Anim\ Sunt\ Labore\ Exercitation\ Labore\
+                        Voluptate\ Commodo\ Excepteur\ Cillum\ Minim",
+                        description: "Nulla\ anim\ sunt\ labore\ exercitation\
+                        labore\ voluptate\ commodo\ excepteur\ cillum\ minim",
+                        cover: 'item-cover-2.jpg', rating: 4.92, price: 72.45,
+                        displayType: 'mini' }) %>
+                      </div>
+                      <div class="carousel-item swiper-slide">
+                        <%= require('../partials/cards/product.html')({ title:
+                        "Ea\ Veniam\ Cupidatat\ Ut\ Ad\ Veniam\ Id\ Anim\ Ad\
+                        Enim\ Deserunt\ Dolor\ Nisi\ Esse\ Consectetur",
+                        description: "Ea\ veniam\ cupidatat\ ut\ ad\ veniam\ id\
+                        anim\ ad\ enim\ deserunt\ dolor\ nisi\ esse\
+                        consectetur", cover: 'item-cover-3.jpg', rating: 3.23,
+                        price: 99, displayType: 'mini' }) %>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="carousel-nav-left d-flex align-items-center justify-content-center"
+                  >
+                    <%= require('/src/images/icons/arrow-left.svg?inline') %>
+                  </div>
+                  <div
+                    class="carousel-nav-right d-flex align-items-center justify-content-center"
+                  >
+                    <%= require('/src/images/icons/arrow-right.svg?inline') %>
+                  </div>
+                  <div class="carousel-dots"></div>
+                </div>
+              </div>
             </footer>
           </div>
         </div>

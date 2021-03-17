@@ -37,7 +37,7 @@ module.exports = {
     },
     contentDetail: {
       import: path.join(viewsDir, "ContentDetail/contentDetail.js"),
-      dependOn: ["dom-purify"],
+      dependOn: ["swiper"],
     },
   },
 
@@ -66,7 +66,7 @@ module.exports = {
     ),
     new HtmlWebpackPlugin(
       template("ContentDetail/layout.html", {
-        includeEntries: ["dom-purify", "contentDetail"],
+        includeEntries: ["swiper", "contentDetail"],
         title: "Sample Demo Course – SLO v2-dev",
         filename: "course/sample-demo-course.html",
       })

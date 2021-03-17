@@ -1,4 +1,5 @@
-<% const size = obj.size || 'small' %>
+<% const size = obj.size || 'small' %> <% const useRating =
+parseInt(obj.ratingValue) > 0 ? true : false %>
 <div class="author author-<%= size %> d-flex align-items-center">
   <div class="author-photo ratio ratio-1x1">
     <img
@@ -15,5 +16,7 @@
   <div class="author-profile">
     <div class="name"><%= Array.isArray(name) ? name[0] : name %></div>
     <div class="company"><%= company %></div>
+    <% if(useRating) { %> <%= require('./rating.html')({value: ratingValue}) %>
+    <% } %>
   </div>
 </div>

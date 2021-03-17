@@ -1,5 +1,55 @@
 // contentDetail.js
-import DomPurify from "dompurify";
+import Swiper, { Navigation, A11y } from "swiper/core";
+
+Swiper.use([Navigation, A11y]);
+
+const carouselElement = (idName) =>
+  document.getElementById(idName).querySelector(".swiper-container");
+const carouselDefaultOptions = {
+  direction: "horizontal",
+  loop: true,
+  slidesPerGroup: 5,
+  slidesPerView: 5,
+  spaceBetween: 24,
+  navigation: false,
+  a11y: true,
+};
+
+const lessonsCarousel = (() => {
+  const swiper = carouselElement("author-carousel");
+  const prevEl = swiper.parentElement.querySelector(".carousel-nav-left");
+  const nextEl = swiper.parentElement.querySelector(".carousel-nav-right");
+  return new Swiper(
+    swiper,
+    Object.assign({}, carouselDefaultOptions, {
+      slidesPerGroup: 1,
+      slidesPerView: 2.5,
+      navigation: { prevEl, nextEl },
+      a11y: {
+        prevSlideMessage: "Previous lessons slide",
+        nextSlideMessage: "Next lessons slide",
+      },
+    })
+  );
+})();
+
+const relatedCarousel = (() => {
+  const swiper = carouselElement("related-carousel");
+  const prevEl = swiper.parentElement.querySelector(".carousel-nav-left");
+  const nextEl = swiper.parentElement.querySelector(".carousel-nav-right");
+  return new Swiper(
+    swiper,
+    Object.assign({}, carouselDefaultOptions, {
+      slidesPerGroup: 3,
+      slidesPerView: 3,
+      navigation: { prevEl, nextEl },
+      a11y: {
+        prevSlideMessage: "Previous lessons slide",
+        nextSlideMessage: "Next lessons slide",
+      },
+    })
+  );
+})();
 
 const findEventTarget = (eventPath, elementLimit, elementToFind) => {
   let target = null;

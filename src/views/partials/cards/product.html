@@ -1,3 +1,5 @@
+<% const description = obj.description || '' %> <% const author = obj.author ||
+false %>
 <div
   class="card"
   data-card-type="product"
@@ -18,7 +20,8 @@
     <div class="row header">
       <div class="col title">
         <h3><%= title %></h3>
-        <% if(displayType == 'row') { %>
+        <% if((displayType == 'row' || displayType == 'mini') && description !==
+        '') { %>
         <p class="description"><%= description %></p>
         <% } %>
       </div>
@@ -31,10 +34,12 @@
     </div>
 
     <div class="row footer">
+      <% if(author) { %>
       <div class="<%= displayType == 'col' ? 'col-12' : 'col' %>">
         <%= require('../author.html')({photo: author.photo, name: author.name,
         company: author.company}) %>
       </div>
+      <% } %>
 
       <div class="<%= displayType == 'col' ? 'col-12' : 'col' %>">
         <%= require('../rating.html')({value: rating}) %>
