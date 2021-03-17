@@ -41,6 +41,10 @@ module.exports = {
       import: path.join(viewsDir, "ContentDetail/contentDetail.js"),
       dependOn: ["swiper"],
     },
+    lesson: {
+      import: path.join(viewsDir, "Lesson/lesson.js"),
+      dependOn: ["shared", "swiper"],
+    },
   },
 
   module: {
@@ -78,6 +82,13 @@ module.exports = {
         includeEntries: ["swiper", "contentDetail"],
         title: "Sample Demo Course – SLO v2-dev",
         filename: "course/sample-demo-course.html",
+      })
+    ),
+    new HtmlWebpackPlugin(
+      template("Lesson/layout.html", {
+        includeEntries: ["shared", "swiper", "lesson"],
+        title: "Lesson #1 – Sample Demo Course – SLO v2-dev",
+        filename: "course/sample-demo-lesson.html",
       })
     ),
   ],
