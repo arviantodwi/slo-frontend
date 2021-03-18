@@ -3,101 +3,56 @@ import "bootstrap/dist/css/bootstrap.css";
 import "./scss/app.scss";
 
 const MEGA_MENU_CLASSNAME = "mega-menu";
+const MEGA_MENU_WRAP_CLASSNAME = "menu-wrap";
+const MEGA_MENU_LINK_LIST_QUERY = ".menu-wrap ul li";
+const MEGA_MENU_LINK_ACTIVE_CLASSNAME = "active";
 
 const $megaMenu = document.querySelector(`.${MEGA_MENU_CLASSNAME}`);
-const $megaMenuLinkList = $megaMenu.querySelectorAll(".menu-wrap ul li");
+const $megaMenuWrap = $megaMenu.querySelector(`.${MEGA_MENU_WRAP_CLASSNAME}`);
+const $megaMenuLinkList = $megaMenu.querySelectorAll(MEGA_MENU_LINK_LIST_QUERY);
 
-/**
-const onMegaMenuLinkMouseOver = (ev) => {
-  console.log(ev);
-  // ev.stopPropagation();
-  const target = findEventTarget([...ev.path], $megaMenu, "li");
-  if (target === null) {
-    return;
-  }
+const rightPads = [0];
+const bottomPads = [0];
 
-  const submenu = target.querySelector("ul")?.cloneNode(true) ?? null;
+const onMenuListMouseEnter = (ev) => {
+  const target = ev.target;
+  target.classList.add(MEGA_MENU_LINK_ACTIVE_CLASSNAME);
+
+  const submenu = target.querySelector("ul") ?? null;
   if (submenu === null) {
     return;
   }
 
-  $megaMenu.querySelector(".menu-wrap").appendChild(submenu);
+  rightPads.unshift(rightPads[0] + submenu.clientWidth + 1);
+  if (submenu.clientHeight > $megaMenuWrap.clientHeight) {
+    bottomPads.unshift(submenu.clientHeight - $megaMenuWrap.clientHeight);
+  } else {
+    bottomPads.unshift(bottomPads[0]);
+  }
+  $megaMenuWrap.style.paddingRight = `${rightPads[0]}px`;
+  $megaMenuWrap.style.paddingBottom = `${bottomPads[0]}px`;
+  // console.log(rightPads, bottomPads);
 };
 
-const onMegaMenuLinkMouseLeave = (ev) => {
-  const target = findEventTarget([...ev.path], $megaMenu, "li");
-  if (target === null) {
+const onMenuListMouseLeave = (ev) => {
+  const target = ev.target;
+  target.classList.remove(MEGA_MENU_LINK_ACTIVE_CLASSNAME);
+
+  const submenu = target.querySelector("ul") ?? null;
+  if (submenu === null) {
     return;
   }
 
-  const $menuWrap = $megaMenu.querySelector(".menu-wrap");
-  if ($menuWrap.children.length > 1) {
-    $menuWrap.removeChild($menuWrap.lastChild);
-  }
+  rightPads.shift();
+  bottomPads.shift();
+  $megaMenuWrap.style.paddingRight = `${rightPads[0]}px`;
+  $megaMenuWrap.style.paddingBottom = `${bottomPads[0]}px`;
+  // console.log(rightPads, bottomPads);
 };
-*/
 
 (() => {
-  const rightPads = [0];
-  const bottomPads = [0];
-
   $megaMenuLinkList.forEach((list, _) => {
-    list.addEventListener(
-      "mouseenter",
-      (ev) => {
-        const target = ev.target;
-        target.classList.add("active");
-
-        const submenu = target.querySelector("ul") ?? null;
-        if (submenu === null) {
-          return;
-        }
-
-        rightPads.unshift(rightPads[0] + submenu.clientWidth + 1);
-        if (
-          submenu.clientHeight >
-          $megaMenu.querySelector(".menu-wrap").clientHeight
-        ) {
-          bottomPads.unshift(
-            submenu.clientHeight -
-              $megaMenu.querySelector(".menu-wrap").clientHeight
-          );
-        } else {
-          bottomPads.unshift(bottomPads[0]);
-        }
-        $megaMenu.querySelector(
-          ".menu-wrap"
-        ).style.paddingRight = `${rightPads[0]}px`;
-        $megaMenu.querySelector(
-          ".menu-wrap"
-        ).style.paddingBottom = `${bottomPads[0]}px`;
-        console.log(rightPads, bottomPads);
-      },
-      false
-    );
-
-    list.addEventListener(
-      "mouseleave",
-      (ev) => {
-        const target = ev.target;
-        target.classList.remove("active");
-
-        const submenu = target.querySelector("ul") ?? null;
-        if (submenu === null) {
-          return;
-        }
-
-        rightPads.shift();
-        bottomPads.shift();
-        $megaMenu.querySelector(
-          ".menu-wrap"
-        ).style.paddingRight = `${rightPads[0]}px`;
-        $megaMenu.querySelector(
-          ".menu-wrap"
-        ).style.paddingBottom = `${bottomPads[0]}px`;
-        console.log(rightPads, bottomPads);
-      },
-      false
-    );
+    list.addEventListener("mouseenter", onMenuListMouseEnter, false);
+    list.addEventListener("mouseleave", onMenuListMouseLeave, false);
   });
 })();
