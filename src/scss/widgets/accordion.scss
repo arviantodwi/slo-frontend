@@ -1,11 +1,97 @@
+@use '../mixins' as m;
+
+// Custom properties
 .accordion {
-  --item-header-cursor: default;
+  --header-cursor: default;
+  --header-main-color: var(--brand-primary);
+  --toggle-icon-rotate: 0deg;
+  --toggle-order: 99;
+  --content-height: auto;
+  --content-padding-top: 12px;
 
   &-item-header-clickable {
-    --item-header-cursor: pointer;
+    --header-cursor: pointer;
+  }
+  &-toggles-left {
+    --toggle-order: -1;
+  }
+  &-item[data-expanded="false"] {
+    --content-height: 0;
+    --content-padding-top: 0;
+    --toggle-icon-rotate: 180deg;
+    --header-main-color: rgba(46, 43, 69, 0.3);
+  }
+}
+
+.accordion {
+  border: 1px solid rgba(46, 43, 69, 0.1);
+  border-top: 0;
+  border-radius: 0 0 8px 8px;
+
+  &-toggles-left {
+    .accordion-item-header {
+      justify-content: flex-start;
+
+      > .title {
+        margin-left: 9px;
+      }
+
+      > .accordion-toggler {
+        margin-left: -5px;
+      }
+    }
+  }
+}
+
+.accordion-item {
+  padding: 12px;
+
+  > * {
+    margin-left: -12px;
+    margin-right: -12px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  &:not(:last-child) {
+    border-bottom: 1px solid rgba(46, 43, 69, 0.1);
   }
 }
 
 .accordion-item-header {
-  cursor: var(--item-header-cursor);
+  cursor: var(--header-cursor);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: -12px;
+  margin-bottom: -12px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+
+  > .title {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: -0.24px;
+    color: var(--header-main-color);
+  }
+
+  > .accordion-toggler {
+    @include m.button-reset();
+    @include m.inline-svg-icon(24px, var(--header-main-color));
+
+    transform: rotate(var(--toggle-icon-rotate));
+    order: var(--toggle-order);
+    transition: transform 0.1s ease-in;
+  }
+}
+
+.accordion-item-content {
+  transition-property: height, padding-top;
+  transition-duration: 0.125s;
+  transition-timing-function: ease-in;
+  overflow: hidden;
+  height: var(--content-height);
+  padding-top: var(--content-padding-top);
 }
