@@ -1,0 +1,11 @@
+.accordion {
+  --item-header-cursor: default;
+
+  &-item-header-clickable {
+    --item-header-cursor: pointer;
+  }
+}
+
+.accordion-item-header {
+  cursor: var(--item-header-cursor);
+}

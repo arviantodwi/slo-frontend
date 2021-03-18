@@ -35,7 +35,7 @@ module.exports = {
     },
     explore: {
       import: path.join(viewsDir, "Explore/explore.js"),
-      dependOn: ["dom-purify"],
+      dependOn: ["dom-purify", "shared"],
     },
     contentDetail: {
       import: path.join(viewsDir, "ContentDetail/contentDetail.js"),
@@ -72,7 +72,7 @@ module.exports = {
     // Add other HtmlWebpackPlugin view instances like the one below:
     new HtmlWebpackPlugin(
       template("Explore/layout.html", {
-        includeEntries: ["dom-purify", "explore"],
+        includeEntries: ["dom-purify", "shared", "explore"],
         title: "Explore – SLO v2-dev",
         filename: "explore/index.html",
       })
