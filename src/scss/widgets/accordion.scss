@@ -67,6 +67,8 @@
   margin-bottom: -12px;
   padding-top: 12px;
   padding-bottom: 12px;
+  position: relative;
+  z-index: 2;
 
   > .title {
     font-style: normal;
@@ -79,19 +81,19 @@
 
   > .accordion-toggler {
     @include m.button-reset();
-    @include m.inline-svg-icon(24px, var(--header-main-color));
-
+    display: inline-flex;
     transform: rotate(var(--toggle-icon-rotate));
     order: var(--toggle-order);
     transition: transform 0.1s ease-in;
+    @include m.inline-svg-icon(24px, var(--header-main-color));
   }
 }
 
 .accordion-item-content {
-  transition-property: height, padding-top;
-  transition-duration: 0.125s;
-  transition-timing-function: ease-in;
   overflow: hidden;
   height: var(--content-height);
   padding-top: var(--content-padding-top);
+  transition-property: padding-top;
+  transition-duration: 0.125s;
+  transition-timing-function: ease-in;
 }

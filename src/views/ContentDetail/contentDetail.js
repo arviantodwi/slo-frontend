@@ -1,7 +1,14 @@
 // contentDetail.js
 import Swiper, { Navigation, A11y } from "swiper/core";
+import { Accordion } from "../../library/shared";
 
 Swiper.use([Navigation, A11y]);
+
+const CURRICULUM_TOGGLE_ALL_CLASSNAME = "curriculum-accordion-toggle-all";
+
+const $curriculumToggleAll = document.querySelector(
+  `.${CURRICULUM_TOGGLE_ALL_CLASSNAME}`
+);
 
 const carouselElement = (idName) =>
   document.getElementById(idName).querySelector(".swiper-container");
@@ -71,74 +78,36 @@ const findEventTarget = (eventPath, elementLimit, elementToFind) => {
   return target;
 };
 
-class Accordion {
-  constructor(element = null, option = {}) {
-    try {
-      if (element === null) {
-        throw new Error("Accordion element should be defined.");
-      }
-
-      if (typeof element === "string") {
-        const _element = document.querySelector(element);
-        if (!_element) {
-          throw new Error(
-            `Accordion failed to resolve the query selector: ${element}, that being passed in component instantiation.`
-          );
-        }
-
-        element = _element;
-      }
-    } catch (e) {
-      console.error(`${e.name}: ${e.message}`);
-      return;
-    }
-
-    this.$ = element;
-    this.events = this.initCustomEvents();
-    this.toggles = element.querySelectorAll(".accordion-toggler");
-    this.items = element.querySelectorAll(".accordion-item");
-
-    this.init();
-  }
-
-  onToggleClick(ev) {
-    const target = findEventTarget([...ev.path], this.$, "button");
-    if (target === null) {
-      return;
-    }
-
-    const key = target.dataset.key;
-    const expandState = this.items[key].dataset.expanded === "true";
-    this.items[key].dataset.expanded = String(!expandState);
-  }
-
-  initCustomEvents() {
-    const events = {};
-
-    events.toggleclick = new CustomEvent("toggleclick", {
-      bubbles: true,
-      cancelable: true,
-    });
-
-    return events;
-  }
-
-  init() {
-    this.toggles.forEach((toggle, index) => {
-      toggle.dataset.key = index;
-      toggle.addEventListener("toggleclick", this.onToggleClick.bind(this));
-    });
-
-    this.$.addEventListener(
-      "click",
-      (ev) => ev.target.dispatchEvent(this.events.toggleclick),
-      false
-    );
-  }
-}
-
 (() => {
-  const objectives = new Accordion(".objectives");
-  const description = new Accordion(".description");
-  const curriculum = new Accordion(".lessons");
+  const objectives = new Accordion(".objectives-accordion", {
+    allowItemHeaderClick: true,
+  });
+  const description = new Accordion(".description-accordion", {
+    allowItemHeaderClick: true,
+  });
+  const curriculum = new Accordion(".curriculum-accordion", {
+    allowItemHeaderClick: true,
+    togglePosition: "left",
+  });
+
+  $curriculumToggleAll.addEventListener(
+    "click",
+    (ev) => {
+      ev.preventDefault();
+
+      let nextAction =
+        ev.target.dataset.trigger == "expand" ? "collapse" : "expand";
+      if (ev.target.dataset.trigger == "expand") {
+        curriculum.expandAll();
+      } else if (ev.target.dataset.trigger == "collapse") {
+        curriculum.collapseAll();
+      }
+
+      ev.target.dataset.trigger = nextAction;
+      ev.target.innerText = `${nextAction[0].toUpperCase()}${nextAction.substring(
+        1
+      )} all lessons sections`;
+    },
+    false
+  );
 })();

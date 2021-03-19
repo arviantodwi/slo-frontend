@@ -7,23 +7,23 @@
         <span>2 sections</span><span>&nbsp;•&nbsp;</span><span>6 lessons</span
         ><span>&nbsp;•&nbsp;</span><span>2h 1m total length</span>
       </div>
-      <a href="#" class="lessons-sections-toggle"
+      <a href="#" class="curriculum-accordion-toggle-all" data-trigger="expand"
         >Expand all lessons sections</a
       >
     </div>
   </div>
 
-  <div class="lessons accordion">
-    <div class="section accordion-item" data-expanded="true">
-      <div class="section-header">
-        <h3 class="section-title">Introduction</h3>
-        <div class="section-counter">4 lessons</div>
+  <div class="curriculum-accordion accordion">
+    <div class="accordion-item">
+      <div class="accordion-item-header">
+        <h3 class="title">Introduction</h3>
+        <div class="lessons-counter">4 lessons</div>
         <button class="accordion-toggler">
-          <i><%= require('../../images/icons/collapse.svg?inline') %></i>
+          <%= require('../../images/icons/collapse.svg?inline') %>
         </button>
       </div>
 
-      <div class="section-content accordion-item-content">
+      <div class="accordion-item-content">
         <div class="lesson">
           <div class="lesson-status">
             <i><%= require('../../images/icons/play.svg?inline') %></i>
@@ -90,16 +90,16 @@
       </div>
     </div>
 
-    <div class="section accordion-item" data-expanded="false">
-      <div class="section-header">
-        <h3 class="section-title">Vel Egestas de Yoga</h3>
-        <div class="section-counter">2 lessons</div>
+    <div class="accordion-item">
+      <div class="accordion-item-header">
+        <h3 class="title">Vel Egestas de Yoga</h3>
+        <div class="lessons-counter">2 lessons</div>
         <button class="accordion-toggler">
-          <i><%= require('../../images/icons/collapse.svg?inline') %></i>
+          <%= require('../../images/icons/collapse.svg?inline') %>
         </button>
       </div>
 
-      <div class="section-content accordion-item-content">
+      <div class="accordion-item-content">
         <div class="lesson">
           <div class="lesson-status">
             <i><%= require('../../images/icons/play.svg?inline') %></i>

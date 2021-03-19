@@ -39,7 +39,7 @@ module.exports = {
     },
     contentDetail: {
       import: path.join(viewsDir, "ContentDetail/contentDetail.js"),
-      dependOn: ["swiper"],
+      dependOn: ["swiper", "shared"],
     },
     lesson: {
       import: path.join(viewsDir, "Lesson/lesson.js"),
@@ -79,7 +79,7 @@ module.exports = {
     ),
     new HtmlWebpackPlugin(
       template("ContentDetail/layout.html", {
-        includeEntries: ["swiper", "contentDetail"],
+        includeEntries: ["swiper", "shared", "contentDetail"],
         title: "Sample Demo Course – SLO v2-dev",
         filename: "course/sample-demo-course.html",
       })
