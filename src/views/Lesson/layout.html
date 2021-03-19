@@ -13,11 +13,107 @@
           ></iframe>
         </div>
 
-        <div class="description"></div>
+        <div class="summary">
+          <div class="description-accordion accordion">
+            <div class="accordion-item">
+              <div class="accordion-item-header">
+                <div class="title">Lesson #4</div>
+                <div class="section-name">Introduction</div>
+                <button class="accordion-toggler">
+                  <%= require('../../images/icons/collapse.svg?inline') %>
+                </button>
+              </div>
 
-        <div class="notes"></div>
+              <h1>
+                Quis sit id nostrud esse reprehenderit labore deserunt magna.
+              </h1>
 
-        <div class="related"></div>
+              <div class="accordion-item-content">
+                <p>
+                  Anim ut nulla magna laboris do ea ea fugiat incididunt aliqua.
+                  Nisi culpa ipsum irure veniam ullamco nostrud. Eiusmod mollit
+                  deserunt quis aliqua voluptate velit enim aute. Eiusmod
+                  excepteur et laborum sunt adipisicing nostrud cupidatat esse
+                  commodo. Commodo mollit labore exercitation elit nisi eu
+                  irure. Exercitation laborum deserunt proident eiusmod.
+                </p>
+                <p>
+                  Exercitation reprehenderit et non sit magna anim aliquip.
+                  Fugiat minim dolore enim adipisicing anim ea magna fugiat
+                  ipsum ullamco dolor officia. Minim voluptate nulla aute
+                  laboris. Est aliqua ad cillum occaecat sit mollit ex duis
+                  nostrud. Consequat culpa reprehenderit magna velit est
+                  voluptate in pariatur do anim.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <%= require('../partials/author.html')({size: 'medium', photo:
+          'author-6.jpg', name: 'Aydin\ Smith', company: 'TED\ Talk'}) %>
+        </div>
+
+        <div class="notes">
+          <h2>Notes for this lesson</h2>
+          <div class="notes-input">
+            <input type="text" placeholder="Type here to put your notes" />
+          </div>
+          <div class="notes-log"></div>
+        </div>
+
+        <footer class="related">
+          <h2>Related Courses You May Like</h2>
+          <div class="related-courses-wrap row">
+            <div
+              id="related-carousel"
+              class="carousel"
+              data-carousel-type="steps"
+            >
+              <div class="carousel-container swiper-container">
+                <div class="carousel-items swiper-wrapper">
+                  <div class="carousel-item swiper-slide">
+                    <%= require('../partials/cards/product.html')({ title:
+                    "Exercitation\ commodo\ magna\ cillum\ officia\ amet\
+                    mollit\ ullamco\ voluptate\ magna\ non\ id\ ad\ ipsum.",
+                    description: "Exercitation\ commodo\ magna\ cillum\ officia\
+                    amet\ mollit\ ullamco\ voluptate\ magna\ non\ id\ ad\
+                    ipsum.", cover: 'item-cover-1.jpg', rating: 4.55, price:
+                    115.99, displayType: 'mini' }) %>
+                  </div>
+                  <div class="carousel-item swiper-slide">
+                    <%= require('../partials/cards/product.html')({ title:
+                    "Nulla\ Anim\ Sunt\ Labore\ Exercitation\ Labore\ Voluptate\
+                    Commodo\ Excepteur\ Cillum\ Minim", description: "Nulla\
+                    anim\ sunt\ labore\ exercitation\ labore\ voluptate\
+                    commodo\ excepteur\ cillum\ minim", cover:
+                    'item-cover-2.jpg', rating: 4.92, price: 72.45, displayType:
+                    'mini' }) %>
+                  </div>
+                  <div class="carousel-item swiper-slide">
+                    <%= require('../partials/cards/product.html')({ title: "Ea\
+                    Veniam\ Cupidatat\ Ut\ Ad\ Veniam\ Id\ Anim\ Ad\ Enim\
+                    Deserunt\ Dolor\ Nisi\ Esse\ Consectetur", description: "Ea\
+                    veniam\ cupidatat\ ut\ ad\ veniam\ id\ anim\ ad\ enim\
+                    deserunt\ dolor\ nisi\ esse\ consectetur", cover:
+                    'item-cover-3.jpg', rating: 3.23, price: 99, displayType:
+                    'mini' }) %>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="carousel-nav-left d-flex align-items-center justify-content-center"
+              >
+                <%= require('/src/images/icons/arrow-left.svg?inline') %>
+              </div>
+              <div
+                class="carousel-nav-right d-flex align-items-center justify-content-center"
+              >
+                <%= require('/src/images/icons/arrow-right.svg?inline') %>
+              </div>
+              <div class="carousel-dots"></div>
+            </div>
+          </div>
+        </footer>
       </div>
     </div>
   </div>
@@ -166,7 +262,7 @@
 
         <div class="accordion-item">
           <div class="accordion-item-header">
-            <h3 class="title">Introduction</h3>
+            <h3 class="title">Amet Id Quis Eu Duis Deserunt</h3>
             <div class="lessons-counter">4 lessons</div>
             <button class="accordion-toggler">
               <%= require('../../images/icons/collapse.svg?inline') %>
@@ -178,7 +274,7 @@
               <div class="lesson-status">
                 <i><%= require('../../images/icons/play.svg?inline') %></i>
               </div>
-              <div class="lesson-order">#1</div>
+              <div class="lesson-order">#7</div>
               <div class="lesson-detail">
                 <a href="#" class="lesson-title">
                   At Mauris Nisi: Elit Tincidunt Interdum
@@ -196,7 +292,7 @@
               <div class="lesson-status">
                 <i><%= require('../../images/icons/play.svg?inline') %></i>
               </div>
-              <div class="lesson-order">#2</div>
+              <div class="lesson-order">#8</div>
               <div class="lesson-detail">
                 <a href="#" class="lesson-title">
                   Ullamco cillum irure cillum nulla occaecat.
@@ -212,7 +308,7 @@
               <div class="lesson-status">
                 <i><%= require('../../images/icons/play.svg?inline') %></i>
               </div>
-              <div class="lesson-order">#3</div>
+              <div class="lesson-order">#9</div>
               <div class="lesson-detail">
                 <a href="#" class="lesson-title"
                   >Sint velit ut dolore Lorem ea ex.</a
@@ -230,7 +326,7 @@
               <div class="lesson-status">
                 <i><%= require('../../images/icons/play.svg?inline') %></i>
               </div>
-              <div class="lesson-order">#4</div>
+              <div class="lesson-order">#10</div>
               <div class="lesson-detail">
                 <a href="#" class="lesson-title">
                   Quis sit id nostrud esse reprehenderit labore deserunt magna.
