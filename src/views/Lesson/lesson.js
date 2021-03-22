@@ -11,7 +11,9 @@ Swiper.use([Navigation, A11y]);
     initialExpandedItems: "all",
   });
 
-  const description = new Accordion(".description-accordion");
+  const description = new Accordion(".description-accordion", {
+    initialExpandedItems: false,
+  });
 
   const relatedCarousel = (() => {
     const { container, option } = carouselBuilder("related-carousel", _, {

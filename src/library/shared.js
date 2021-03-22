@@ -129,9 +129,10 @@ export class Accordion {
       // When the value is `true`, `initialExpandedItems` must use number value or else this option will not work.
       singleExpandMode: false,
       //
-      // initialExpandedItems: number | number[] | 'all'
+      // initialExpandedItems: number | number[] | 'all' | false
       // Set items that should be expanded when the accordion was executed.
       // When number OR array of number is used as a value, the number must be 0-based index.
+      // False value means all items will be collapsed when init'ed.
       initialExpandedItems: 0,
     };
 
@@ -248,6 +249,8 @@ export class Accordion {
       this.option.initialExpandedItems.toLowerCase() === "all"
     ) {
       this.expandAll();
+    } else if (this.option.initialExpandedItems === false) {
+      this.collapseAll();
     }
   }
 }
