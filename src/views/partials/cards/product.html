@@ -44,9 +44,8 @@ false %>
       <div class="<%= displayType == 'col' ? 'col-12' : 'col' %>">
         <%= require('../rating.html')({value: rating}) %>
 
-        <div class="price">
-          <% if(price > 0) { %>
-          <span>$</span><span><%= price %></span>
+        <div class="price" <%= (price <= 0) ? 'data-is-free="true"' : '' %>> <% if(price > 0) { %> <span>$</span
+          ><span><%= price %></span>
           <% } else if (price <= 0) { %>
           <span>Free</span>
           <% } %>

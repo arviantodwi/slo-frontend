@@ -86,6 +86,12 @@
     .price {
       text-align: right;
 
+      &[data-is-free="true"] {
+        > span {
+          color: var(--brand-green);
+        }
+      }
+
       > span {
         display: inline-block;
         color: #e95244;

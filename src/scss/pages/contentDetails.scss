@@ -124,6 +124,12 @@
       &-price {
         margin-bottom: 12px;
 
+        &[data-is-free="true"] {
+          > span {
+            color: var(--brand-green);
+          }
+        }
+
         > span {
           display: inline-block;
           color: #e95244;
