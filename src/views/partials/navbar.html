@@ -1,6 +1,12 @@
 <header class="container-fluid main-header">
-  <div class="d-flex flex-column-reverse">
-    <nav class="mainbar-wrap d-flex" aria-label="Primary navigation">
+  <div class="header-wrap">
+    <nav class="mainbar-wrap" aria-label="Primary navigation">
+      <div class="mobile-menu">
+        <button>
+          <i><%= require('/src/images/icons/mobile-menu.svg?inline') %></i>
+        </button>
+      </div>
+
       <div class="brand">
         <a href="/">
           <img
@@ -10,43 +16,80 @@
           />
         </a>
       </div>
-      <div class="module d-flex flex-row align-items-center">
+
+      <div class="module">
         <div class="module-dropdown">
-          <a class="d-flex flex-row align-items-center" href="/explore"
+          <a href="/explore"
             ><i><%= require('/src/images/icons/block.svg?inline') %></i
             >Explore</a
           >
-          <%= require('./menu/deepMenu.html')([ { text: 'Business\ Development',
-          sub: [{ text: 'All\ Business\ Development' }, { text: 'Programming',
-          sub: [{ text: 'Python' }, { text: 'JavaScript' }, { text: 'PHP\ &amp;\
-          CodeIgniter' }] }, { text: 'Sales' }, { text: 'Sponsorship' }, { text:
-          'Sales' }, { text: 'Sint\ Nulla\ Quis' }] }, { text: 'Eu\ minim\
-          ipsum' }, { text: 'Id\ enim' }, { text: 'Elit\ adipisicing\
-          excepteur', sub: [{text: 'Non\ Laborum'}, {text: 'Tempor\ Elit'}] } ])
-          %>
+          <!-- prettier-ignore -->
+          <%= require('./menu/deepMenu.html')([{
+            text: 'Business Development',
+            sub: [{
+                text: 'All Business Development'
+              }, {
+                text: 'Programming',
+                sub: [{
+                  text: 'Python'
+                }, {
+                  text: 'JavaScript'
+                }, {
+                  text: 'PHP &amp; CodeIgniter'
+                }]
+              }, {
+                text: 'Sales'
+              }, {
+                text: 'Sponsorship'
+              }, {
+                text: 'Sales'
+              }, {
+                text: 'Sint Nulla Quis'
+              }]
+            }, {
+              text: 'Eu minim ipsum'
+            }, {
+              text: 'Id enim'
+            }, {
+              text: 'Elit adipisicing excepteur',
+              sub: [{
+                text: 'Non Laborum'
+              }, {
+                text: 'Tempor Elit'
+              }]
+            }
+          ])%>
         </div>
       </div>
-      <div class="module d-flex flex-row align-items-center">
+
+      <div class="module">
         <div class="module-search">
-          <a href=""
+          <a href="#"
             ><i><%= require('/src/images/icons/search.svg?inline') %></i></a
           >
         </div>
         <div class="module-cart">
-          <a href=""
+          <a href="#"
             ><i><%= require('/src/images/icons/cart.svg?inline') %></i></a
           >
         </div>
         <div class="module-v-separator"></div>
-        <div class="module-user d-flex flex-row align-items-center">
+        <div class="module-user">
           <i><%= require('/src/images/icons/sign-in.svg?inline') %></i>
-          <a href="">Sign In</a>&nbsp; <span>or</span>&nbsp;
-          <a href="">Register</a>
+          <a href="#">Sign In</a>&nbsp; <span>or</span>&nbsp;
+          <a href="#">Register</a>
+        </div>
+        <div class="module-user-mobile">
+          <a href="#"
+            ><i
+              ><%= require('/src/images/icons/mobile-user.svg?inline') %></i
+            ></a
+          >
         </div>
       </div>
     </nav>
 
-    <div class="secondarybar-wrap d-flex justify-content-between">
+    <div class="secondarybar-wrap">
       <div class="nav-left module-dropdown">
         <a class="d-flex flex-row align-items-center" href="#">
           <small>Channels</small>
