@@ -1,6 +1,6 @@
 <footer class="main-footer">
   <div class="container">
-    <div class="top-wrap d-flex flex-row">
+    <div class="top-wrap">
       <div class="brand">
         <a href="/">
           <img
@@ -11,17 +11,29 @@
       </div>
     </div>
 
-    <div class="links-wrap d-flex flex-row">
-      <%= require('./footerLinks.html')({title: 'About', links: [{text: `About
-      Us`}, {text: `Become an Author`}, {text: 'Schools\ &\ Programs'}, {text:
-      'Help\ &\ FAQs'}]}) %> <%= require('./footerLinks.html')({title: 'Quick\
-      Links', links: [{text: `COVID-19`}, {text: `Return\ to\ Play\
-      Operations`}, {text: 'Sports\ Complexes'}, {text: 'Fan\ Experience'}]}) %>
+    <div class="links-wrap">
+      <!-- prettier-ignore -->
+      <%= require('./footerLinks.html')({
+        title: 'About',
+        links: [
+          { text: 'About Us' },
+          { text: 'Become an Author' },
+          { text: 'Schools & Programs' },
+          { text: 'Help & FAQs' }
+        ]
+      }) %> 
+      <%= require('./footerLinks.html')({
+        title: 'Quick Links',
+        links: [
+          { text: 'COVID-19' },
+          { text: 'Return to Play Operations' },
+          { text: 'Sports Complexes' },
+          { text: 'Fan Experience'}
+        ]
+      }) %>
     </div>
 
-    <div
-      class="bottom-wrap d-flex flex-row justify-content-between align-items-center"
-    >
+    <div class="bottom-wrap">
       <div class="copy">
         Copyright &copy; 2021 Sports Learning Online. All rights reserved.
       </div>

@@ -1,5 +1,10 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+@use '../functions' as *;
+
 .main-footer {
-  background: #2e2b45 url("/src/images/footer-bg.jpg") no-repeat center / 100%;
+  background: var(--brand-primary) url("/src/images/footer-bg.jpg") no-repeat
+    center / 100%;
   background-size: cover;
   position: relative;
 
@@ -13,52 +18,104 @@
     height: 100%;
     background: linear-gradient(
       90deg,
-      #2e2b45 1.45%,
-      rgba(46, 43, 69, 0.75) 100%
+      var(--brand-primary) 1.45%,
+      rgba($brand-primary, 0.75) 100%
     );
     z-index: 1;
   }
 
-  .container {
+  > .container {
     z-index: 2;
     position: relative;
-    padding-top: 36px;
-    padding-bottom: 36px;
+    padding-top: 32px;
+    padding-bottom: 24px;
+
+    @media only screen and (min-width: $breakpoint-tablet) {
+      padding-top: 36px;
+      padding-bottom: 36px;
+    }
   }
 
-  .brand {
-    a {
-      display: inline-block;
+  .top-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 
-      img {
-        height: 72px;
+    @media only screen and (min-width: $breakpoint-tablet) {
+      justify-content: flex-start;
+    }
+
+    .brand {
+      a {
+        display: inline-block;
+
+        img {
+          height: 72px;
+        }
       }
     }
   }
 
   .links-wrap {
-    margin-top: 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 24px;
+
+    @media only screen and (min-width: $breakpoint-tablet) {
+      flex-direction: row;
+      align-items: flex-start;
+      margin-top: 36px;
+    }
 
     .links-col {
-      &:not(:first-child) {
-        margin-left: 66px;
+      margin-bottom: 36px;
+
+      &:first-child {
+        h1 {
+          display: none;
+        }
+      }
+
+      @media only screen and (min-width: $breakpoint-tablet) {
+        margin-bottom: 0;
+
+        &:first-child {
+          h1 {
+            display: block;
+          }
+        }
+
+        &:not(:first-child) {
+          margin-left: 66px;
+        }
       }
 
       h1 {
         font-style: normal;
         font-weight: bold;
-        font-size: 22px;
-        line-height: 28px;
+        font-size: rem(22px);
+        line-height: rem(28px);
         letter-spacing: 0.8px;
-        color: #ffffff;
+        color: var(--brand-white);
         margin-bottom: 12px;
+        text-align: center;
+
+        @media only screen and (min-width: $breakpoint-tablet) {
+          text-align: left;
+        }
       }
+
       ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
+        @include ul-reset;
 
         li {
+          text-align: center;
+
+          @media only screen and (min-width: $breakpoint-tablet) {
+            text-align: left;
+          }
+
           &:not(:last-child) {
             margin-bottom: 16px;
           }
@@ -66,14 +123,14 @@
           a {
             font-style: normal;
             font-weight: normal;
-            font-size: 17px;
-            line-height: 22px;
+            font-size: rem(17px);
+            line-height: rem(22px);
             letter-spacing: -0.408px;
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba($brand-white, 0.8);
             text-decoration: none;
 
             &:hover {
-              color: rgba(255, 255, 255, 1);
+              color: var(--brand-white);
             }
           }
         }
@@ -82,28 +139,40 @@
   }
 
   .bottom-wrap {
-    margin-top: 56px;
+    margin-top: 28px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+
+    @media only screen and (min-width: $breakpoint-tablet) {
+      margin-top: 56px;
+      flex-direction: row;
+      justify-content: space-between;
+    }
 
     .copy {
       font-style: normal;
       font-weight: normal;
-      font-size: 13px;
-      line-height: 18px;
+      font-size: rem(13px);
+      line-height: rem(18px);
       letter-spacing: -0.078px;
-      color: rgba(255, 255, 255, 0.6);
+      color: rgba($brand-white, 0.6);
+      margin-top: 64px;
+      max-width: 254px;
+      text-align: center;
+
+      @media only screen and (min-width: $breakpoint-tablet) {
+        margin-top: 0;
+        max-width: unset;
+        text-align: left;
+      }
     }
 
     .social {
       a {
-        // &:first-child {
-        // }
-        // &:last-child {
-        // }
-
         margin: 0 8px;
         height: 32px;
         width: 32px;
-        left: 1288px;
         text-decoration: none;
 
         svg {
