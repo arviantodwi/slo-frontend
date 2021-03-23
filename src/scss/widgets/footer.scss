@@ -30,7 +30,7 @@
     padding-top: 32px;
     padding-bottom: 24px;
 
-    @media only screen and (min-width: $breakpoint-tablet) {
+    @media only screen and (min-width: $tablet-min) {
       padding-top: 36px;
       padding-bottom: 36px;
     }
@@ -41,7 +41,7 @@
     flex-direction: row;
     justify-content: center;
 
-    @media only screen and (min-width: $breakpoint-tablet) {
+    @media only screen and (min-width: $tablet-min) {
       justify-content: flex-start;
     }
 
@@ -62,7 +62,7 @@
     align-items: center;
     margin-top: 24px;
 
-    @media only screen and (min-width: $breakpoint-tablet) {
+    @media only screen and (min-width: $tablet-min) {
       flex-direction: row;
       align-items: flex-start;
       margin-top: 36px;
@@ -77,7 +77,7 @@
         }
       }
 
-      @media only screen and (min-width: $breakpoint-tablet) {
+      @media only screen and (min-width: $tablet-min) {
         margin-bottom: 0;
 
         &:first-child {
@@ -101,7 +101,7 @@
         margin-bottom: 12px;
         text-align: center;
 
-        @media only screen and (min-width: $breakpoint-tablet) {
+        @media only screen and (min-width: $tablet-min) {
           text-align: left;
         }
       }
@@ -112,7 +112,7 @@
         li {
           text-align: center;
 
-          @media only screen and (min-width: $breakpoint-tablet) {
+          @media only screen and (min-width: $tablet-min) {
             text-align: left;
           }
 
@@ -144,7 +144,7 @@
     flex-direction: column-reverse;
     align-items: center;
 
-    @media only screen and (min-width: $breakpoint-tablet) {
+    @media only screen and (min-width: $tablet-min) {
       margin-top: 56px;
       flex-direction: row;
       justify-content: space-between;
@@ -161,7 +161,7 @@
       max-width: 254px;
       text-align: center;
 
-      @media only screen and (min-width: $breakpoint-tablet) {
+      @media only screen and (min-width: $tablet-min) {
         margin-top: 0;
         max-width: unset;
         text-align: left;
