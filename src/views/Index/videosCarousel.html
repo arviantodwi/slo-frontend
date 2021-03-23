@@ -1,0 +1,56 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <h2 class="dark">Videos</h2>
+      <div class="d-flex flex-md-row flex-sm-column">
+        <p>
+          Aliquip Lorem est esse ad excepteur enim duis quis labore dolore
+          excepteur aliqua ea.
+        </p>
+        <div class="d-flex justify-content-sm-between">
+          <a href="">See all videos</a>
+        </div>
+      </div>
+      <div
+        id="videos-carousel"
+        class="carousel"
+        data-carousel-type="free-scroll"
+      >
+        <div class="carousel-container swiper-container">
+          <div class="carousel-items swiper-wrapper">
+            <div class="carousel-item swiper-slide">
+              <%= require('../partials/cards/video.html')({ title:
+              "Weightlifting\ Series\ &#8211;\ Pound\ for\ Pound", cover:
+              'video-cover-1.jpg', duration: '24:12', views: 128, isPremiere:
+              false }) %>
+            </div>
+            <div class="carousel-item swiper-slide">
+              <%= require('../partials/cards/video.html')({ title:
+              "Weightlifting\ Series\ &#8211;\ Deadlift\ Injury\ Prevention",
+              cover: 'video-cover-2.jpg', duration: '32:01', views: 832,
+              isPremiere: false }) %>
+            </div>
+            <div class="carousel-item swiper-slide">
+              <%= require('../partials/cards/video.html')({ title:
+              "Weightlifting\ Series\ &#8211;\ The\ Benefits\ of\ Lifting\ for",
+              cover: 'video-cover-3.jpg', duration: '24:12', views: '3.1K',
+              isPremiere: false }) %>
+            </div>
+            <div class="carousel-item swiper-slide">
+              <%= require('../partials/cards/video.html')({ title:
+              "Weightlifting\ Interview\ &#8211;\ Kendrick\ Farris", cover:
+              'video-cover-4.jpg', duration: '32:01', views: 999, isPremiere:
+              false }) %>
+            </div>
+            <div class="carousel-item swiper-slide">
+              <%= require('../partials/cards/video.html')({ title:
+              "Weightlifting\ Interview\ &#8211;\ James\ Tatum", cover:
+              'video-cover-5.jpg', duration: '24:12', views: 832, isPremiere:
+              true }) %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -57,7 +57,7 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin(
-      template("Index/index.html", {
+      template("Index/layout.html", {
         includeEntries: [
           "dom-purify",
           "swiper",
@@ -67,6 +67,7 @@ module.exports = {
           "index",
         ],
         title: "SLO v2-dev",
+        filename: "index.html",
       })
     ),
     // Add other HtmlWebpackPlugin view instances like the one below:

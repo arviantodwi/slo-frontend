@@ -1,0 +1,58 @@
+<section class="col-8">
+  <h2 class="light">Podcasts</h2>
+  <p>
+    Labore duis sit labore et pariatur qui sint aliquip sunt commodo
+    exercitation adipisicing.
+  </p>
+  <div class="table" data-table-type="podcast">
+    <div class="table-head">
+      <div class="row-wrap">
+        <div class="row">
+          <div class="col-6">Title</div>
+          <div class="col-3">Podcast by</div>
+          <div class="col">
+            <i><%= require('/src/images/icons/time.svg?inline') %></i>
+          </div>
+          <div class="col text-end">Preview</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="table-body">
+      <% for (const item of items) { %>
+      <div class="row-wrap">
+        <div class="row">
+          <div
+            class="col-6 d-flex flex-row align-self-center align-items-center"
+          >
+            <div class="cover">
+              <img src="<%= require(`/src/images/${item.cover}`) %>" alt="" />
+            </div>
+            <strong><%= item.title %></strong>
+          </div>
+          <div class="col-3 d-flex flex-row align-self-center">
+            <%= item.author %>
+          </div>
+          <div
+            class="col d-flex flex-row align-self-center justify-content-end"
+          >
+            <%= item.duration %>
+          </div>
+          <div
+            class="col d-flex flex-row align-self-center justify-content-end"
+          >
+            <div id="<%= item.id %>" class="podcast-preview">
+              <button class="preview-switch">
+                <i><%= require('../../images/icons/play.svg?inline') %></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% } %>
+    </div>
+  </div>
+  <a href="/explore" class="button button-medium button-secondary"
+    >See all podcasts</a
+  >
+</section>

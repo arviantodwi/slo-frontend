@@ -1,0 +1,168 @@
+<main class="index">
+  <!-- prettier-ignore -->
+  <%= require('./hero.html')({
+    headline: 'Sports business contents now at your fingertips',
+    buttonLabel: 'Explore the Hub'
+  }) %>
+
+  <!-- prettier-ignore -->
+  <%=
+  require('./regularCarousel.html')({
+    id: 'lessons-carousel',
+    title: 'Lessons from the legends',
+    description: 'Magna fugiat consectetur consectetur irure deserunt.',
+    moreButtonLabel: 'See\ all\ lessons\ from\ the\ legends',
+    items: [{
+      title: "Exercitation\ commodo\ magna\ cillum\ officia\ amet\ mollit\ ullamco\ voluptate\ magna\ non\ id\ ad\ ipsum.",
+      cover: 'item-cover-1.jpg',
+      author: {
+        photo: 'author-1.jpg',
+        name: 'Chaya\ Davidson',
+        company: 'Football\ Daily'
+      },
+      rating: 4.55,
+      price: 115.99,
+      displayType: 'col'
+    }, {
+      title: "Nulla\ Anim\ Sunt\ Labore\ Exercitation\ Labore\ Voluptate\ Commodo\ Excepteur\ Cillum\ Minim",
+      cover: 'item-cover-2.jpg',
+      author: {
+        photo: 'author-2.jpg',
+        name: 'Chandni\ Craft',
+        company: 'Global\ Cycling\ Network'
+      },
+      rating: 4.92,
+      price: 72.45,
+      displayType: 'col'
+    }, {
+      title: "Ea\ Veniam\ Cupidatat\ Ut\ Ad\ Veniam\ Id\ Anim\ Ad\ Enim\ Deserunt\ Dolor\ Nisi\ Esse\ Consectetur",
+      cover: 'item-cover-3.jpg',
+      author: {
+        photo: 'author-3.jpg',
+        name: 'Bobbie\ Hudson',
+        company: 'Daily\ Cyclist\ News'
+      },
+      rating: 3.23,
+      price: 99,
+      displayType: 'col'
+    }, {
+      title: "Lorem\ Labore\ Ullamco\ Et\ Est\ Labore\ Dolore\ Cillum",
+      cover: 'item-cover-4.jpg',
+      author: {
+        photo: 'author-4.jpg',
+        name: 'Dylan\ Atkins',
+        company: 'GoSwim'
+      },
+      rating: 1.5,
+      price: 91.44,
+      displayType: 'col'
+    }, {
+      title: "Culpa\ Qui\ Veniam\ Do\ Occaecat\ Eiusmod\ Incididunt\ Nisi\ Dolore\ Labore\ Est\ Officia",
+      cover: 'item-cover-5.jpg',
+      author: {
+        photo: 'author-5.jpg',
+        name: 'Joel\ Becker',
+        company: 'PGA\ Tour'
+      },
+      rating: 5.00,
+      price: 115.99,
+      displayType: 'col'
+    }]
+  }) %>
+
+  <%= require('./videosCarousel.html')() %>
+
+  <div class="container">
+    <div class="row">
+      <!-- prettier-ignore -->
+      <%= require('./podcast.html')({
+        items: [{
+          id: 'podcast-1',
+          cover: 'podcast-cover-1.jpg',
+          title: 'Sint voluptate in qui aute ea laboris veniam.',
+          author: 'Fermentum Integer',
+          duration: '49:11',
+        }, {
+          id: 'podcast-2',
+          cover: 'podcast-cover-2.jpg',
+          title: 'Voluptate dolor qui velit Lorem esse commodo incididunt et.',
+          author: 'Cursus: Volutpat Ac Et',
+          duration: '1:22:32',
+        }, {
+          id: 'podcast-3',
+          cover: 'podcast-cover-2.jpg',
+          title: 'Deserunt duis id duis id est non aute tempor voluptate ut irure cupidatat.',
+          author: 'Cursus: Volutpat Ac Et',
+          duration: '57:00',
+        }]
+      }) %>
+
+      <%= require('./topCategories.html')() %>
+    </div>
+  </div>
+
+  <!-- prettier-ignore -->
+  <%=
+  require('./regularCarousel.html')({
+    id: 'webinars-carousel',
+    title: 'Webinars',
+    description: 'Non esse nostrud cupidatat eu proident eiusmod sunt in aute.',
+    moreButtonLabel: 'See all webinars',
+    items: [{
+      title: "Non\ Elit\ Massa\ Sit:\ Nam\ Orci\ Vestibulum",
+      cover: 'webinar-cover-1.jpg',
+      author: {
+        photo: 'author-1.jpg',
+        name: 'Chaya\ Davidson',
+        company: 'Football\ Daily'
+      },
+      rating: 4.55,
+      price: 23.12,
+      displayType: 'col'
+    }, {
+      title: "Morbi\ Condimentum\ Sed\ Scelerisque\ 2021",
+      cover: 'webinar-cover-2.jpg',
+      author: {
+        photo: 'author-2.jpg',
+        name: 'Chandni\ Craft',
+        company: 'Global\ Cycling\ Network'
+      },
+      rating: 4.18,
+      price: 7.45,
+      displayType: 'col'
+    }, {
+      title: "Tortor\ Lorem\ Purus\ Aenean\ Elementum",
+      cover: 'webinar-cover-3.jpg',
+      author: {
+        photo: 'author-3.jpg',
+        name: ['Bobbie\ Hudson', 'a', 'b'],
+        company: 'Global\ Cycling\ Channel'
+      },
+      rating: 3.77,
+      price: 9.11,
+      displayType: 'col'
+    }, {
+      title: "Sapien\ Nibh\ Nisl\ Adipiscing\ Eget\ Conte",
+      cover: 'webinar-cover-4.jpg',
+      author: {
+        photo: 'author-4.jpg',
+        name: ['Dylan Atkins', 'a', 'b', 'c', 'd'],
+        company: 'GoSwim'
+      },
+      rating: 5.00,
+      price: 91.4,
+      displayType: 'col'
+    }, {
+      title: "Turpis\ Tincidunt\ &#8211;\ Vel\ Diam\ Aliquet\ Internationale",
+      cover: 'webinar-cover-5.jpg',
+      author: {
+        photo: 'author-5.jpg',
+        name: 'Joel\ Becker',
+        company: 'PGA\ Tour'
+      },
+      rating: 0.62,
+      price: 0,
+      displayType: 'col'
+    }]
+  }) %>
+</main>
