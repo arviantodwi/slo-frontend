@@ -1,19 +1,38 @@
+@use '../variables' as *;
 @use "button" as b;
 
 .hero {
   background: url("/src/images/hero-bg.jpg") no-repeat center / 100%;
   background-size: cover;
   height: calc(100vw * 9 / 16);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  @media only screen and (max-width: $mobile-max) and (orientation: portrait) {
+    height: 100vw;
+  }
+
+  .headline-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 
   h1 {
-    top: 374px;
     font-style: normal;
     font-weight: bold;
-    font-size: 52px;
-    line-height: 65px;
+    font-size: 34px;
+    line-height: 42px;
     letter-spacing: 0.374px;
-    color: #ffffff;
-    margin-bottom: 48px;
+    color: var(--brand-white);
+    margin-bottom: 24px;
+
+    @media only screen and (min-width: $tablet-min) {
+      font-size: 52px;
+      line-height: 65px;
+      margin-bottom: 48px;
+    }
   }
 
   .button {

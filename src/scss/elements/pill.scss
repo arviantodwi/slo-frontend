@@ -1,14 +1,23 @@
+@use '../variables' as *;
+@use '../functions' as *;
+
 .pill {
-  background: #ffffff;
-  border: 3px solid rgba(46, 43, 69, 0.1);
+  background: var(--brand-white);
+  border: 3px solid rgba($brand-primary, 0.1);
   border-radius: 22px;
   padding: 9px 21px;
   margin: 4px;
   font-style: normal;
   font-weight: 600;
-  font-size: 15px;
-  line-height: 20px;
-  letter-spacing: -0.24px;
-  color: #2e2b45;
+  font-size: rem(13px);
+  line-height: rem(18px);
+  letter-spacing: -0.08px;
+  color: var(--brand-primary);
   display: inline-block;
+
+  @media only screen and (min-width: $tablet-min) {
+    font-size: rem(15px);
+    line-height: rem(20px);
+    letter-spacing: -0.24px;
+  }
 }

@@ -130,6 +130,20 @@ const onPodcastPreviewButtonClick = (ev) => {
         prevSlideMessage: "Previous lessons slide",
         nextSlideMessage: "Next lessons slide",
       },
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          slidesPerGroup: 1,
+        },
+        768: {
+          slidesPerView: 3,
+          slidesPerGroup: 3,
+        },
+        1199: {
+          slidesPerView: 5,
+          slidesPerGroup: 5,
+        },
+      },
     });
     return new Swiper(container, option);
   })();
@@ -140,6 +154,20 @@ const onPodcastPreviewButtonClick = (ev) => {
         prevSlideMessage: "Previous webinars slide",
         nextSlideMessage: "Next webinars slide",
       },
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          slidesPerGroup: 1,
+        },
+        768: {
+          slidesPerView: 3,
+          slidesPerGroup: 3,
+        },
+        1199: {
+          slidesPerView: 5,
+          slidesPerGroup: 5,
+        },
+      },
     });
     return new Swiper(container, option);
   })();
@@ -148,6 +176,29 @@ const onPodcastPreviewButtonClick = (ev) => {
     const { container, option } = carouselBuilder("videos-carousel", false, {
       loop: false,
       a11y: false,
+      breakpoints: {
+        320: {
+          slidesPerView: 1.5,
+          slidesPerGroup: 1,
+          freeMode: true,
+        },
+        768: {
+          slidesPerView: 2.5,
+          slidesPerGroup: 2,
+          freeMode: true,
+        },
+        992: {
+          slidesPerView: 3.5,
+          slidesPerGroup: 3,
+          freeMode: true,
+        },
+        1199: {
+          slidesPerView: 5,
+          slidesPerGroup: 5,
+          allowSlideNext: false,
+          allowSlidePrev: false,
+        },
+      },
     });
     return new Swiper(container, option);
   })();
