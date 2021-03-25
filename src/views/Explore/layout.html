@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row flex-row-reverse">
       <!-- List / Grid -->
-      <div class="content col-9">
+      <div class="content col-12 col-lg-9">
         <div class="content-topbar" style="display: none">
           <div class="row">
             <div
@@ -47,7 +47,7 @@
           </div>
           <div class="row catalog">
             <% for(let i = 0; i < 4; i += 1) { %>
-            <div class="col-3">
+            <div class="col-6 col-md-3">
               <%= require('../partials/preloaders/productCol.html')() %>
             </div>
             <% } %>

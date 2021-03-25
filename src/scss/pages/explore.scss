@@ -1,4 +1,5 @@
 @use "../mixins" as m;
+@use '../variables' as *;
 
 .explore {
   > * {
@@ -12,8 +13,12 @@
 
     .content {
       position: relative;
-      padding-left: 24px;
-      border-left: 1px solid rgba(46, 43, 69, 0.1);
+
+      @media only screen and (min-width: $tablet-min) and (max-width: $tablet-max) and (orientation: landscape),
+        only screen and (min-width: $desktop-min) {
+        padding-left: 24px;
+        border-left: 1px solid rgba(46, 43, 69, 0.1);
+      }
 
       &-topbar,
       &-catalog {
@@ -50,6 +55,12 @@
 
           .counter > strong {
             font-weight: 600;
+          }
+
+          @media only screen and (max-width: $mobile-max) and (orientation: portrait) {
+            .counter {
+              max-width: 50%;
+            }
           }
 
           .switch {
@@ -116,6 +127,81 @@
           margin-top: 12px;
           margin-bottom: 12px;
         }
+
+        @media only screen and (max-width: $mobile-max) and (orientation: portrait) {
+          .grid-item {
+            &:nth-child(2n - 1) {
+              padding-right: 6px;
+            }
+            &:nth-child(2n) {
+              padding-left: 6px;
+            }
+
+            .author-photo {
+              flex-shrink: 0;
+            }
+
+            .header .title h3 {
+              word-break: break-all;
+            }
+
+            .author-more {
+              display: none;
+            }
+
+            .author-profile {
+              max-width: calc(100% - 34px);
+
+              .name,
+              .company {
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+              }
+            }
+
+            .rating {
+              > i:not(:first-child) {
+                display: none;
+              }
+            }
+          }
+
+          .list-item {
+            .card {
+              padding: 16px 12px;
+              max-height: none;
+            }
+
+            .product-cover {
+              width: 100px;
+              height: 100px;
+              border-radius: 0;
+            }
+
+            .product-summary {
+              padding: 0;
+              padding-left: 12px;
+
+              .footer {
+                flex-direction: column;
+
+                > div[class^="col"] {
+                  &:last-child {
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-top: 12px;
+
+                    .rating {
+                      margin-bottom: 0;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
 
       &-pagination {
@@ -131,6 +217,11 @@
       top: 74px;
       align-self: start;
       padding-bottom: 36px;
+
+      @media only screen and (max-width: $mobile-max),
+        only screen and (min-width: $tablet-min) and (max-width: $tablet-max) and (orientation: portrait) {
+        display: none;
+      }
 
       &-topbar {
         padding-top: 12px;
