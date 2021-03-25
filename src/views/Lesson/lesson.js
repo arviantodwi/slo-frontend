@@ -23,7 +23,30 @@ Swiper.use([Navigation, A11y]);
         prevSlideMessage: "Previous slide",
         nextSlideMessage: "Next slide",
       },
+      breakpoints: {
+        320: {
+          slidesPerGroup: 1,
+          slidesPerView: 1.25,
+        },
+      },
     });
     return new Swiper(container, option);
   })();
+
+  if (window.innerWidth <= 812) {
+    const curriculum = document
+      .querySelector(".desktop-sb-curriculum")
+      .firstElementChild.cloneNode(true);
+
+    document.querySelector(".mobile-curriculum").appendChild(curriculum);
+
+    const mobileCurriculum = new Accordion(
+      ".mobile-curriculum .curriculum-accordion",
+      {
+        togglePosition: "left",
+        allowItemHeaderClick: true,
+        initialExpandedItems: "all",
+      }
+    );
+  }
 })();

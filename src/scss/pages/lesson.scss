@@ -1,3 +1,4 @@
+@use '../variables' as *;
 @use '../mixins' as *;
 @use '../elements/author' as a;
 
@@ -14,7 +15,17 @@
     padding-right: 24px;
     padding-top: 24px;
 
-    > .row > .col {
+    @media only screen and (max-width: $mobile-max),
+      only screen and (max-width: $tablet-max) and (orientation: portrait) {
+      width: 100%;
+      padding-left: 12px;
+      padding-right: 12px;
+      padding-top: 0;
+
+      > .row > .col {
+        padding-left: 0;
+        padding-right: 0;
+      }
     }
   }
 
@@ -146,10 +157,194 @@
     }
   }
 
-  .curriculum {
+  .mobile-curriculum {
+    background-color: var(--brand-white);
+    margin-bottom: 24px;
+    box-shadow: 0px 2px 4px rgba(14, 31, 53, 0.12);
+
+    @media only screen and (min-width: $tablet-max) {
+      display: none;
+    }
+
+    .curriculum-tabs {
+      display: flex;
+      flex-direction: row;
+      overflow: auto;
+
+      .tab {
+        padding: 12px 4px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 21px;
+        letter-spacing: -0.32px;
+        color: rgba(60, 60, 67, 0.6);
+        flex-shrink: 0;
+
+        &.tab-active {
+          font-weight: 600;
+          color: #000;
+        }
+
+        &:not(:last-child) {
+          border-right: 1px solid rgba(46, 43, 69, 0.1);
+        }
+
+        > button {
+          @include button-reset;
+          padding: 12px;
+          font-weight: inherit;
+          color: inherit;
+        }
+      }
+    }
+
+    .curriculum-accordion {
+      border: 0;
+      border-top: 1px solid rgba(46, 43, 69, 0.1);
+      border-radius: 0 0 4px 4px;
+
+      .accordion-item {
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+
+      .accordion-item-header {
+        margin-top: -10px;
+        margin-bottom: -10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background: #f1f2f3;
+        border-bottom: 1px solid rgba(46, 43, 69, 0.1);
+        // Custom sticky
+        position: sticky;
+        top: 63px;
+        z-index: 2;
+
+        > .title {
+          font-weight: 600;
+          color: rgba(60, 60, 67, 0.6);
+          margin-bottom: 0;
+          margin-left: 16px;
+        }
+
+        > .lessons-counter {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 15px;
+          line-height: 20px;
+          letter-spacing: -0.24px;
+          color: rgba(60, 60, 67, 0.6);
+          margin-left: auto;
+        }
+
+        > .accordion-toggler {
+          margin-left: 0;
+          width: 20px;
+          height: 20px;
+
+          svg path {
+            fill: rgba(60, 60, 67, 0.6);
+          }
+        }
+      }
+
+      .accordion-item-content {
+        .lesson {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          padding-top: 12px;
+          background-color: #fff;
+
+          &:not(:last-child) {
+            border-bottom: 1px solid rgba(46, 43, 69, 0.1);
+            padding-bottom: 12px;
+          }
+
+          &.is-playing {
+            .lesson-status i svg path {
+              fill: var(--brand-green);
+            }
+          }
+          &.is-locked {
+            .lesson-status i svg path {
+              fill: var(--brand-orange);
+            }
+          }
+
+          &-status {
+            width: 24px;
+            height: 24px;
+
+            i {
+              @include inline-svg-icon(24px, rgba(#2e2b45, 0.6));
+            }
+          }
+
+          &-order {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 17px;
+            line-height: 22px;
+            letter-spacing: -0.408px;
+            color: #2e2b45;
+            text-align: right;
+            width: 37px;
+            flex-shrink: 0;
+          }
+
+          &-title {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 17px;
+            line-height: 22px;
+            letter-spacing: -0.408px;
+            color: #2e2b45;
+            padding-left: 24px;
+            padding-right: 24px;
+            margin-bottom: 4px;
+          }
+
+          &-detail {
+            display: flex;
+            flex-direction: column;
+          }
+          &-meta {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding-left: 24px;
+            padding-right: 24px;
+          }
+
+          &-duration,
+          &-playing {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 15px;
+            line-height: 20px;
+            letter-spacing: -0.24px;
+            color: rgba(60, 60, 67, 0.6);
+            margin-left: 12px;
+          }
+        }
+      }
+    }
   }
 
   .related {
+    @media only screen and (max-width: $mobile-max),
+      only screen and (max-width: $tablet-max) and (orientation: portrait) {
+      padding-left: 12px;
+      padding-right: 12px;
+
+      .carousel-container {
+        padding-left: 12px;
+        padding-right: 12px;
+      }
+    }
+
     > h2 {
       font-style: normal;
       font-weight: 600;
@@ -167,6 +362,11 @@
     flex-shrink: 0;
     max-width: 430px;
     border-left: 1px solid rgba(46, 43, 69, 0.16);
+
+    @media only screen and (max-width: $mobile-max),
+      only screen and (max-width: $tablet-max) {
+      display: none;
+    }
 
     .curriculum-tabs {
       display: flex;
