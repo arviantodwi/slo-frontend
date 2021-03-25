@@ -8,6 +8,10 @@
   background-size: cover;
   position: relative;
 
+  @media only screen and (max-width: $mobile-max) and (orientation: portrait) {
+    z-index: 0;
+  }
+
   &::before {
     content: "";
     position: absolute;

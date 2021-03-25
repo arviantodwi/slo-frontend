@@ -36,6 +36,16 @@ const lessonsCarousel = (() => {
         prevSlideMessage: "Previous lessons slide",
         nextSlideMessage: "Next lessons slide",
       },
+      breakpoints: {
+        320: {
+          slidesPerGroup: 1,
+          slidesPerView: 1,
+        },
+        768: {
+          slidesPerGroup: 1,
+          slidesPerView: 2.5,
+        },
+      },
     })
   );
 })();
@@ -53,6 +63,17 @@ const relatedCarousel = (() => {
       a11y: {
         prevSlideMessage: "Previous lessons slide",
         nextSlideMessage: "Next lessons slide",
+      },
+      breakpoints: {
+        320: {
+          slidesPerGroup: 1,
+          slidesPerView: 1.25,
+          centeredSlides: true,
+        },
+        768: {
+          slidesPerGroup: 3,
+          slidesPerView: 3,
+        },
       },
     })
   );
