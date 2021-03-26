@@ -26,5 +26,7 @@ htmlWebpackPlugin.options.title || 'Webpack Boilerplate | Basic Static Website';
       require(`./views/${content}`)() %> <%=
       require('./views/partials/footer.html')() %>
     </div>
+
+    <%= require('./views/partials/mobileSidenav.html')() %>
   </body>
 </html>

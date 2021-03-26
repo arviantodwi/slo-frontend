@@ -1,0 +1,130 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.mobile-sidenav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 50;
+
+  &-hidden {
+    display: none;
+
+    .sn-dimmer {
+      opacity: 0 !important;
+    }
+
+    .snmenu {
+      &-explore {
+        transform: translateX(-350px) !important;
+      }
+      &-user {
+        transform: translateX(350px) !important;
+      }
+    }
+  }
+
+  @media only screen {
+    // @media (max-width: $mobile-max),
+    //   (min-width: $tablet-min) and (max-width: $tablet-max) {
+    // }
+    @media (min-width: $desktop-min) {
+      display: none !important;
+    }
+  }
+
+  .sn-dimmer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($brand-primary, 0.9);
+    opacity: 1;
+    transition: opacity 0.125s ease-in;
+  }
+
+  .snmenu {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    max-width: 350px;
+    height: 100%;
+    overflow: auto;
+    background-color: var(--brand-white);
+    transform: translateX(0);
+    transition: transform 0.125s ease-in;
+
+    &-wrap {
+      padding: 24px;
+    }
+
+    &-close {
+      position: absolute;
+      right: 16px;
+      top: 19px;
+      @include button-reset;
+      @include inline-svg-icon(32px, var(--brand-primary));
+    }
+
+    &-header {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 17px;
+      line-height: 22px;
+      letter-spacing: -0.408px;
+      color: var(--brand-primary);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 14px;
+
+      > i {
+        @include inline-svg-icon(20px, var(--brand-primary));
+        margin-right: 8px;
+      }
+    }
+
+    &-list {
+      @include ul-reset;
+
+      > li {
+        > a {
+          padding-top: 10px;
+          padding-bottom: 10px;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+
+          > span {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 21px;
+            letter-spacing: -0.32px;
+            color: var(--brand-primary);
+          }
+
+          > i {
+            @include inline-svg-icon(16px, var(--brand-primary));
+          }
+        }
+      }
+    }
+
+    &-explore {
+      left: 0;
+    }
+
+    &-user {
+      right: 0;
+    }
+
+    &-inactive {
+      display: none;
+    }
+  }
+}

@@ -2,14 +2,23 @@
 import "bootstrap/dist/css/bootstrap.css";
 import "./scss/app.scss";
 
+const BODY_NOSCROLL_CLASSNAME = "no-scroll";
 const MEGA_MENU_CLASSNAME = "mega-menu";
 const MEGA_MENU_WRAP_CLASSNAME = "menu-wrap";
 const MEGA_MENU_LINK_LIST_QUERY = ".menu-wrap ul li";
 const MEGA_MENU_LINK_ACTIVE_CLASSNAME = "active";
+const MOBILE_MENU_CLASSNAME = "mobile-menu";
+const MOBILE_SIDENAV_CLASSNAME = "mobile-sidenav";
+const MOBILE_SIDENAV_HIDDEN_CLASSNAME = "mobile-sidenav-hidden";
+const MOBILE_SIDENAV_CLOSE_BUTTON_CLASSNAME = "snmenu-close";
+const MOBILE_USER_CLASSNAME = "module-user-mobile";
 
 const $megaMenu = document.querySelector(`.${MEGA_MENU_CLASSNAME}`);
 const $megaMenuWrap = $megaMenu.querySelector(`.${MEGA_MENU_WRAP_CLASSNAME}`);
 const $megaMenuLinkList = $megaMenu.querySelectorAll(MEGA_MENU_LINK_LIST_QUERY);
+const $mobileMenuButton = document.querySelector(`.${MOBILE_MENU_CLASSNAME}`);
+const $mobileSideNav = document.querySelector(`.${MOBILE_SIDENAV_CLASSNAME}`);
+const $mobileUserButton = document.querySelector(`.${MOBILE_USER_CLASSNAME}`);
 
 const rightPads = [0];
 const bottomPads = [0];
@@ -50,9 +59,63 @@ const onMenuListMouseLeave = (ev) => {
   // console.log(rightPads, bottomPads);
 };
 
+const onMobileMenuButtonClick = (ev, navType) => {
+  if (window.innerWidth >= 992) {
+    return;
+  }
+  if (navType != "explore" && navType != "user") {
+    return;
+  }
+
+  document.body.classList.add(BODY_NOSCROLL_CLASSNAME);
+  $mobileSideNav.style.display = "block";
+  $mobileSideNav
+    .querySelector(`.snmenu-${navType}`)
+    .classList.remove("snmenu-inactive");
+
+  window.setTimeout(() => {
+    $mobileSideNav.classList.remove(MOBILE_SIDENAV_HIDDEN_CLASSNAME);
+  }, 10);
+};
+
+const onSidenavCloseButtonClick = (ev) => {
+  if (window.innerWidth >= 992) {
+    return;
+  }
+  if (!ev.target.closest(`.${MOBILE_SIDENAV_CLOSE_BUTTON_CLASSNAME}`)) {
+    return;
+  }
+
+  const activeNav =
+    ev.target.closest(".snmenu-explore") || ev.target.closest(".snmenu-user");
+
+  $mobileSideNav.classList.add(MOBILE_SIDENAV_HIDDEN_CLASSNAME);
+  window.setTimeout(() => {
+    $mobileSideNav.style.display = null;
+    activeNav.classList.add("snmenu-inactive");
+    document.body.classList.remove(BODY_NOSCROLL_CLASSNAME);
+  }, 125);
+};
+
 (() => {
   $megaMenuLinkList.forEach((list, _) => {
     list.addEventListener("mouseenter", onMenuListMouseEnter, false);
     list.addEventListener("mouseleave", onMenuListMouseLeave, false);
   });
+
+  $mobileMenuButton.addEventListener(
+    "click",
+    function (ev) {
+      onMobileMenuButtonClick(ev, "explore");
+    },
+    false
+  );
+  $mobileUserButton.addEventListener(
+    "click",
+    function (ev) {
+      onMobileMenuButtonClick(ev, "user");
+    },
+    false
+  );
+  $mobileSideNav.addEventListener("click", onSidenavCloseButtonClick, false);
 })();
