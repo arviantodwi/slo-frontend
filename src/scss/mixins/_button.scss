@@ -1,0 +1,87 @@
+@mixin size($size) {
+  $height-small: 34px;
+  $height-medium: 46px;
+  $height-large: 58px;
+  $text-small: (
+    "font-weight": normal,
+    "font-size": 13px,
+    "line-height": 18px,
+    "letter-spacing": -0.078px,
+  );
+  $text-medium: (
+    "font-weight": 600,
+    "font-size": 16px,
+    "line-height": 21px,
+    "letter-spacing": -0.32px,
+  );
+  $text-large: (
+    "font-weight": 600,
+    "font-size": 20px,
+    "line-height": 24px,
+    "letter-spacing": 0.75px,
+  );
+
+  @if $size == "small" {
+    height: $height-small;
+    padding: 8px 12px;
+    @each $property, $value in $text-small {
+      #{$property}: #{$value};
+    }
+  } @else if $size == "medium" {
+    height: $height-medium;
+    padding: 13px 16px 12px;
+    @each $property, $value in $text-medium {
+      #{$property}: #{$value};
+    }
+  } @else if $size == "large" {
+    height: $height-large;
+    padding: 17px 24px;
+    @each $property, $value in $text-large {
+      #{$property}: #{$value};
+    }
+  } @else {
+    @error ('Property #{$size} is not defined! It must be either "small", "medium" or "large"');
+  }
+}
+
+@mixin color($color) {
+  $primary-button-color: var(--brand-primary);
+  $primary-button-text-color: var(--brand-white);
+  $secondary-button-color: var(--brand-secondary);
+  $secondary-button-text-color: var(--brand-primary);
+
+  @if $color == "primary" {
+    background-color: $primary-button-color;
+    color: $primary-button-text-color;
+    &:hover {
+      background-color: $secondary-button-color;
+      color: $secondary-button-text-color;
+    }
+  } @else if $color == "secondary" {
+    background-color: $secondary-button-color;
+    color: $secondary-button-text-color;
+    &:hover {
+      background-color: $primary-button-color;
+      color: var(--brand-white);
+    }
+  } @else {
+    @error ('Property #{$color} is not defined! It must be either "primary" or "secondary"');
+  }
+}
+
+@mixin base() {
+  @include reset;
+
+  display: inline-block;
+  border-radius: 4px;
+  font-style: normal;
+  text-align: center;
+  transition-property: background-color, color;
+  transition-duration: 0.125s;
+}
+
+@mixin reset() {
+  background: none;
+  border: 0;
+  padding: 0;
+}

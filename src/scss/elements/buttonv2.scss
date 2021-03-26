@@ -1,0 +1,22 @@
+@use '../mixins/button' as button;
+
+.button {
+  @include button.base();
+
+  &-small {
+    @include button.size("small");
+  }
+  &-medium {
+    @include button.size("medium");
+  }
+  &-large {
+    @include button.size("large");
+  }
+
+  &-primary {
+    @include button.color("primary");
+  }
+  &-secondary {
+    @include button.color("secondary");
+  }
+}

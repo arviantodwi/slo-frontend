@@ -1,41 +1,76 @@
 @use '../variables' as *;
-@use "button" as b;
 
 .hero {
-  background: url("/src/images/hero-bg.jpg") no-repeat center / 100%;
-  background-size: cover;
-  height: calc(100vw * 9 / 16);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  .ratio {
+    &::before {
+      width: 0;
+      flex: 0 0 auto;
+    }
 
-  @media only screen and (max-width: $mobile-max) and (orientation: portrait) {
-    height: 100vw;
-  }
+    @media only screen {
+      @media (orientation: portrait) {
+        @media (max-width: $mobile-max) {
+          &.ratio-mobile-1x1::before {
+            padding-top: 100vw;
+          }
+        }
 
-  .headline-wrap {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  h1 {
-    font-style: normal;
-    font-weight: bold;
-    font-size: 34px;
-    line-height: 42px;
-    letter-spacing: 0.374px;
-    color: var(--brand-white);
-    margin-bottom: 24px;
-
-    @media only screen and (min-width: $tablet-min) {
-      font-size: 52px;
-      line-height: 65px;
-      margin-bottom: 48px;
+        @media (min-width: $tablet-min) and (max-width: $tablet-max) {
+          &.ratio-tablet-4x3::before {
+            padding-top: calc(3 / 4 * 100%);
+          }
+        }
+      }
+      @media (min-width: $xwide-min) {
+        &.ratio::before {
+          padding-top: 767px;
+        }
+      }
     }
   }
 
-  .button {
-    @include b.button("large", "secondary");
+  &-wrap {
+    display: flex;
+    flex-direction: row;
+
+    > img {
+      z-index: 1;
+    }
+
+    > .container {
+      position: static;
+      top: initial;
+      left: initial;
+      z-index: 2;
+      height: auto;
+      display: flex;
+      flex: 0 0 auto;
+      align-items: center;
+    }
+  }
+
+  &-headline {
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 34px;
+      line-height: 42px;
+      letter-spacing: 0.374px;
+      color: var(--brand-white);
+      margin-bottom: 24px;
+
+      @media only screen and (min-width: $tablet-min) {
+        font-size: 52px;
+        line-height: 65px;
+        margin-bottom: 48px;
+      }
+    }
+
+    .button {
+      align-self: flex-start;
+    }
   }
 }
