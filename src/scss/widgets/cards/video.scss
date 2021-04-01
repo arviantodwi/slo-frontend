@@ -3,6 +3,15 @@
     border-radius: 24px 24px 0 0;
     overflow: hidden;
 
+    > img {
+      top: 50%;
+      left: 50%;
+      height: 100%;
+      min-width: 100%;
+      width: auto;
+      transform: translate(-50%, -50%);
+    }
+
     .icon-play {
       width: 64px;
       height: 64px;
