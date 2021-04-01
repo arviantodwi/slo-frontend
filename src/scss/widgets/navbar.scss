@@ -133,6 +133,7 @@
 
           &:hover {
             font-weight: 600;
+            // letter-spacing: -0.233px;
           }
         }
 
@@ -227,6 +228,11 @@
       }
 
       @media only screen and (min-width: $tablet-min) {
+        margin-left: unset;
+        margin-right: 24px;
+      }
+
+      @media only screen and (min-width: $xwide-min) {
         margin-left: unset;
         margin-right: 48px;
       }
@@ -384,6 +390,68 @@
 
       &-search {
         margin: 0 16px;
+        position: relative;
+
+        > button {
+          @include m.button-reset;
+        }
+
+        .search-field {
+          position: absolute;
+          top: -7px;
+          right: 0;
+          background-color: var(--brand-white);
+          display: none;
+
+          @media only screen and (max-width: $tablet-max) {
+            position: fixed;
+            top: 64px;
+            left: 0;
+            width: 100vw;
+            padding: 4px 12px;
+            box-shadow: 0px 0px 2px rgba(14, 31, 53, 0.12);
+          }
+
+          &.active {
+            display: block;
+          }
+
+          input[type="text"] {
+            height: 43px;
+            width: 350px;
+            background-color: rgba(46, 43, 69, 0.06);
+            border-radius: 6px;
+            border: 0;
+            padding: 10px;
+            padding-right: 40px;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 21px;
+            letter-spacing: -0.32px;
+
+            @media only screen and (max-width: $tablet-max) {
+              width: 100%;
+            }
+          }
+
+          button {
+            @include m.button-reset;
+            position: absolute;
+            top: 7px;
+            right: 7px;
+            display: inline-flex;
+
+            @media only screen and (max-width: $tablet-max) {
+              top: 12px;
+              right: 18px;
+            }
+
+            i {
+              @include m.inline-svg-icon(28px, var(--brand-primary));
+            }
+          }
+        }
       }
 
       &-cart {

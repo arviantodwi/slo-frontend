@@ -64,9 +64,18 @@
 
       <div class="module">
         <div class="module-search">
-          <a href="#"
-            ><i><%= require('/src/images/icons/search.svg?inline') %></i></a
-          >
+          <button type="button">
+            <i><%= require('/src/images/icons/search.svg?inline') %></i>
+          </button>
+
+          <div class="search-field">
+            <form action="/" method="GET">
+              <input name="search" type="text" placeholder="Search" />
+              <button type="button">
+                <i><%= require('/src/images/icons/close.svg?inline') %></i>
+              </button>
+            </form>
+          </div>
         </div>
         <div class="module-cart">
           <a href="#"

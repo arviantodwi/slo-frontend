@@ -12,6 +12,9 @@ const MOBILE_SIDENAV_CLASSNAME = "mobile-sidenav";
 const MOBILE_SIDENAV_HIDDEN_CLASSNAME = "mobile-sidenav-hidden";
 const MOBILE_SIDENAV_CLOSE_BUTTON_CLASSNAME = "snmenu-close";
 const MOBILE_USER_CLASSNAME = "module-user-mobile";
+const MODULE_SEARCH_BUTTON_QUERY = ".module-search > button";
+const MODULE_SEARCH_FIELD_QUERY = ".module-search > .search-field";
+const MODULE_SEARCH_CLOSE_QUERY = ".module-search > .search-field button";
 
 const $megaMenu = document.querySelector(`.${MEGA_MENU_CLASSNAME}`);
 const $megaMenuWrap = $megaMenu.querySelector(`.${MEGA_MENU_WRAP_CLASSNAME}`);
@@ -19,6 +22,11 @@ const $megaMenuLinkList = $megaMenu.querySelectorAll(MEGA_MENU_LINK_LIST_QUERY);
 const $mobileMenuButton = document.querySelector(`.${MOBILE_MENU_CLASSNAME}`);
 const $mobileSideNav = document.querySelector(`.${MOBILE_SIDENAV_CLASSNAME}`);
 const $mobileUserButton = document.querySelector(`.${MOBILE_USER_CLASSNAME}`);
+const $moduleSearchButton = document.querySelector(MODULE_SEARCH_BUTTON_QUERY);
+const $moduleSearchField = document.querySelector(MODULE_SEARCH_FIELD_QUERY);
+const $moduleSearchCloseQuery = document.querySelector(
+  MODULE_SEARCH_CLOSE_QUERY
+);
 
 const rightPads = [0];
 const bottomPads = [0];
@@ -97,6 +105,19 @@ const onSidenavCloseButtonClick = (ev) => {
   }, 125);
 };
 
+const onSearchCloseButtonClick = () => {
+  $moduleSearchField.classList.remove("active");
+};
+
+const onModuleSearchButtonClick = () => {
+  if ($moduleSearchField.classList.contains("active")) {
+    onSearchCloseButtonClick();
+    return;
+  }
+
+  $moduleSearchField.classList.add("active");
+};
+
 (() => {
   $megaMenuLinkList.forEach((list, _) => {
     list.addEventListener("mouseenter", onMenuListMouseEnter, false);
@@ -118,4 +139,14 @@ const onSidenavCloseButtonClick = (ev) => {
     false
   );
   $mobileSideNav.addEventListener("click", onSidenavCloseButtonClick, false);
+  $moduleSearchButton.addEventListener(
+    "click",
+    onModuleSearchButtonClick,
+    false
+  );
+  $moduleSearchCloseQuery.addEventListener(
+    "click",
+    onSearchCloseButtonClick,
+    false
+  );
 })();
