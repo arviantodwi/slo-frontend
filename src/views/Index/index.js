@@ -173,30 +173,23 @@ const onPodcastPreviewButtonClick = (ev) => {
   })();
 
   const videosCarousel = (() => {
-    const { container, option } = carouselBuilder("videos-carousel", false, {
-      loop: false,
-      a11y: false,
+    const { container, option } = carouselBuilder("videos-carousel", _, {
+      a11y: {
+        prevSlideMessage: "Previous videos slide",
+        nextSlideMessage: "Next videos slide",
+      },
       breakpoints: {
         320: {
-          slidesPerView: 1.5,
+          slidesPerView: 1,
           slidesPerGroup: 1,
-          freeMode: true,
         },
         768: {
-          slidesPerView: 2.5,
-          slidesPerGroup: 2,
-          freeMode: true,
-        },
-        992: {
-          slidesPerView: 3.5,
+          slidesPerView: 3,
           slidesPerGroup: 3,
-          freeMode: true,
         },
         1199: {
           slidesPerView: 5,
           slidesPerGroup: 5,
-          allowSlideNext: false,
-          allowSlidePrev: false,
         },
       },
     });

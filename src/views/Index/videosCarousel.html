@@ -11,11 +11,7 @@
           <a href="">See all videos</a>
         </div>
       </div>
-      <div
-        id="videos-carousel"
-        class="carousel"
-        data-carousel-type="free-scroll"
-      >
+      <div id="videos-carousel" class="carousel" data-carousel-type="steps">
         <div class="carousel-container swiper-container">
           <div class="carousel-items swiper-wrapper">
             <div class="carousel-item swiper-slide">
@@ -49,6 +45,16 @@
               true }) %>
             </div>
           </div>
+        </div>
+        <div
+          class="carousel-nav-left d-flex align-items-center justify-content-center"
+        >
+          <%= require('/src/images/icons/arrow-left.svg?inline') %>
+        </div>
+        <div
+          class="carousel-nav-right d-flex align-items-center justify-content-center"
+        >
+          <%= require('/src/images/icons/arrow-right.svg?inline') %>
         </div>
       </div>
     </div>
