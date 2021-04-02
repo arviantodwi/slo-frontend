@@ -57,7 +57,10 @@
         <div class="notes">
           <h2>Notes for this lesson</h2>
           <div class="notes-input">
-            <input type="text" placeholder="Type here to put your notes" />
+            <textarea
+              rows="3"
+              placeholder="Type here to put your notes"
+            ></textarea>
           </div>
           <div class="notes-log"></div>
         </div>
@@ -81,7 +84,7 @@
                     description: "Exercitation\ commodo\ magna\ cillum\ officia\
                     amet\ mollit\ ullamco\ voluptate\ magna\ non\ id\ ad\
                     ipsum.", cover: 'item-cover-1.jpg', rating: 4.55, price:
-                    115.99, displayType: 'mini' }) %>
+                    115.99, displayType: 'col' }) %>
                   </div>
                   <div class="carousel-item swiper-slide">
                     <%= require('../partials/cards/product.html')({ title:
@@ -90,7 +93,7 @@
                     anim\ sunt\ labore\ exercitation\ labore\ voluptate\
                     commodo\ excepteur\ cillum\ minim", cover:
                     'item-cover-2.jpg', rating: 4.92, price: 72.45, displayType:
-                    'mini' }) %>
+                    'col' }) %>
                   </div>
                   <div class="carousel-item swiper-slide">
                     <%= require('../partials/cards/product.html')({ title: "Ea\
@@ -99,7 +102,13 @@
                     veniam\ cupidatat\ ut\ ad\ veniam\ id\ anim\ ad\ enim\
                     deserunt\ dolor\ nisi\ esse\ consectetur", cover:
                     'item-cover-3.jpg', rating: 3.23, price: 99, displayType:
-                    'mini' }) %>
+                    'col' }) %>
+                  </div>
+                  <div class="carousel-item swiper-slide">
+                    <%= require('../partials/cards/product.html')({ title:
+                    "Lorem\ Labore\ Ullamco\ Et\ Est\ Labore\ Dolore\ Cillum",
+                    cover: 'item-cover-4.jpg', rating: 1.5, price: 91.44,
+                    displayType: 'col' }) %>
                   </div>
                 </div>
               </div>
