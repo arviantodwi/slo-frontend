@@ -473,6 +473,7 @@
             flex-direction: row;
             align-items: center;
             padding-top: 12px;
+            background-color: var(--brand-white);
 
             &:not(:last-child) {
               border-bottom: 1px solid rgba(46, 43, 69, 0.1);
@@ -507,7 +508,9 @@
               letter-spacing: -0.408px;
               color: #2e2b45;
               text-align: right;
+              max-width: 37px;
               width: 37px;
+              flex: 1 0 auto;
             }
 
             &-title {
