@@ -8,7 +8,7 @@ Swiper.use([Navigation, A11y]);
   const curriculum = new Accordion(".curriculum-accordion", {
     togglePosition: "left",
     allowItemHeaderClick: true,
-    initialExpandedItems: "all",
+    initialExpandedItems: 0,
   });
 
   const description = new Accordion(".description-accordion", {
@@ -45,7 +45,7 @@ Swiper.use([Navigation, A11y]);
       {
         togglePosition: "left",
         allowItemHeaderClick: true,
-        initialExpandedItems: "all",
+        initialExpandedItems: 0,
       }
     );
   }
