@@ -134,17 +134,17 @@
     <div class="curriculum-wrap">
       <div class="curriculum-tabs">
         <div class="tab tab-active">
-          <button>Course Curriculum</button>
+          <button data-tab-index="0">Course Curriculum</button>
         </div>
         <div class="tab">
-          <button>Supporting Documents</button>
+          <button data-tab-index="1">Supporting Documents</button>
         </div>
         <div class="tab">
-          <button>About Course</button>
+          <button data-tab-index="2">About Course</button>
         </div>
       </div>
 
-      <div class="curriculum-accordion accordion">
+      <div id="tab-0" class="curriculum-accordion accordion">
         <div class="accordion-item">
           <div class="accordion-item-header">
             <h3 class="title">Introduction</h3>
@@ -350,6 +350,62 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div
+        id="tab-1"
+        class="curriculum-supporting-documents tab-content-hidden"
+      >
+        <ul>
+          <li class="attachment">
+            <div class="attachment-icon">
+              <%= require('../../images/file-video.svg?inline') %>
+            </div>
+            <div class="attachment-detail">
+              <div>consequat-rhoncus-auctor.mov</div>
+              <div>Video</div>
+            </div>
+          </li>
+          <li class="attachment">
+            <div class="attachment-icon">
+              <%= require('../../images/file-audio.svg?inline') %>
+            </div>
+            <div class="attachment-detail">
+              <div>consequat-rhoncus-auctor.wav</div>
+              <div>Audio</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div id="tab-2" class="curriculum-about-course tab-content-hidden">
+        <div class="about-course-wrap">
+          <p>
+            Velit in ridiculus sed netus. Et sit pharetra sit quam est nisi
+            nunc. Enim, scelerisque mattis sagittis pretium, elit. Felis lacus
+            nulla dui sed mauris. Sed faucibus egestas vitae phasellus viverra
+            pulvinar. Tincidunt tortor cum libero, donec.
+          </p>
+          <p>
+            Diam enim semper lacus, gravida. Pellentesque tellus scelerisque
+            ornare nisl. Scelerisque nulla risus, molestie amet, vitae dolor
+            sed.
+          </p>
+          <p>
+            Pellentesque nulla felis sagittis eget orci facilisis at proin.
+            Urna, turpis pellentesque non massa massa lectus elit tellus. Purus
+            dictum id dis tristique quis amet odio ac, feugiat. Eu pharetra, et
+            id diam gravida molestie. Augue vestibulum, amet nunc laoreet
+            elementum nulla in.
+          </p>
+          <p>
+            Pulvinar habitasse integer massa aliquam feugiat augue sagittis
+            senectus quisque. Odio mattis tincidunt maecenas duis vel blandit.
+            Sed sed dictum neque, sit convallis sagittis etiam. Et placerat
+            habitant vitae sed consectetur nisl aliquam, massa. Risus vestibulum
+            amet lacus.
+          </p>
         </div>
       </div>
     </div>

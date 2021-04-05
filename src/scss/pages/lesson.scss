@@ -2,6 +2,78 @@
 @use '../mixins' as *;
 @use '../elements/author' as a;
 
+@mixin supporting-documents() {
+  .curriculum-supporting-documents {
+    border-top: 1px solid rgba(46, 43, 69, 0.1);
+
+    ul {
+      @include ul-reset;
+      padding-left: 12px;
+      padding-right: 12px;
+
+      .attachment {
+        border-bottom: 1px solid rgba(46, 43, 69, 0.1);
+        padding-top: 16px;
+        padding-bottom: 16px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding-left: 4px;
+        padding-right: 4px;
+
+        &-icon {
+          flex: 0 0 0%;
+        }
+
+        &-detail {
+          flex: 1 0 0%;
+          padding-left: 16px;
+
+          > div {
+            font-style: normal;
+            font-weight: normal;
+
+            &:first-child {
+              font-size: 17px;
+              line-height: 22px;
+              letter-spacing: -0.408px;
+              color: var(--brand-primary);
+            }
+
+            &:last-child {
+              font-size: 15px;
+              line-height: 20px;
+              letter-spacing: -0.24px;
+              color: rgba(60, 60, 67, 0.6);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin about-course() {
+  .curriculum-about-course {
+    border-top: 1px solid rgba(46, 43, 69, 0.1);
+    padding-top: 16px;
+
+    .about-course-wrap {
+      padding-left: 16px;
+      padding-right: 16px;
+
+      > p {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 17px;
+        line-height: 25px;
+        letter-spacing: -0.408px;
+        color: var(--brand-primary);
+      }
+    }
+  }
+}
+
 .lesson {
   display: flex;
   flex-direction: row;
@@ -229,6 +301,10 @@
       }
     }
 
+    .tab-content-hidden {
+      display: none;
+    }
+
     .curriculum-accordion {
       border: 0;
       border-top: 1px solid rgba(46, 43, 69, 0.1);
@@ -361,6 +437,9 @@
         }
       }
     }
+
+    @include supporting-documents;
+    @include about-course;
   }
 
   .related {
@@ -459,6 +538,10 @@
           color: inherit;
         }
       }
+    }
+
+    .tab-content-hidden {
+      display: none;
     }
 
     .curriculum-accordion {
@@ -593,5 +676,8 @@
         }
       }
     }
+
+    @include supporting-documents;
+    @include about-course;
   }
 }

@@ -4,6 +4,14 @@ import Swiper, { Navigation, A11y } from "swiper/core";
 
 Swiper.use([Navigation, A11y]);
 
+const DESKTOP_CURICCULUM_TABS_QUERY = ".desktop-sb-curriculum .curriculum-tabs";
+let MOBILE_CURICCULUM_TABS_QUERY = null;
+
+const $desktopCurriculumTabs = document.querySelector(
+  DESKTOP_CURICCULUM_TABS_QUERY
+);
+let $mobileCurriculumTabs = null;
+
 const cloneCurriculum = () => {
   const mobileCurriculum = document.querySelector(".mobile-curriculum");
   if (mobileCurriculum.children.length) {
@@ -15,6 +23,10 @@ const cloneCurriculum = () => {
     .firstElementChild.cloneNode(true);
 
   mobileCurriculum.appendChild(curriculum);
+  // MOBILE_CURICCULUM_TABS_QUERY = ".mobile-curriculum .curriculum-tabs";
+  $mobileCurriculumTabs = document.querySelector(
+    ".mobile-curriculum .curriculum-tabs"
+  );
 
   const mobileCurriculumAccordion = new Accordion(
     ".mobile-curriculum .curriculum-accordion",
@@ -24,6 +36,30 @@ const cloneCurriculum = () => {
       initialExpandedItems: 0,
     }
   );
+};
+
+const onCurriculumTabButtonClick = (tabsWrap, ev) => {
+  if (!ev.target.closest("button")) {
+    return;
+  }
+
+  const button = ev.target.closest("button");
+  if (button.parentElement.classList.contains("tab-active")) {
+    return;
+  }
+
+  const tabIndex = parseInt(button.dataset.tabIndex);
+  const currentActiveTabIndex = parseInt(
+    tabsWrap.querySelector(".tab-active button").dataset.tabIndex
+  );
+  tabsWrap.querySelector(".tab-active").classList.remove("tab-active");
+  button.parentElement.classList.add("tab-active");
+  tabsWrap.parentElement
+    .querySelector(`#tab-${currentActiveTabIndex}`)
+    .classList.add("tab-content-hidden");
+  tabsWrap.parentElement
+    .querySelector(`#tab-${tabIndex}`)
+    .classList.remove("tab-content-hidden");
 };
 
 (() => {
@@ -69,5 +105,16 @@ const cloneCurriculum = () => {
     return new Swiper(container, option);
   })();
 
+  $desktopCurriculumTabs.addEventListener(
+    "click",
+    (ev) => onCurriculumTabButtonClick($desktopCurriculumTabs, ev),
+    false
+  );
+
   cloneCurriculum();
+  $mobileCurriculumTabs.addEventListener(
+    "click",
+    (ev) => onCurriculumTabButtonClick($mobileCurriculumTabs, ev),
+    false
+  );
 })();
