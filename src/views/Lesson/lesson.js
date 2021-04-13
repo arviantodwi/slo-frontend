@@ -81,24 +81,24 @@ const onCurriculumTabButtonClick = (tabsWrap, ev) => {
       },
       breakpoints: {
         320: {
-          slidesPerView: 1,
           slidesPerGroup: 1,
+          slidesPerView: 1,
         },
         768: {
-          slidesPerView: 3.5,
           slidesPerGroup: 1,
+          slidesPerView: 1.5,
+        },
+        800: {
+          slidesPerGroup: 1,
+          slidesPerView: 1.75,
         },
         992: {
-          slidesPerView: 2.5,
           slidesPerGroup: 1,
-        },
-        1200: {
-          slidesPerView: 3,
-          slidesPerGroup: 3,
+          slidesPerView: 1.5,
         },
         1400: {
-          slidesPerView: 4,
-          slidesPerGroup: 4,
+          slidesPerGroup: 1,
+          slidesPerView: 2.5,
         },
       },
     });
