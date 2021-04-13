@@ -53,7 +53,8 @@ const toggleActiveSwitch = (nextView) => {
 const onViewSwitchButtonClick = (ev) => {
   ev.preventDefault();
 
-  const target = findEventTarget([...ev.path], "a", viewSwitch);
+  // const target = findEventTarget([...ev.path], "a", viewSwitch);
+  const target = ev.target.closest("a");
   if (target === null) {
     return;
   }
