@@ -8,7 +8,8 @@
   background-size: cover;
   position: relative;
 
-  @media only screen and (max-width: $mobile-max) and (orientation: portrait) {
+  @media only screen and (max-width: $mobile-max) and (orientation: portrait),
+    only screen and (max-height: $mobile-max) and (orientation: landscape) {
     z-index: 0;
   }
 

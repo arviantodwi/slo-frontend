@@ -43,7 +43,19 @@ const lessonsCarousel = (() => {
         },
         768: {
           slidesPerGroup: 1,
-          slidesPerView: 2.5,
+          slidesPerView: 1.2,
+        },
+        800: {
+          slidesPerGroup: 1,
+          slidesPerView: 1.75,
+        },
+        992: {
+          slidesPerGroup: 1,
+          slidesPerView: 1.5,
+        },
+        1400: {
+          slidesPerGroup: 1,
+          slidesPerView: 2.1,
         },
       },
     })
@@ -67,12 +79,23 @@ const relatedCarousel = (() => {
       breakpoints: {
         320: {
           slidesPerGroup: 1,
-          slidesPerView: 1.25,
-          centeredSlides: true,
+          slidesPerView: 1,
         },
         768: {
-          slidesPerGroup: 3,
-          slidesPerView: 3,
+          slidesPerGroup: 1,
+          slidesPerView: 1.2,
+        },
+        800: {
+          slidesPerGroup: 1,
+          slidesPerView: 1.75,
+        },
+        992: {
+          slidesPerGroup: 1,
+          slidesPerView: 1.5,
+        },
+        1400: {
+          slidesPerGroup: 1,
+          slidesPerView: 2.1,
         },
       },
     })
