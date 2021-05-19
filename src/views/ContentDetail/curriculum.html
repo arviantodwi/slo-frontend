@@ -16,7 +16,9 @@ const formatTime = (totalSeconds, useAbbr = false) => {
     str = `${h}h ${m}m ${s}s`
   } else {
     if (h > 0) {
+      str += `${h}:${m < 10 ? '0' : ''}`
     }
+    str += `${m}:${s < 10 ? '0' : ''}${s}`
   }
 
   return str;

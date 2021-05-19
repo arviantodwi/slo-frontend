@@ -1,6 +1,7 @@
 <% const content = htmlWebpackPlugin.options.content; %> <% const title =
 htmlWebpackPlugin.options.title || 'Webpack Boilerplate | Basic Static Website';
-const templateData = htmlWebpackPlugin.options.data ?? {} %>
+const templateData = 'data' in htmlWebpackPlugin.options ?
+htmlWebpackPlugin.options.data : {} %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
