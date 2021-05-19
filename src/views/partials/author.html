@@ -2,11 +2,7 @@
 parseInt(obj.ratingValue) > 0 ? true : false %>
 <div class="author author-<%= size %> d-flex align-items-center">
   <div class="author-photo ratio ratio-1x1">
-    <img
-      src="<%= require(`../../images/${photo}`) %>"
-      alt=""
-      class="rounded-circle"
-    />
+    <img src="<%= photo %>" alt="" class="rounded-circle" />
   </div>
   <% if (Array.isArray(name)) { %>
   <div class="author-more rounded-circle ratio ratio-1x1">

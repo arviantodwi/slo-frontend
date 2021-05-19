@@ -1,21 +1,22 @@
 <header>
-  <h1>Cillum Nulla Dolore Voluptate Deserunt</h1>
-  <p>
-    Cupidatat aliquip veniam enim excepteur incididunt. Consequat reprehenderit
-    ullamco sunt nulla irure nostrud nostrud do. Commodo eu magna aute ad
-    nostrud cupidatat incididunt amet culpa est consequat eu.
-  </p>
+  <h1><%= title ?? "Cillum Nulla Dolore Voluptate Deserunt" %></h1>
+  <%= desc %>
   <div class="info">
-    <div class="product-tag" data-product-type="course">Course</div>
+    <div
+      class="product-tag"
+      data-product-type="<%= String(type).toLowerCase() %>"
+    >
+      <%= type %>
+    </div>
 
-    <%= require('../partials/rating.html')({value: 4.66}) %>
+    <%= require('../partials/rating.html')({value: rating}) %>
 
     <div class="v-separator"></div>
 
-    <div class="enrolled">50 enrolled</div>
+    <div class="enrolled"><%= enrolled %> enrolled</div>
 
     <div class="v-separator"></div>
 
-    <div class="language">English</div>
+    <div class="language"><%= language %></div>
   </div>
 </header>

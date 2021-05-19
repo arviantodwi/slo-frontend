@@ -1,6 +1,6 @@
 <% const content = htmlWebpackPlugin.options.content; %> <% const title =
 htmlWebpackPlugin.options.title || 'Webpack Boilerplate | Basic Static Website';
-%>
+const templateData = htmlWebpackPlugin.options.data ?? {} %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -23,7 +23,7 @@ htmlWebpackPlugin.options.title || 'Webpack Boilerplate | Basic Static Website';
   <body>
     <div id="app">
       <%= require('./views/partials/navbar.html')() %> <%=
-      require(`./views/${content}`)() %> <%=
+      require(`./views/${content}`)({templateData}) %> <%=
       require('./views/partials/footer.html')() %>
     </div>
 

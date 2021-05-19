@@ -3,10 +3,12 @@
     <div class="content-details-top">
       <div class="container">
         <div class="content-wrap">
-          <%= require('../partials/breadcrumb.html')(JSON.stringify(['Explore',
-          'Event Operations', 'Volunteer Management'] )) %> <%=
-          require('./header.html')({title: "null", desc: "null", type: "",
-          rating: 0, enrolled: 0, language: "null"}) %>
+          <%=
+          require('../partials/breadcrumb.html')(JSON.stringify(String(templateData.bread_nav).split(',')))
+          %> <%= require('./header.html')({title: templateData.title, desc:
+          templateData.about_short, type: templateData.type, rating:
+          templateData.rating, enrolled: templateData.enrolled, language:
+          templateData.lang}) %>
         </div>
       </div>
     </div>
@@ -15,9 +17,8 @@
       <div class="container">
         <div class="row flex-row-reverse">
           <div class="sidebar-container col-auto">
-            <%= require('./sidebar.html')({cover: 'course-sample-cover.jpg',
-            title: 'Cillum\ Nulla\ Dolore\ Voluptate\ Deserunt', price: 115.99})
-            %>
+            <%= require('./sidebar.html')({cover: templateData.cover, title:
+            templateData.title, price: templateData.price}) %>
           </div>
 
           <div class="content-wrap col">
@@ -30,17 +31,7 @@
                   </button>
                 </div>
                 <div class="accordion-item-content">
-                  <p>
-                    Quis consequat anim laborum elit ex aliquip exercitation
-                    quis sint enim sit fugiat reprehenderit enim. Reprehenderit
-                    aute dolore duis tempor enim ut duis ipsum. Magna irure
-                    laboris incididunt duis magna. Laborum in dolor do quis
-                    reprehenderit excepteur exercitation dolore ea amet
-                    cupidatat anim aliqua. Dolor culpa incididunt aliquip
-                    laborum consequat exercitation deserunt cillum. Eiusmod
-                    aliqua esse non elit elit sunt ea sit pariatur aute fugiat
-                    consequat tempor pariatur.
-                  </p>
+                  <%= templateData.objectives %>
                 </div>
               </div>
             </section>
@@ -54,57 +45,29 @@
                   </button>
                 </div>
                 <div class="accordion-item-content">
-                  <p>
-                    Velit in ridiculus sed netus. Et sit pharetra sit quam est
-                    nisi nunc. Enim, scelerisque mattis sagittis pretium, elit.
-                    Felis lacus nulla dui sed mauris. Sed faucibus egestas vitae
-                    phasellus viverra pulvinar. Tincidunt tortor cum libero,
-                    donec.
-                  </p>
-                  <p>
-                    Diam enim semper lacus, gravida. Pellentesque tellus
-                    scelerisque ornare nisl. Scelerisque nulla risus, molestie
-                    amet, vitae dolor sed.
-                  </p>
-                  <p>
-                    Pellentesque nulla felis sagittis eget orci facilisis at
-                    proin. Urna, turpis pellentesque non massa massa lectus elit
-                    tellus. Purus dictum id dis tristique quis amet odio ac,
-                    feugiat. Eu pharetra, et id diam gravida molestie. Augue
-                    vestibulum, amet nunc laoreet elementum nulla in.
-                  </p>
-                  <p>
-                    Pulvinar habitasse integer massa aliquam feugiat augue
-                    sagittis senectus quisque. Odio mattis tincidunt maecenas
-                    duis vel blandit. Sed sed dictum neque, sit convallis
-                    sagittis etiam. Et placerat habitant vitae sed consectetur
-                    nisl aliquam, massa. Risus vestibulum amet lacus.
-                  </p>
+                  <%= templateData.about_long %>
                 </div>
               </div>
             </section>
 
-            <%= require('./curriculum.html')() %>
+            <%= require('./curriculum.html')(templateData.curriculum) %>
 
             <section class="author-container">
+              <% const author = Object(templateData.author) %>
               <div class="row">
                 <div class="col-auto">
                   <%= require('../partials/author.html')({size: 'medium', photo:
-                  'author-6.jpg', name: 'Aydin\ Smith', company: 'TED\ Talk',
-                  ratingValue: 4.21}) %>
+                  author.photo, name: author.name, company: author.org,
+                  ratingValue: author.rating}) %>
                 </div>
               </div>
 
-              <p>
-                Hi, I’m Aydin, a yoga specialist. Sollicitudin pretium neque
-                viverra in. Arcu, feugiat aliquam molestie amet iaculis. Quam
-                elit quis nulla vestibulum sit enim, consectetur.
-              </p>
+              <p><%= author.about %></p>
 
               <hr />
 
               <div class="author-courses">
-                <h2>More Courses from Aydin Smith</h2>
+                <h2>More Courses from <%= author.name %></h2>
                 <div class="author-courses-wrap row">
                   <div
                     id="author-carousel"
