@@ -21,12 +21,59 @@ const preloaders = document.getElementsByClassName(CONTENT_PRELOADER_CLASSNAME);
 
 let currentViewType = store.getItem(VIEW_TYPE_STORE) ?? "grid";
 
+const templateData = [
+  {
+    title: "Applied Sport Psychology and Leadership in Sport",
+    type: "Course",
+    rating: 4.76,
+    price: 92.99,
+    permalink: "applied-sport-psychology-leadership-sport",
+    cover: "https://i.imgur.com/RqmQKO3.jpg",
+    description:
+      "Enhance your knowledge of sport psychology from an athlete or coach perspective with this in depth applied course.",
+    author: {
+      name: "John Kosner",
+      org: "Kosner Media",
+      photo: "https://i.imgur.com/Ld7oEoT.jpg",
+    },
+  },
+  {
+    title: "How To Deal With Loss in Sport",
+    type: "Course",
+    rating: 3.4,
+    price: 43.52,
+    permalink: "how-to-deal-with-loss-in-sport",
+    cover: "https://i.imgur.com/mu6bImD.jpg",
+    description: "Learn how to use losses to get more wins",
+    author: {
+      name: "Rick Jones",
+      org: "Kosner Media",
+      photo: "https://i.imgur.com/NqPEpYD.png",
+    },
+  },
+  {
+    title: "The Complete Course on Sport Events and Facility Management",
+    type: "Course",
+    rating: 4.4,
+    price: 0,
+    permalink: "complete-course-sport-events-and-facility-management",
+    cover: "https://i.imgur.com/Em4QCCW.jpg",
+    description:
+      "An In-Depth Look at the Work of Sports Event and Facility Managers and What it Takes to Run a Successful Sports Event",
+    author: {
+      name: "Jim Host",
+      org: "International Management Group (IMG)",
+      photo: "https://i.imgur.com/5ayUOK3.png",
+    },
+  },
+];
+
 const toggleContentView = (nextView) => {
   try {
     if (nextView === "grid") {
-      content.innerHTML = DomPurify.sanitize(GridContent());
+      content.innerHTML = DomPurify.sanitize(GridContent(templateData));
     } else if (nextView === "list") {
-      content.innerHTML = DomPurify.sanitize(ListContent());
+      content.innerHTML = DomPurify.sanitize(ListContent(templateData));
     } else {
       throw new Error("View type other than Grid and List is not acceptable.");
     }

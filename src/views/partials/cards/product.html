@@ -6,7 +6,12 @@ false %>
   data-display-type="<%= displayType %>"
 >
   <div class="product-cover ratio ratio-1x1">
+    <!--  -->
+    <% if (cover.indexOf('http') > -1) { %>
+    <img src="<%= cover %>" alt="" />
+    <% } else { %>
     <img src="<%= require(`../../../images/${cover}`) %>" alt="" />
+    <% } %>
     <% if('productType' in obj) { %>
     <div
       class="product-tag"

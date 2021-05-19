@@ -55,9 +55,13 @@ $base-class: ".author";
     line-height: 18px;
     letter-spacing: -0.078px;
     font-size: 13px;
+    max-width: calc(100% - 34px);
 
     .company {
       font-size: 12px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
   } @else if ($size == "medium") {
     font-weight: 600;
@@ -78,6 +82,7 @@ $base-class: ".author";
       &-photo,
       &-more {
         width: 28px;
+        flex-shrink: 0;
       }
     }
   } @else if ($size == "medium") {
